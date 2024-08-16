@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://vvc5yfc4g37l"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rsnpu"]
+
+[node name="Level1" type="Node3D"]
+
+[node name="Level" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level"]
+mesh = SubResource("PlaneMesh_rsnpu")
