@@ -2,7 +2,7 @@ extends Node3D
 class_name Slime
 
 @export var inControl: bool = true
-@export var heightLayer: int = 0
+@export var heightLayer: int = 1
 var isDead: bool = false
 
 func _ready():
@@ -22,13 +22,18 @@ func _process(delta):
 			
 		$Behaviour.AttemptMove(moveDirection)
 
+func MoveTiles(dir: Vector2) -> String:
+	get_parent().position.x += dir.x
+	get_parent().position.z += dir.y
+	return "air"
+
 func CheckForGround() -> bool:
 	return true
 
 func DropHeightLayer():
 	while(!isDead && !CheckForGround()):
 		heightLayer -= 1
-		if(heightLayer <= -1):
+		if(heightLayer <= 0):
 			Die()
 
 func Die():
