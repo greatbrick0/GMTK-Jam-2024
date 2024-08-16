@@ -1,19 +1,28 @@
 [gd_scene load_steps=4 format=3 uid="uid://vvc5yfc4g37l"]
 
 [ext_resource type="PackedScene" uid="uid://b5ke5fcwyf1lg" path="res://Scenes/basic_slime.tscn" id="1_iuon6"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_rsnpu"]
+[ext_resource type="MeshLibrary" uid="uid://buv462r46jhlq" path="res://Art/Models/GroundTiles0.tres" id="2_ftv2b"]
 
 [sub_resource type="Environment" id="Environment_kbt1j"]
+background_mode = 1
+background_color = Color(1, 1, 1, 1)
+background_energy_multiplier = 0.2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 8.13
+fog_enabled = true
+fog_light_color = Color(0.767205, 0.790014, 0.825857, 1)
+fog_density = 0.0
+fog_height = -2.0
+fog_height_density = 1.0
 
 [node name="Level1" type="Node3D"]
 
 [node name="Level" type="Node3D" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Level"]
-mesh = SubResource("PlaneMesh_rsnpu")
-
 [node name="BasicSlime" parent="Level" instance=ExtResource("1_iuon6")]
+
+[node name="GridMap" type="GridMap" parent="Level"]
+mesh_library = ExtResource("2_ftv2b")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866026, 0, -0.866026, 0.5, 0, 24, 14)

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://difapendduedo"
-path.s3tc="res://.godot/imported/grassVar4_grassVar4.png-2b8ecaadd35bd8c93000ab86e13909c8.s3tc.ctex"
+uid="uid://d4l156xwj2v7p"
+path.s3tc="res://.godot/imported/grassVar1_grassVar1.png-85b8eae917fd8a41bea492e4eafd7ba3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "a9a1237221d7bb11c9f8c6852fbb59e4"
+"md5": "5ad2b1259c1caf0580dce7cd48e10188"
 }
 
 [deps]
 
-source_file="res://Art/Models/grassVar4_grassVar4.png"
-dest_files=["res://.godot/imported/grassVar4_grassVar4.png-2b8ecaadd35bd8c93000ab86e13909c8.s3tc.ctex"]
+source_file="res://Art/Models/Grass Variations/grassVar1_grassVar1.png"
+dest_files=["res://.godot/imported/grassVar1_grassVar1.png-85b8eae917fd8a41bea492e4eafd7ba3.s3tc.ctex"]
 
 [params]
 

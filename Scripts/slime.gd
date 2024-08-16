@@ -22,10 +22,9 @@ func _process(delta):
 			
 		$Behaviour.AttemptMove(moveDirection)
 
-func MoveTiles(dir: Vector2) -> String:
-	get_parent().position.x += dir.x
-	get_parent().position.z += dir.y
-	return "air"
+func MoveTiles(dir: Vector2):
+	position.x += dir.x
+	position.z += dir.y
 
 func CheckForGround() -> bool:
 	return true

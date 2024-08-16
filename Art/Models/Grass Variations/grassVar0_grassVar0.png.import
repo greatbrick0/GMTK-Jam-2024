@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://brbceckuwf0ps"
-path.s3tc="res://.godot/imported/grassVar0_grassVar0.png-80a7692739ddf93ff6433bf1fd632e3d.s3tc.ctex"
+path.s3tc="res://.godot/imported/grassVar0_grassVar0.png-a36035dd27501551f31711523ea12da2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Art/Models/grassVar0_grassVar0.png"
-dest_files=["res://.godot/imported/grassVar0_grassVar0.png-80a7692739ddf93ff6433bf1fd632e3d.s3tc.ctex"]
+source_file="res://Art/Models/Grass Variations/grassVar0_grassVar0.png"
+dest_files=["res://.godot/imported/grassVar0_grassVar0.png-a36035dd27501551f31711523ea12da2.s3tc.ctex"]
 
 [params]
 
