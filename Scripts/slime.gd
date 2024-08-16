@@ -3,6 +3,7 @@ class_name Slime
 
 @export var inControl: bool = true
 @export var heightLayer: int = 1
+@export var tilePosition: Vector2i = Vector2i.ZERO
 var isDead: bool = false
 
 func _ready():
@@ -25,9 +26,11 @@ func _process(delta):
 func MoveTiles(dir: Vector2):
 	position.x += dir.x
 	position.z += dir.y
+	tilePosition.x += dir.x
+	tilePosition.y += dir.y
 
 func CheckForGround() -> bool:
-	return true
+	return get_parent().ReadTile(tilePosition, heightLayer - 1) != "Air"
 
 func DropHeightLayer():
 	while(!isDead && !CheckForGround()):

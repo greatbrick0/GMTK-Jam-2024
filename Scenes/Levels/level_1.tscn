@@ -8,12 +8,14 @@
 texture = ExtResource("2_f76gy")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+0:0/0/custom_data_0 = "Air"
 1:0/0 = 0
+1:0/0/custom_data_0 = "Ground"
 
 [sub_resource type="TileSet" id="TileSet_p0oox"]
 tile_size = Vector2i(32, 32)
-custom_data_layer_0/name = "Ground"
-custom_data_layer_0/type = 0
+custom_data_layer_0/name = "GroundType"
+custom_data_layer_0/type = 4
 sources/1 = SubResource("TileSetAtlasSource_78i1y")
 
 [sub_resource type="Environment" id="Environment_kbt1j"]
