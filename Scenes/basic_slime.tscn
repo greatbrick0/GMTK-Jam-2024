@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5ke5fcwyf1lg"]
+
+[ext_resource type="Script" path="res://Scripts/slime.gd" id="1_rhjpw"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_o7etk"]
+
+[node name="BasicSlime" type="Node3D"]
+script = ExtResource("1_rhjpw")
+
+[node name="Visuals" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Visuals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("SphereMesh_o7etk")

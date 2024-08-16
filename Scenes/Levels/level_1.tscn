@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://vvc5yfc4g37l"]
+[gd_scene load_steps=4 format=3 uid="uid://vvc5yfc4g37l"]
+
+[ext_resource type="PackedScene" uid="uid://b5ke5fcwyf1lg" path="res://Scenes/basic_slime.tscn" id="1_iuon6"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rsnpu"]
+
+[sub_resource type="Environment" id="Environment_kbt1j"]
 
 [node name="Level1" type="Node3D"]
 
@@ -8,3 +12,15 @@
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Level"]
 mesh = SubResource("PlaneMesh_rsnpu")
+
+[node name="BasicSlime" parent="." instance=ExtResource("1_iuon6")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.34202, 0.939693, 0, -0.939693, 0.34202, 0, 24, 8.5)
+fov = 20.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.560841, 0, 0.827923, -0.568961, 0.726455, 0.385418, -0.601449, -0.687214, 0.407426, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kbt1j")
