@@ -13,7 +13,7 @@
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Level"]
 mesh = SubResource("PlaneMesh_rsnpu")
 
-[node name="BasicSlime" parent="." instance=ExtResource("1_iuon6")]
+[node name="BasicSlime" parent="Level" instance=ExtResource("1_iuon6")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.34202, 0.939693, 0, -0.939693, 0.34202, 0, 24, 8.5)
