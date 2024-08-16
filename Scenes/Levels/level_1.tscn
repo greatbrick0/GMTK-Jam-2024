@@ -1,7 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://vvc5yfc4g37l"]
+[gd_scene load_steps=7 format=3 uid="uid://vvc5yfc4g37l"]
 
 [ext_resource type="PackedScene" uid="uid://b5ke5fcwyf1lg" path="res://Scenes/basic_slime.tscn" id="1_iuon6"]
-[ext_resource type="MeshLibrary" uid="uid://buv462r46jhlq" path="res://Art/Models/GroundTiles0.tres" id="2_ftv2b"]
+[ext_resource type="Script" path="res://Scripts/Level.gd" id="1_jbn6u"]
+[ext_resource type="Texture2D" uid="uid://dhhnp6x275thb" path="res://Art/Images/TileMapData.png" id="2_f76gy"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_78i1y"]
+texture = ExtResource("2_f76gy")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_p0oox"]
+tile_size = Vector2i(32, 32)
+custom_data_layer_0/name = "Ground"
+custom_data_layer_0/type = 0
+sources/1 = SubResource("TileSetAtlasSource_78i1y")
 
 [sub_resource type="Environment" id="Environment_kbt1j"]
 background_mode = 1
@@ -18,11 +31,14 @@ fog_height_density = 1.0
 [node name="Level1" type="Node3D"]
 
 [node name="Level" type="Node3D" parent="."]
+script = ExtResource("1_jbn6u")
 
 [node name="BasicSlime" parent="Level" instance=ExtResource("1_iuon6")]
 
-[node name="GridMap" type="GridMap" parent="Level"]
-mesh_library = ExtResource("2_ftv2b")
+[node name="TileMap" type="TileMap" parent="Level"]
+tile_set = SubResource("TileSet_p0oox")
+format = 2
+layer_0/tile_data = PackedInt32Array(-1, 65537, 0, -65536, 65537, 0, -65535, 65537, 0, 65535, 65537, 0, 0, 65537, 0, 1, 65537, 0, 131071, 65537, 0, 65536, 65537, 0, 65537, 65537, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866026, 0, -0.866026, 0.5, 0, 24, 14)
