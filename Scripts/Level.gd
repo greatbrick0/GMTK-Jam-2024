@@ -1,5 +1,8 @@
 extends Node3D
 
+func _ready():
+	$TileMap.visible = false
+
 func ReadTile(pos: Vector2i, height: int) -> String:
 	var tile: String
 	var tileData: TileData = $TileMap.get_cell_tile_data(height, pos)

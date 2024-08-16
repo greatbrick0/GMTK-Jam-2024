@@ -23,11 +23,12 @@ func _process(delta):
 			
 		$Behaviour.AttemptMove(moveDirection)
 
-func MoveTiles(dir: Vector2):
-	position.x += dir.x
-	position.z += dir.y
-	tilePosition.x += dir.x
-	tilePosition.y += dir.y
+func MoveTiles(dir: Vector2i):
+	if(get_parent().ReadTile(tilePosition + dir, heightLayer) == "Air"):
+		position.x += dir.x
+		position.z += dir.y
+		tilePosition.x += dir.x
+		tilePosition.y += dir.y
 
 func CheckForGround() -> bool:
 	return get_parent().ReadTile(tilePosition, heightLayer - 1) != "Air"
