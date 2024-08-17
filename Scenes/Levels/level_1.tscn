@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_jbn6u"]
 [ext_resource type="Texture2D" uid="uid://dhhnp6x275thb" path="res://Art/Images/TileMapData.png" id="2_f76gy"]
 [ext_resource type="PackedScene" uid="uid://dq4smmbp1k74c" path="res://Scenes/Slimes/jumpy_slime.tscn" id="4_2mphd"]
-[ext_resource type="MeshLibrary" uid="uid://vp31fmn484sn" path="res://Art/grassPanelLib.tres" id="5_wg3i6"]
+[ext_resource type="MeshLibrary" uid="uid://bm07s1xbqkrov" path="res://Art/SurfaceTiles.tres" id="5_5lky0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_78i1y"]
 texture = ExtResource("2_f76gy")
@@ -54,12 +54,12 @@ tilePosition = Vector2i(0, 1)
 
 [node name="GridMap" type="GridMap" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, -0.5)
-mesh_library = ExtResource("5_wg3i6")
+mesh_library = ExtResource("5_5lky0")
 cell_size = Vector3(1, 1, 1)
 data = {
-"cells": PackedInt32Array(-65536, 0, 0, -65535, 0, 1, -65534, 0, 0, -1, 0, 3, -3, 1, 0, -2, 1, 1, -1, 1, 0, -65536, 1, 1, -65535, 1, 0, -65534, 1, 2, -3, 65535, 0, -2, 65535, 1, -1, 65535, 0, -65536, 65535, 1, -65535, 65535, 0, -65534, 65535, 1, -1, 65534, 1, -65536, 65534, 0, -65535, 65534, 1, -65534, 65534, 0, -1, 2, 1, -65536, 2, 0, -65535, 2, 1, -65534, 2, 0, -1, 3, 0, -65536, 3, 1, -4, 3, 3, -4, 1, 1, -4, 0, 0, -4, 65535, 1, -2, 0, 0, -2, 65534, 0, -2, 2, 0, -2, 3, 4, 65534, 0, 0, 0, 3, 0, 1, 65535, 0, -65534, 3, 1, -65535, 3, 0)
+"cells": PackedInt32Array(-65536, 0, 0, -65535, 0, 1, -65534, 0, 0, -1, 0, 3, -3, 1, 0, -2, 1, 1, -1, 1, 0, -65536, 1, 1, -65535, 1, 0, -65534, 1, 2, -3, 65535, 0, -2, 65535, 1, -1, 65535, 0, -65536, 65535, 1, -65535, 65535, 0, -65534, 65535, 1, -1, 65534, 1, -65536, 65534, 0, -65535, 65534, 1, -65534, 65534, 0, -1, 2, 1, -65536, 2, 0, -65535, 2, 1, -65534, 2, 0, -1, 3, 0, -65536, 3, 1, -4, 3, 3, -4, 1, 1, -4, 0, 0, -4, 65535, 1, -2, 0, 0, -2, 65534, 0, -2, 2, 0, -2, 3, 4, 65534, 0, 0, 0, 3, 6, 1, 65535, 9, -65534, 3, 1, -65535, 3, 0)
 }
-metadata/_editor_floor_ = Vector3(0, -1, 0)
+metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 18, 18)
