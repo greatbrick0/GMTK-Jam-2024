@@ -16,7 +16,7 @@ func _ready():
 func _process(delta):
 	$Visuals/ControlRing.visible = inControl
 	if(Input.is_action_just_pressed("PuzzleAction")):
-		$Visuals/TestSlime2/AnimationPlayer.stop()
+		$Visuals/SlimeBody/SlimeAnim.stop()
 	if(inControl):
 		var moveDirection: Vector2 = Vector2.ZERO
 		if(Input.is_action_just_pressed("MoveUp")):
@@ -33,7 +33,7 @@ func _process(delta):
 func ChangeTiles(newPos: Vector2i):
 	tilePosition = newPos
 	get_parent().tileScenes[self][0] = tilePosition
-	$Visuals/TestSlime2/AnimationPlayer.play("Green_Move1")
+	$Visuals/SlimeBody/SlimeAnim.play("Green_Move1")
 	prevPosition.x = position.x
 	prevPosition.z = position.z
 	position.x = newPos.x
