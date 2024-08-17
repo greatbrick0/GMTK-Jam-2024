@@ -34,8 +34,6 @@ func ChangeTiles(newPos: Vector2i):
 	tilePosition = newPos
 	get_parent().tileScenes[self][0] = tilePosition
 	$Visuals/SlimeBody/SlimeAnim.play("Green_Move1")
-	prevPosition.x = position.x
-	prevPosition.z = position.z
 	position.x = newPos.x
 	position.z = newPos.y
 
