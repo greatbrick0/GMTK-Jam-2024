@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dgtd3nlu33wgm"
+path="res://.godot/imported/stoneHalf.obj-f8a96f8544ec97edea63b6ab10508b41.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stoneHalf.obj-f8a96f8544ec97edea63b6ab10508b41.mesh"]
+
+source_file="res://Art/Models/Grass Variations/stoneHalf.obj"
+dest_files=["res://.godot/imported/stoneHalf.obj-f8a96f8544ec97edea63b6ab10508b41.mesh", "res://.godot/imported/stoneHalf.obj-f8a96f8544ec97edea63b6ab10508b41.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
