@@ -24,19 +24,22 @@ func _process(delta):
 			moveDirection = Vector2.LEFT
 		if(Input.is_action_just_pressed("MoveRight")):
 			moveDirection = Vector2.RIGHT
-		
-		$Behaviour.AttemptMove(moveDirection)
+		if(moveDirection != Vector2.ZERO):
+			$Behaviour.AttemptMove(moveDirection)
 
 func ChangeTiles(newPos: Vector2i):
 	tilePosition = newPos
 	get_parent().tileScenes[self][0] = tilePosition
 	$Visuals/TestSlime2/AnimationPlayer.play("Green_Move1")
+	position.x = newPos.x
+	position.z = newPos.y
 
 func MoveTiles(dir: Vector2i):
 	if(get_parent().ReadTile(tilePosition + dir, heightLayer) == "Air"):
 		ChangeTiles(tilePosition + dir)
-		position.x += dir.x
-		position.z += dir.y
+
+func CheckFacingTiles(dir: Vector2i) -> Array[String]:
+	return get_parent().ReadTile(tilePosition + dir, heightLayer)
 
 func CheckForGround() -> bool:
 	return get_parent().ReadTile(tilePosition, heightLayer - 1) != "Air"

@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://vvc5yfc4g37l"]
 
-[ext_resource type="PackedScene" uid="uid://b5ke5fcwyf1lg" path="res://Scenes/basic_slime.tscn" id="1_iuon6"]
+[ext_resource type="PackedScene" uid="uid://b5ke5fcwyf1lg" path="res://Scenes/Slimes/basic_slime.tscn" id="1_iuon6"]
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_jbn6u"]
 [ext_resource type="Texture2D" uid="uid://dhhnp6x275thb" path="res://Art/Images/TileMapData.png" id="2_f76gy"]
-[ext_resource type="PackedScene" uid="uid://dq4smmbp1k74c" path="res://Scenes/jumpy_slime.tscn" id="4_2mphd"]
+[ext_resource type="PackedScene" uid="uid://dq4smmbp1k74c" path="res://Scenes/Slimes/jumpy_slime.tscn" id="4_2mphd"]
 [ext_resource type="MeshLibrary" uid="uid://vp31fmn484sn" path="res://Art/grassPanelLib.tres" id="5_wg3i6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_78i1y"]
