@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ufybijyraq43"
-path="res://.godot/imported/grassVar0.glb-2c6b1d69240b1aeed0c8c7f129b35edf.scn"
+uid="uid://ci18qscheat71"
+path="res://.godot/imported/yeet.glb-4f9aacd4859d5de70344e8e56f230ed5.scn"
 
 [deps]
 
-source_file="res://Art/Models/newGrass/grassVar0.glb"
-dest_files=["res://.godot/imported/grassVar0.glb-2c6b1d69240b1aeed0c8c7f129b35edf.scn"]
+source_file="res://Art/Models/yeet.glb"
+dest_files=["res://.godot/imported/yeet.glb-4f9aacd4859d5de70344e8e56f230ed5.scn"]
 
 [params]
 
