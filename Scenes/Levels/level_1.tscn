@@ -20,10 +20,10 @@ sources/1 = SubResource("TileSetAtlasSource_78i1y")
 
 [sub_resource type="Environment" id="Environment_kbt1j"]
 background_mode = 1
-background_color = Color(1, 1, 1, 1)
-background_energy_multiplier = 0.2
+background_color = Color(0.610107, 0.796875, 0.796875, 1)
+ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 8.13
+ambient_light_energy = 0.6
 fog_enabled = true
 fog_light_color = Color(0.767205, 0.790014, 0.825857, 1)
 fog_density = 0.0
