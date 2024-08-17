@@ -12,6 +12,8 @@ func _ready():
 	get_parent().tileScenes[self] = [tilePosition, heightLayer, "LittleSlime"]
 
 func _process(delta):
+	if(Input.is_action_just_pressed("PuzzleAction")):
+		$Visuals/TestSlime2/AnimationPlayer.stop()
 	if(inControl):
 		var moveDirection: Vector2 = Vector2.ZERO
 		if(Input.is_action_just_pressed("MoveUp")):
@@ -22,12 +24,13 @@ func _process(delta):
 			moveDirection = Vector2.LEFT
 		if(Input.is_action_just_pressed("MoveRight")):
 			moveDirection = Vector2.RIGHT
-			
+		
 		$Behaviour.AttemptMove(moveDirection)
 
 func ChangeTiles(newPos: Vector2i):
 	tilePosition = newPos
 	get_parent().tileScenes[self][0] = tilePosition
+	$Visuals/TestSlime2/AnimationPlayer.play("Green_Move1")
 
 func MoveTiles(dir: Vector2i):
 	if(get_parent().ReadTile(tilePosition + dir, heightLayer) == "Air"):
@@ -42,6 +45,7 @@ func DropHeightLayer():
 	while(!isDead && !CheckForGround()):
 		heightLayer -= 1
 		get_parent().tileScenes[self][1] = heightLayer
+		position.y = heightLayer - 1
 		if(heightLayer <= 0):
 			Die()
 
