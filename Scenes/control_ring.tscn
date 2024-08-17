@@ -5,6 +5,7 @@ inner_radius = 0.8
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ypsk"]
 shading_mode = 0
+disable_receive_shadows = true
 
 [node name="ControlRing" type="Node3D"]
 

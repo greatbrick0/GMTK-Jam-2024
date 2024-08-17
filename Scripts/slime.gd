@@ -4,7 +4,6 @@ class_name Slime
 @export var inControl: bool = false
 @export var heightLayer: int = 1
 @export var tilePosition: Vector2i = Vector2i.ZERO
-var prevPosition: Vector3
 var isDead: bool = false
 
 @export var fallSounds: Array[AudioStream]
@@ -27,6 +26,7 @@ func _process(delta):
 			moveDirection = Vector2.LEFT
 		if(Input.is_action_just_pressed("MoveRight")):
 			moveDirection = Vector2.RIGHT
+		
 		if(moveDirection != Vector2.ZERO):
 			$Behaviour.AttemptMove(moveDirection)
 
