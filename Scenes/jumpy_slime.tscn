@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq4smmbp1k74c"]
+
+[ext_resource type="Script" path="res://Scripts/slime.gd" id="1_jb6l8"]
+[ext_resource type="PackedScene" uid="uid://d3ovs1ws8efyr" path="res://Art/Models/Slimes/TestSlime2.glb" id="2_sqqj1"]
+[ext_resource type="Script" path="res://Scripts/jumpy_slime.gd" id="3_w1k37"]
+
+[node name="JumpySlime" type="Node3D"]
+script = ExtResource("1_jb6l8")
+
+[node name="Visuals" type="Node3D" parent="."]
+
+[node name="TestSlime2" parent="Visuals" instance=ExtResource("2_sqqj1")]
+
+[node name="Behaviour" type="Node" parent="."]
+script = ExtResource("3_w1k37")
