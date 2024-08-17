@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://dq4smmbp1k74c"]
+[gd_scene load_steps=6 format=3 uid="uid://dq4smmbp1k74c"]
 
 [ext_resource type="Script" path="res://Scripts/slime.gd" id="1_jb6l8"]
 [ext_resource type="PackedScene" uid="uid://d3ovs1ws8efyr" path="res://Art/Models/Slimes/TestSlime2.glb" id="2_sqqj1"]
 [ext_resource type="Script" path="res://Scripts/jumpy_slime.gd" id="3_w1k37"]
+[ext_resource type="Texture2D" uid="uid://bjmkaamewsdeg" path="res://Art/Models/Slimes/_pinkTestSlime2_Image_0.png" id="3_yd58l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_266y2"]
+albedo_texture = ExtResource("3_yd58l")
 
 [node name="JumpySlime" type="Node3D"]
 script = ExtResource("1_jb6l8")
@@ -11,5 +15,10 @@ script = ExtResource("1_jb6l8")
 
 [node name="TestSlime2" parent="Visuals" instance=ExtResource("2_sqqj1")]
 
+[node name="Mesh_0" parent="Visuals/TestSlime2/Root/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_266y2")
+
 [node name="Behaviour" type="Node" parent="."]
 script = ExtResource("3_w1k37")
+
+[editable path="Visuals/TestSlime2"]
