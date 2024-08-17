@@ -7,7 +7,7 @@ class_name Slime
 var isDead: bool = false
 
 func _ready():
-	pass 
+	get_parent().tileScenes[self] = [tilePosition, heightLayer, "LittleSlime"]
 
 func _process(delta):
 	if(inControl):
@@ -23,12 +23,15 @@ func _process(delta):
 			
 		$Behaviour.AttemptMove(moveDirection)
 
+func ChangeTiles(newPos: Vector2i):
+	tilePosition = newPos
+	get_parent().tileScenes[self][0] = tilePosition
+
 func MoveTiles(dir: Vector2i):
 	if(get_parent().ReadTile(tilePosition + dir, heightLayer) == "Air"):
+		ChangeTiles(tilePosition + dir)
 		position.x += dir.x
 		position.z += dir.y
-		tilePosition.x += dir.x
-		tilePosition.y += dir.y
 
 func CheckForGround() -> bool:
 	return get_parent().ReadTile(tilePosition, heightLayer - 1) != "Air"
@@ -36,6 +39,7 @@ func CheckForGround() -> bool:
 func DropHeightLayer():
 	while(!isDead && !CheckForGround()):
 		heightLayer -= 1
+		get_parent().tileScenes[self][1] = heightLayer
 		if(heightLayer <= 0):
 			Die()
 
@@ -43,3 +47,5 @@ func Die():
 	print("dead slime")
 	inControl = false
 	isDead = true
+	$Visuals.visible = false
+	get_parent().tileScenes.erase(self)

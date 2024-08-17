@@ -1,5 +1,7 @@
 extends Node3D
 
+var tileScenes: Dictionary
+
 func _ready():
 	$TileMap.visible = false
 
@@ -12,6 +14,13 @@ func ReadTile(pos: Vector2i, height: int) -> String:
 		tile = tileData.get_custom_data("GroundType")
 	
 	if(tile == "Air"):
-		pass
+		tile = FindByPosition(pos, height)
 	
 	return tile
+
+func FindByPosition(pos: Vector2i, height: int) -> String:
+	var output: String = "Air"
+	for ii in tileScenes.values():
+		if(ii[0] == pos && ii[1] == height):
+			output = ii[2]
+	return output
