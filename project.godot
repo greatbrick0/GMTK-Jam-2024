@@ -18,6 +18,7 @@ config/icon="res://Art/Images/icon.svg"
 [autoload]
 
 SlimeController="*res://Scripts/SlimeController.gd"
+VectorTools="*res://Scripts/VectorTools.gd"
 
 [filesystem]
 

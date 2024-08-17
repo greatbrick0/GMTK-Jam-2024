@@ -2,6 +2,8 @@ extends Node
 
 func AttemptMove(dir: Vector2):
 	if(IsOnlyAir(get_parent().CheckFacingTiles(dir))):
+		$"../MovePlayer".play("Move" + VectorTools.VectorToString(dir))
+		$"../Visuals".position = VectorTools.Vec2ToVec3(-dir)
 		get_parent().MoveTiles(dir)
 	get_parent().DropHeightLayer()
 
