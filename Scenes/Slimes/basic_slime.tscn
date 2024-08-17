@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" path="res://Scripts/slime.gd" id="1_rhjpw"]
 [ext_resource type="PackedScene" uid="uid://d3ovs1ws8efyr" path="res://Art/Models/Slimes/TestSlime2.glb" id="2_0qb2k"]
+[ext_resource type="AudioStream" uid="uid://cltc76krufxiy" path="res://Sounds/Effects/Falling1.wav" id="2_eh2v7"]
 [ext_resource type="Script" path="res://Scripts/Slimes/basic_slime.gd" id="2_ehmlq"]
-[ext_resource type="AudioStream" uid="uid://bwqggsirgyvii" path="res://Sounds/Effects/Falling2.wav" id="3_t2rxb"]
-[ext_resource type="AudioStream" uid="uid://cltc76krufxiy" path="res://Sounds/Effects/Falling1.wav" id="4_8kdos"]
-[ext_resource type="AudioStream" uid="uid://br212d5n4ley0" path="res://Sounds/Effects/Falling3.wav" id="4_720dl"]
+[ext_resource type="AudioStream" uid="uid://bwqggsirgyvii" path="res://Sounds/Effects/Falling2.wav" id="3_n4om8"]
+[ext_resource type="AudioStream" uid="uid://br212d5n4ley0" path="res://Sounds/Effects/Falling3.wav" id="4_6mtcv"]
 
 [node name="BasicSlime" type="Node3D"]
 script = ExtResource("1_rhjpw")
-fallSounds = Array[AudioStream]([ExtResource("4_8kdos"), ExtResource("3_t2rxb"), ExtResource("4_720dl")])
+fallSounds = Array[AudioStream]([ExtResource("2_eh2v7"), ExtResource("3_n4om8"), ExtResource("4_6mtcv")])
 
 [node name="Visuals" type="Node3D" parent="."]
 
@@ -21,4 +21,4 @@ script = ExtResource("2_ehmlq")
 [node name="Sounds" type="Node" parent="."]
 
 [node name="FallSound" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("4_8kdos")
+stream = ExtResource("2_eh2v7")

@@ -1,7 +1,7 @@
 extends Node3D
 class_name Slime
 
-@export var inControl: bool = true
+@export var inControl: bool = false
 @export var heightLayer: int = 1
 @export var tilePosition: Vector2i = Vector2i.ZERO
 var isDead: bool = false
@@ -10,6 +10,7 @@ var isDead: bool = false
 
 func _ready():
 	get_parent().tileScenes[self] = [tilePosition, heightLayer, "LittleSlime"]
+	SlimeController.slimeList.append(self)
 
 func _process(delta):
 	if(Input.is_action_just_pressed("PuzzleAction")):
@@ -58,5 +59,6 @@ func Die():
 	isDead = true
 	$Visuals.visible = false
 	get_parent().tileScenes.erase(self)
+	SlimeController.RemoveSlime(self)
 	$Sounds/FallSound.stream = fallSounds.pick_random()
 	$Sounds/FallSound.play()
