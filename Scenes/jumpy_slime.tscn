@@ -1,15 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://dq4smmbp1k74c"]
+[gd_scene load_steps=9 format=3 uid="uid://dq4smmbp1k74c"]
 
 [ext_resource type="Script" path="res://Scripts/slime.gd" id="1_jb6l8"]
 [ext_resource type="PackedScene" uid="uid://d3ovs1ws8efyr" path="res://Art/Models/Slimes/TestSlime2.glb" id="2_sqqj1"]
+[ext_resource type="AudioStream" uid="uid://bwqggsirgyvii" path="res://Sounds/Falling2.wav" id="3_6i0ho"]
 [ext_resource type="Script" path="res://Scripts/jumpy_slime.gd" id="3_w1k37"]
 [ext_resource type="Texture2D" uid="uid://bjmkaamewsdeg" path="res://Art/Models/Slimes/_pinkTestSlime2_Image_0.png" id="3_yd58l"]
+[ext_resource type="AudioStream" uid="uid://br212d5n4ley0" path="res://Sounds/Falling3.wav" id="4_tkwyr"]
+[ext_resource type="AudioStream" uid="uid://cltc76krufxiy" path="res://Sounds/Falling1.wav" id="5_ndmwo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_266y2"]
 albedo_texture = ExtResource("3_yd58l")
 
 [node name="JumpySlime" type="Node3D"]
 script = ExtResource("1_jb6l8")
+fallSounds = Array[AudioStream]([ExtResource("5_ndmwo"), ExtResource("3_6i0ho"), ExtResource("4_tkwyr")])
 
 [node name="Visuals" type="Node3D" parent="."]
 
@@ -20,5 +24,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_266y2")
 
 [node name="Behaviour" type="Node" parent="."]
 script = ExtResource("3_w1k37")
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="FallSound" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("5_ndmwo")
 
 [editable path="Visuals/TestSlime2"]

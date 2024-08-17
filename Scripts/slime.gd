@@ -6,6 +6,8 @@ class_name Slime
 @export var tilePosition: Vector2i = Vector2i.ZERO
 var isDead: bool = false
 
+@export var fallSounds: Array[AudioStream]
+
 func _ready():
 	get_parent().tileScenes[self] = [tilePosition, heightLayer, "LittleSlime"]
 
@@ -49,3 +51,5 @@ func Die():
 	isDead = true
 	$Visuals.visible = false
 	get_parent().tileScenes.erase(self)
+	$Sounds/FallSound.stream = fallSounds.pick_random()
+	$Sounds/FallSound.play()
