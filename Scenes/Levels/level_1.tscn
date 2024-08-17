@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_jbn6u"]
 [ext_resource type="Texture2D" uid="uid://dhhnp6x275thb" path="res://Art/Images/TileMapData.png" id="2_f76gy"]
 [ext_resource type="PackedScene" uid="uid://dq4smmbp1k74c" path="res://Scenes/jumpy_slime.tscn" id="4_2mphd"]
-[ext_resource type="MeshLibrary" uid="uid://bm6wbqbckwm2w" path="res://Art/TempMeshLib.tres" id="5_5nhmr"]
+[ext_resource type="MeshLibrary" uid="uid://vp31fmn484sn" path="res://Art/grassPanelLib.tres" id="5_wg3i6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_78i1y"]
 texture = ExtResource("2_f76gy")
@@ -53,7 +53,7 @@ tilePosition = Vector2i(0, 1)
 
 [node name="GridMap" type="GridMap" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
-mesh_library = ExtResource("5_5nhmr")
+mesh_library = ExtResource("5_wg3i6")
 cell_size = Vector3(1, 1, 1)
 data = {
 "cells": PackedInt32Array(-65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -1, 0, 0, -3, 1, 0, -2, 1, 0, -1, 1, 0, -65536, 1, 0, -65535, 1, 0, -65534, 1, 0, -3, 65535, 0, -2, 65535, 0, -1, 65535, 0, -65536, 65535, 0, -65535, 65535, 0, -65534, 65535, 0, -1, 65534, 0, -65536, 65534, 0, -65535, 65534, 0, -65534, 65534, 0, -1, 2, 0, -65536, 2, 0, -65535, 2, 0, -65534, 2, 0, -1, 3, 0, -65536, 3, 0, -65535, 3, 0, -65534, 3, 0, -4, 3, 0, -4, 1, 0, -4, 0, 0, -4, 65535, 0, -2, 0, 0, -2, 65534, 0, -2, 2, 0, -2, 3, 0, 65534, 0, 0, 0, 3, 0, 1, 65535, 0)
