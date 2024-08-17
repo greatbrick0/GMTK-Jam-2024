@@ -2,24 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr4b0ca4x30cr"
-path.s3tc="res://.godot/imported/RedSlimeGreenAnims_Image_0.png-ead13dbfaf7d09967e73846462f721a8.s3tc.ctex"
+uid="uid://b6le36j0wxtjh"
+path="res://.godot/imported/RedSlimeNoAnim1_Image_1.png-8b81f982cbfc199eccdb825b1bfa06d1.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
-"md5": "50ffb210852477f8ce4f54f2977cafc6"
+"md5": "2e9de6968b622498166a9ee3d4d3b5bd"
 }
 
 [deps]
 
-source_file="res://Art/Models/Slimes/RedSlimeGreenAnims_Image_0.png"
-dest_files=["res://.godot/imported/RedSlimeGreenAnims_Image_0.png-ead13dbfaf7d09967e73846462f721a8.s3tc.ctex"]
+source_file="res://Art/Models/Slimes/RedSlimeNoAnim1_Image_1.png"
+dest_files=["res://.godot/imported/RedSlimeNoAnim1_Image_1.png-8b81f982cbfc199eccdb825b1bfa06d1.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://duww2i1rb15kw"
-path="res://.godot/imported/RedSlime2.glb-cf30a44509d084bc2b1418a7961d1c35.scn"
+uid="uid://4iotg8x4dqrc"
+path="res://.godot/imported/BlueSlime1.glb-dd73a0b6222ad95eedb22236e9fc7471.scn"
 
 [deps]
 
-source_file="res://Art/Models/Slimes/RedSlime2.glb"
-dest_files=["res://.godot/imported/RedSlime2.glb-cf30a44509d084bc2b1418a7961d1c35.scn"]
+source_file="res://Art/Models/Slimes/BlueSlime1.glb"
+dest_files=["res://.godot/imported/BlueSlime1.glb-dd73a0b6222ad95eedb22236e9fc7471.scn"]
 
 [params]
 

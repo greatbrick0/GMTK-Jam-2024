@@ -2,11 +2,10 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyq8iq8f8bj8r"
-path.s3tc="res://.godot/imported/TestSlime2_Image_1.png-a9bf05d12250058dd59381c63b8c5c39.s3tc.ctex"
+uid="uid://c6tcwgj7pf2h4"
+path="res://.godot/imported/BlueSlime1_Image_1.png-59bd5213e52be8dc4c264bdeb8d919fe.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "57774db1528dddcc74bc3e2466ca3c1c"
@@ -14,12 +13,12 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Art/Models/Slimes/TestSlime2_Image_1.png"
-dest_files=["res://.godot/imported/TestSlime2_Image_1.png-a9bf05d12250058dd59381c63b8c5c39.s3tc.ctex"]
+source_file="res://Art/Models/Slimes/BlueSlime1_Image_1.png"
+dest_files=["res://.godot/imported/BlueSlime1_Image_1.png-59bd5213e52be8dc4c264bdeb8d919fe.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
