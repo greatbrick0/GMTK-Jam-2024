@@ -38,11 +38,10 @@ func ChangeTiles(newPos: Vector2i):
 	position.z = newPos.y
 
 func MoveTiles(dir: Vector2i):
-	if(get_parent().ReadTile(tilePosition + dir, heightLayer) == "Air"):
-		ChangeTiles(tilePosition + dir)
+	ChangeTiles(tilePosition + dir)
 
 func CheckFacingTiles(dir: Vector2i) -> Array[String]:
-	return get_parent().ReadTile(tilePosition + dir, heightLayer)
+	return [get_parent().ReadTile(tilePosition + dir, heightLayer)]
 
 func CheckForGround() -> bool:
 	return get_parent().ReadTile(tilePosition, heightLayer - 1) != "Air"
