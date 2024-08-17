@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5ke5fcwyf1lg"]
+[gd_scene load_steps=8 format=3 uid="uid://b5ke5fcwyf1lg"]
 
 [ext_resource type="Script" path="res://Scripts/slime.gd" id="1_rhjpw"]
 [ext_resource type="PackedScene" uid="uid://d3ovs1ws8efyr" path="res://Art/Models/Slimes/TestSlime2.glb" id="2_0qb2k"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/Slimes/basic_slime.gd" id="2_ehmlq"]
 [ext_resource type="AudioStream" uid="uid://bwqggsirgyvii" path="res://Sounds/Effects/Falling2.wav" id="3_n4om8"]
 [ext_resource type="AudioStream" uid="uid://br212d5n4ley0" path="res://Sounds/Effects/Falling3.wav" id="4_6mtcv"]
+[ext_resource type="PackedScene" uid="uid://himskgliij4c" path="res://Scenes/control_ring.tscn" id="6_2674h"]
 
 [node name="BasicSlime" type="Node3D"]
 script = ExtResource("1_rhjpw")
@@ -14,6 +15,9 @@ fallSounds = Array[AudioStream]([ExtResource("2_eh2v7"), ExtResource("3_n4om8"),
 [node name="Visuals" type="Node3D" parent="."]
 
 [node name="TestSlime2" parent="Visuals" instance=ExtResource("2_0qb2k")]
+
+[node name="ControlRing" parent="Visuals" instance=ExtResource("6_2674h")]
+visible = false
 
 [node name="Behaviour" type="Node" parent="."]
 script = ExtResource("2_ehmlq")

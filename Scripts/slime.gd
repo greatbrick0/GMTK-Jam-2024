@@ -4,6 +4,7 @@ class_name Slime
 @export var inControl: bool = false
 @export var heightLayer: int = 1
 @export var tilePosition: Vector2i = Vector2i.ZERO
+var prevPosition: Vector3
 var isDead: bool = false
 
 @export var fallSounds: Array[AudioStream]
@@ -13,6 +14,7 @@ func _ready():
 	SlimeController.slimeList.append(self)
 
 func _process(delta):
+	$Visuals/ControlRing.visible = inControl
 	if(Input.is_action_just_pressed("PuzzleAction")):
 		$Visuals/TestSlime2/AnimationPlayer.stop()
 	if(inControl):
@@ -32,6 +34,8 @@ func ChangeTiles(newPos: Vector2i):
 	tilePosition = newPos
 	get_parent().tileScenes[self][0] = tilePosition
 	$Visuals/TestSlime2/AnimationPlayer.play("Green_Move1")
+	prevPosition.x = position.x
+	prevPosition.z = position.z
 	position.x = newPos.x
 	position.z = newPos.y
 
