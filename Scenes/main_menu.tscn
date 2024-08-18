@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dedfpfcoujkyu"]
 
-[ext_resource type="Theme" uid="uid://dteoorviru2rf" path="res://BaseSlimeTheme.tres" id="1_188e2"]
+[ext_resource type="Theme" uid="uid://c0yn4it21qjdo" path="res://BaseSlimeTheme.tres" id="1_188e2"]
 [ext_resource type="Script" path="res://Scripts/PlayTestButton.gd" id="1_qjvn6"]
 [ext_resource type="PackedScene" uid="uid://vvc5yfc4g37l" path="res://Scenes/Levels/level_1.tscn" id="2_486bp"]
 [ext_resource type="PackedScene" uid="uid://5tndv6eqpk0v" path="res://Scenes/Levels/level_2.tscn" id="3_8ge8w"]
@@ -27,17 +27,37 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 14
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.5
+offset_left = 360.0
+offset_top = -65.0
+offset_right = -360.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_188e2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -265.0
+offset_top = -40.0
+offset_right = 265.0
+offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 40
 alignment = 1
 
-[node name="Level1" type="Button" parent="CanvasLayer/Control/HBoxContainer"]
+[node name="Level1" type="Button" parent="CanvasLayer/Control/Panel/HBoxContainer"]
 custom_minimum_size = Vector2(150, 80)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -47,7 +67,7 @@ text = "level 1"
 script = ExtResource("1_qjvn6")
 newScene = ExtResource("2_486bp")
 
-[node name="Level2" type="Button" parent="CanvasLayer/Control/HBoxContainer"]
+[node name="Level2" type="Button" parent="CanvasLayer/Control/Panel/HBoxContainer"]
 custom_minimum_size = Vector2(150, 80)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -57,7 +77,7 @@ text = "level 2"
 script = ExtResource("1_qjvn6")
 newScene = ExtResource("3_8ge8w")
 
-[node name="Level3" type="Button" parent="CanvasLayer/Control/HBoxContainer"]
+[node name="Level3" type="Button" parent="CanvasLayer/Control/Panel/HBoxContainer"]
 custom_minimum_size = Vector2(150, 80)
 layout_mode = 2
 size_flags_horizontal = 4
