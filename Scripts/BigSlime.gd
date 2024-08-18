@@ -58,13 +58,16 @@ func CheckForGround() -> bool:
 				return true
 	return false
 
-func DropHeightLayer():
+func DropHeightLayer() -> int:
+	var distance: int = 0
 	while(!isDead && !CheckForGround()):
 		heightLayer -= 1
+		distance += 1
 		get_parent().tileScenes[self][1] = heightLayer
 		position.y = heightLayer - 1
 		if(heightLayer <= 0):
 			Die()
+	return distance
 
 func Die():
 	print("dead slime")

@@ -49,13 +49,16 @@ func CheckFacingTiles(dir: Vector2i) -> Array[String]:
 func CheckForGround() -> bool:
 	return get_parent().ReadTile(tilePosition, heightLayer - 1) != "Air"
 
-func DropHeightLayer():
+func DropHeightLayer() -> int:
+	var distance: int = 0
 	while(!isDead && !CheckForGround()):
 		heightLayer -= 1
+		distance += 1
 		get_parent().tileScenes[self][1] = heightLayer
 		position.y = heightLayer - 1
 		if(heightLayer <= 0):
 			Die()
+	return distance
 
 func Die():
 	print("dead slime")
