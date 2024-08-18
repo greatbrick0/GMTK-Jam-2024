@@ -15,3 +15,9 @@ static func VectorToString(dir: Vector2i) -> String:
 
 static func Vec2ToVec3(vec2: Vector2) -> Vector3:
 	return Vector3(vec2.x, 0, vec2.y)
+
+static func Perpendicular(dir: Vector2) -> Vector2:
+	var output: Vector2 = Vector2.ZERO
+	output.x = -dir.y
+	output.y = dir.x
+	return output

@@ -44,7 +44,12 @@ func MoveTiles(dir: Vector2i):
 	ChangeTiles(tilePosition + dir)
 
 func CheckFacingTiles(dir: Vector2i) -> Array[String]:
-	return [get_parent().ReadTile(tilePosition + dir, heightLayer)]
+	var perpDir: Vector2i = VectorTools.Perpendicular(dir)
+	var output: Array[String] = []
+	output.append(get_parent().ReadTile(tilePosition + dir + dir, heightLayer))
+	output.append(get_parent().ReadTile(tilePosition + dir + dir + perpDir, heightLayer))
+	output.append(get_parent().ReadTile(tilePosition + dir + dir - perpDir, heightLayer))
+	return output
 
 func CheckForGround() -> bool:
 	for ii in range(-1, 2):
