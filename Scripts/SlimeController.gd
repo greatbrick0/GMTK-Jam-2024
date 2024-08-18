@@ -22,6 +22,8 @@ func RemoveSlime(slime: Slime):
 		slimeList[0].set_deferred("inControl", true)
 
 func CheckForVictory():
+	if(slimeList.size() <= 0):
+		return
 	for ii in slimeList:
 		if(!ii.inGoal):
 			return

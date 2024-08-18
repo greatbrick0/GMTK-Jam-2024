@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dq4smmbp1k74c" path="res://Scenes/Slimes/Small/jumpy_slime.tscn" id="4_2mphd"]
 [ext_resource type="MeshLibrary" uid="uid://cx761x71sw86k" path="res://Art/SurfaceTiles.tres" id="5_5lky0"]
 [ext_resource type="PackedScene" uid="uid://dw404wym7g13q" path="res://Scenes/Slimes/Big/large_basic_slime.tscn" id="6_oxc55"]
-[ext_resource type="Environment" uid="uid://cs8septr0lst1" path="res://Environment1.tres" id="7_lcrp3"]
 [ext_resource type="PackedScene" uid="uid://bcgpsusq5pemj" path="res://Art/Models/tree.glb" id="8_g1pf0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_78i1y"]
@@ -24,6 +23,17 @@ tile_size = Vector2i(32, 32)
 custom_data_layer_0/name = "GroundType"
 custom_data_layer_0/type = 4
 sources/1 = SubResource("TileSetAtlasSource_78i1y")
+
+[sub_resource type="Environment" id="Environment_kbt1j"]
+background_mode = 1
+background_color = Color(0.610107, 0.796875, 0.796875, 1)
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.4
+fog_enabled = true
+fog_light_color = Color(0.611765, 0.796078, 0.796078, 1)
+fog_density = 0.0
+fog_height_density = 1.0
 
 [node name="Level1" type="Node3D"]
 
@@ -59,12 +69,13 @@ metadata/_editor_floor_ = Vector3(0, -1, 0)
 
 [node name="LargeBasicSlime" parent="Level" instance=ExtResource("6_oxc55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+heightLayer = 1
 tilePosition = Vector2i(0, 1)
+inControl = false
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -0.5, 18, 19)
 fov = 20.0
-far = 50.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.560841, 2.17287e-07, 0.827924, -0.568961, 0.726455, 0.385418, -0.601449, -0.687214, 0.407426, 0, 0, 0)
@@ -72,7 +83,7 @@ shadow_enabled = true
 directional_shadow_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("7_lcrp3")
+environment = SubResource("Environment_kbt1j")
 
 [node name="tree" parent="." instance=ExtResource("8_g1pf0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -2, -6)

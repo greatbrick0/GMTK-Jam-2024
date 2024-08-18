@@ -31,8 +31,6 @@ func _process(delta):
 			moveDirection = Vector2.RIGHT
 		if(moveDirection != Vector2.ZERO):
 			$Behaviour.AttemptMove(moveDirection)
-			inGoal = CheckForGoal()
-			SlimeController.CheckForVictory()
 
 func ChangeTiles(newPos: Vector2i):
 	tilePosition = newPos
@@ -42,6 +40,7 @@ func ChangeTiles(newPos: Vector2i):
 	position.z = newPos.y
 
 func MoveTiles(dir: Vector2i):
+	inGoal = CheckForGoal(tilePosition + dir, heightLayer)
 	ChangeTiles(tilePosition + dir)
 
 func CheckFacingTiles(dir: Vector2i) -> Array[String]:
@@ -52,11 +51,11 @@ func CheckFacingTiles(dir: Vector2i) -> Array[String]:
 	output.append(get_parent().ReadTile(tilePosition + dir + dir - perpDir, heightLayer))
 	return output
 
-func CheckForGoal() -> bool:
-	if(get_parent().ReadTile(tilePosition, heightLayer) == "Goal"):
+func CheckForGoal(pos: Vector2i, y: int) -> bool:
+	if(get_parent().ReadTile(pos, y) == "Goal"):
 		return true
 	for ii in VectorTools.directionVectors:
-		if(get_parent().ReadTile(tilePosition + ii, heightLayer) == "Goal"):
+		if(get_parent().ReadTile(pos + ii, y) == "Goal"):
 			return true
 	return false
 
@@ -72,6 +71,7 @@ func CheckForGround() -> bool:
 func DropHeightLayer() -> int:
 	var distance: int = 0
 	while(!isDead && !CheckForGround()):
+		inGoal = CheckForGoal(tilePosition, heightLayer - 1)
 		heightLayer -= 1
 		distance += 1
 		get_parent().MoveTileScene(self, tilePosition, heightLayer)

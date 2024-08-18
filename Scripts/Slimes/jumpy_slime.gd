@@ -3,8 +3,8 @@ extends Node
 func AttemptMove(dir: Vector2):
 	MoveOneTile(dir)
 	MoveOneTile(dir)
-	print(get_parent().CheckFacingTiles(dir))
 	get_parent().DropHeightLayer()
+	SlimeController.CheckForVictory()
 
 func MoveOneTile(dir: Vector2):
 	if(IsOnlyAir(get_parent().CheckFacingTiles(dir))):

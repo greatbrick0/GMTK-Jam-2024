@@ -12,12 +12,12 @@ func ReadTile(pos: Vector2i, height: int) -> String:
 	if(tileData == null): tile = "Air"
 	else: tile = tileData.get_custom_data("GroundType")
 	
-	if(tile == "Air" or tile == "Goal" or tile == "Goal"): tile = FindByPosition(pos, height)
+	if(tile == "Air" or tile == "Goal"): tile = FindByPosition(pos, height, tile)
 	
 	return tile
 
-func FindByPosition(pos: Vector2i, height: int) -> String:
-	var output: String = "Air"
+func FindByPosition(pos: Vector2i, height: int, defualt: String) -> String:
+	var output: String = defualt
 	for ii in tileScenes.values():
 		if(ii[0] == pos && ii[1] == height):
 			output = ii[2]

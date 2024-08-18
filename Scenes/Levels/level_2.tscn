@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_gn51c"]
 [ext_resource type="Texture2D" uid="uid://dhhnp6x275thb" path="res://Art/Images/TileMapData.png" id="3_s55c5"]
 [ext_resource type="PackedScene" uid="uid://dq4smmbp1k74c" path="res://Scenes/Slimes/Small/jumpy_slime.tscn" id="4_73f1g"]
+[ext_resource type="Environment" uid="uid://cs8septr0lst1" path="res://Environment1.tres" id="5_3v0nl"]
 [ext_resource type="MeshLibrary" uid="uid://cx761x71sw86k" path="res://Art/SurfaceTiles.tres" id="5_aw43i"]
 [ext_resource type="PackedScene" uid="uid://cgh2tq17b0mg5" path="res://Art/Models/picnic.glb" id="7_bdy3l"]
 [ext_resource type="PackedScene" uid="uid://dj6hxxsdsus8q" path="res://Art/Models/basket.glb" id="7_kbm8t"]
@@ -23,17 +24,6 @@ tile_size = Vector2i(32, 32)
 custom_data_layer_0/name = "GroundType"
 custom_data_layer_0/type = 4
 sources/1 = SubResource("TileSetAtlasSource_78i1y")
-
-[sub_resource type="Environment" id="Environment_kbt1j"]
-background_mode = 1
-background_color = Color(0.610107, 0.796875, 0.796875, 1)
-ambient_light_source = 2
-ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 0.4
-fog_enabled = true
-fog_light_color = Color(0.611765, 0.796078, 0.796078, 1)
-fog_density = 0.0
-fog_height_density = 0.5
 
 [node name="Level2" type="Node3D"]
 
@@ -66,6 +56,7 @@ metadata/_editor_floor_ = Vector3(0, -2, 0)
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.999391, -0.0246777, 0.0246777, 0, 0.707107, 0.707107, -0.0348995, -0.706676, 0.706676, 0, 13, 14)
 fov = 20.0
+far = 50.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.560841, 2.17287e-07, 0.827924, -0.568961, 0.726455, 0.385418, -0.601449, -0.687214, 0.407426, 0, 0, 0)
@@ -73,7 +64,7 @@ shadow_enabled = true
 directional_shadow_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_kbt1j")
+environment = ExtResource("5_3v0nl")
 
 [node name="basket" parent="." instance=ExtResource("7_kbm8t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -2)
