@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dj6hxxsdsus8q"
-path="res://.godot/imported/basket.glb-930f86d44185d6929cb0b4305653d4f9.scn"
+uid="uid://db77qdr606amx"
+path="res://.godot/imported/widePicnic.glb-796f6949d14322543c021e690a5c4137.scn"
 
 [deps]
 
-source_file="res://Art/Models/basket.glb"
-dest_files=["res://.godot/imported/basket.glb-930f86d44185d6929cb0b4305653d4f9.scn"]
+source_file="res://Art/Models/widePicnic.glb"
+dest_files=["res://.godot/imported/widePicnic.glb-796f6949d14322543c021e690a5c4137.scn"]
 
 [params]
 

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n4perg1fg6kn"
-path.s3tc="res://.godot/imported/basket_Baguette.png-185b0a7d08ae6d5476c91678bb7fd304.s3tc.ctex"
+uid="uid://clw1ffasptcig"
+path.s3tc="res://.godot/imported/widePicnic_picnicCloth.png-10ee36575b10f3a797de5673a5d369ee.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "72e85838c5d7a424ae6f5f5e115dd8f0"
+"md5": "1d79f7c01acc8c40f1357d4dd9c06036"
 }
 
 [deps]
 
-source_file="res://Art/Models/basket_Baguette.png"
-dest_files=["res://.godot/imported/basket_Baguette.png-185b0a7d08ae6d5476c91678bb7fd304.s3tc.ctex"]
+source_file="res://Art/Models/widePicnic_picnicCloth.png"
+dest_files=["res://.godot/imported/widePicnic_picnicCloth.png-10ee36575b10f3a797de5673a5d369ee.s3tc.ctex"]
 
 [params]
 
