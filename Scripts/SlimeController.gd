@@ -1,9 +1,16 @@
 extends Node
 
 var slimeList: Array[Slime]
-var keyOrder: Array[String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+const keyOrder: Array[String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
 func _process(delta):
+	if(Input.is_action_just_pressed("Retry")):
+		slimeList.clear()
+		get_tree().reload_current_scene()
+	if(Input.is_action_just_pressed("BackToMenu")):
+		slimeList.clear()
+		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	
 	for ii in range(keyOrder.size()):
 		if(Input.is_action_just_pressed("ControlSlime" + keyOrder[ii])):
 			if(ii < slimeList.size()):

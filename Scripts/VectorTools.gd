@@ -1,6 +1,6 @@
 extends Node
 
-static var directionVectors: Array[Vector2i] = [
+const directionVectors: Array[Vector2i] = [
 	Vector2i.UP, 
 	Vector2i.UP + Vector2i.LEFT,
 	Vector2i.LEFT,
