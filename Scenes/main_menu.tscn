@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dedfpfcoujkyu"]
+[gd_scene load_steps=6 format=3 uid="uid://dedfpfcoujkyu"]
 
+[ext_resource type="Theme" uid="uid://c0yn4it21qjdo" path="res://BaseSlimeTheme.tres" id="1_188e2"]
 [ext_resource type="Script" path="res://Scripts/PlayTestButton.gd" id="1_qjvn6"]
 [ext_resource type="PackedScene" uid="uid://vvc5yfc4g37l" path="res://Scenes/Levels/level_1.tscn" id="2_486bp"]
 [ext_resource type="PackedScene" uid="uid://5tndv6eqpk0v" path="res://Scenes/Levels/level_2.tscn" id="3_8ge8w"]
@@ -41,6 +42,7 @@ custom_minimum_size = Vector2(150, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("1_188e2")
 text = "level 1"
 script = ExtResource("1_qjvn6")
 newScene = ExtResource("2_486bp")
@@ -50,6 +52,7 @@ custom_minimum_size = Vector2(150, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("1_188e2")
 text = "level 2"
 script = ExtResource("1_qjvn6")
 newScene = ExtResource("3_8ge8w")
@@ -59,6 +62,7 @@ custom_minimum_size = Vector2(150, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("1_188e2")
 text = "level 3"
 script = ExtResource("1_qjvn6")
 newScene = ExtResource("4_b3yp7")
