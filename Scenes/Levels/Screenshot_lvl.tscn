@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://xfmhwbdkn3wa"]
+[gd_scene load_steps=14 format=3 uid="uid://xfmhwbdkn3wa"]
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_rtrev"]
 [ext_resource type="Texture2D" uid="uid://dhhnp6x275thb" path="res://Art/Images/TileMapData.png" id="3_u1plq"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dj6hxxsdsus8q" path="res://Art/Models/basket.glb" id="8_f7uau"]
 [ext_resource type="PackedScene" uid="uid://bcgpsusq5pemj" path="res://Art/Models/tree.glb" id="8_yuarv"]
 [ext_resource type="PackedScene" uid="uid://4iotg8x4dqrc" path="res://Art/Models/Slimes/BlueSlime1.glb" id="9_6eay2"]
+[ext_resource type="PackedScene" uid="uid://b5ke5fcwyf1lg" path="res://Scenes/Slimes/Small/basic_slime.tscn" id="10_e23qb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_78i1y"]
 texture = ExtResource("3_u1plq")
@@ -77,6 +78,14 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, -4, 0)
 
+[node name="GridMap3" type="GridMap" parent="Level"]
+mesh_library = ExtResource("5_pl11s")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(19, 65535, 6, 19, 0, 5, 19, 1, 6, 20, 1, 5, 20, 0, 6, 21, 0, 5, 21, 65535, 6, 20, 65535, 5, 21, 1, 6, 65555, 65534, 5, 65557, 65534, 5, 65558, 65535, 5, 65558, 0, 6, 65558, 1, 5, 65556, 65534, 6, 65558, 65534, 6, 18, 65534, 6, 65556, 65535, 16, -65518, 65535, 5, -65518, 0, 6)
+}
+metadata/_editor_floor_ = Vector3(0, -2, 0)
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.819152, -0.32899, 0.469846, 0, 0.819152, 0.573576, -0.573576, -0.469846, 0.67101, 1.5, 4, 5)
 fov = 40.0
@@ -88,6 +97,11 @@ projection = 1
 current = true
 fov = 1.0
 size = 6.35
+far = 50.0
+
+[node name="Camera3D3" type="Camera3D" parent="."]
+transform = Transform3D(0.825114, 0.22799, -0.516922, 0, 0.91496, 0.403545, 0.564967, -0.332971, 0.754946, 18.203, 1.77, 2.265)
+fov = 40.0
 far = 50.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -169,3 +183,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, -20)
 
 [node name="tree21" parent="." instance=ExtResource("8_yuarv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, -15)
+
+[node name="BasicSlime" parent="." instance=ExtResource("10_e23qb")]
+transform = Transform3D(0.861399, 0, -0.507929, 0, 1, 0, 0.507929, 0, 0.861399, 19.6651, 0.5, 0.119467)
