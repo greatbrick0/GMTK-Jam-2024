@@ -11,9 +11,8 @@ func _process(delta):
 				slimeList[ii].inControl = true
 
 func UnselectAll():
-	if(Input.is_action_just_pressed("ControlSlime")):
-		for ii in slimeList:
-			ii.inControl = false
+	for ii in slimeList:
+		ii.inControl = false
 
 func RemoveSlime(slime: Slime):
 	slimeList.erase(slime)
