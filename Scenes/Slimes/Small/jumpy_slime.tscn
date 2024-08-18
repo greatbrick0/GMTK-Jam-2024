@@ -178,9 +178,9 @@ _data = {
 
 [node name="JumpySlime" type="Node3D"]
 script = ExtResource("1_jb6l8")
+fallSounds = Array[AudioStream]([ExtResource("2_kjm1l"), ExtResource("3_c2eq3"), ExtResource("4_klvsa")])
 heightLayer = null
 tilePosition = null
-fallSounds = Array[AudioStream]([ExtResource("2_kjm1l"), ExtResource("3_c2eq3"), ExtResource("4_klvsa")])
 inControl = null
 
 [node name="Visuals" type="Node3D" parent="."]

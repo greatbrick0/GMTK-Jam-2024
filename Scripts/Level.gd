@@ -23,6 +23,14 @@ func FindByPosition(pos: Vector2i, height: int, defualt: String) -> String:
 			output = ii[2]
 	return output
 
+func ReferenceByPosition(pos: Vector2i, height: int) -> Node3D:
+	var output: Node3D = null
+	for ii in tileScenes.keys():
+		if(tileScenes[ii][0] == pos && tileScenes[ii][1] == height):
+			if(typeof(ii) == TYPE_STRING): output = ii
+			else: output == ii[0]
+	return output
+
 func AddTileScene(sceneType: String, pos: Vector2i, height: int, key: Node3D):
 	tileScenes[key] = [pos, height, sceneType]
 	if(sceneType == "BigSlime"):
