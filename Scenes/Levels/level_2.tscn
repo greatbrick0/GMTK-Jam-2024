@@ -1,0 +1,120 @@
+[gd_scene load_steps=11 format=3 uid="uid://du4waqv1vyy3t"]
+
+[ext_resource type="Script" path="res://Scripts/Level.gd" id="1_gn51c"]
+[ext_resource type="Texture2D" uid="uid://dhhnp6x275thb" path="res://Art/Images/TileMapData.png" id="3_s55c5"]
+[ext_resource type="PackedScene" uid="uid://dq4smmbp1k74c" path="res://Scenes/Slimes/Small/jumpy_slime.tscn" id="4_73f1g"]
+[ext_resource type="MeshLibrary" uid="uid://cx761x71sw86k" path="res://Art/SurfaceTiles.tres" id="5_aw43i"]
+[ext_resource type="PackedScene" uid="uid://cgh2tq17b0mg5" path="res://Art/Models/picnic.glb" id="7_bdy3l"]
+[ext_resource type="PackedScene" uid="uid://dj6hxxsdsus8q" path="res://Art/Models/basket.glb" id="7_kbm8t"]
+[ext_resource type="PackedScene" uid="uid://bcgpsusq5pemj" path="res://Art/Models/tree.glb" id="8_f5oue"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_78i1y"]
+texture = ExtResource("3_s55c5")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/custom_data_0 = "Air"
+1:0/0 = 0
+1:0/0/custom_data_0 = "Ground"
+
+[sub_resource type="TileSet" id="TileSet_p0oox"]
+tile_size = Vector2i(32, 32)
+custom_data_layer_0/name = "GroundType"
+custom_data_layer_0/type = 4
+sources/1 = SubResource("TileSetAtlasSource_78i1y")
+
+[sub_resource type="Environment" id="Environment_kbt1j"]
+background_mode = 1
+background_color = Color(0.610107, 0.796875, 0.796875, 1)
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.4
+fog_enabled = true
+fog_light_color = Color(0.611765, 0.796078, 0.796078, 1)
+fog_density = 0.0
+fog_height_density = 0.5
+
+[node name="Level1" type="Node3D"]
+
+[node name="Level" type="Node3D" parent="."]
+script = ExtResource("1_gn51c")
+
+[node name="TileMap" type="TileMap" parent="Level"]
+tile_set = SubResource("TileSet_p0oox")
+format = 2
+layer_0/navigation_enabled = false
+layer_0/tile_data = PackedInt32Array(65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 131072, 1, 0, 131073, 65537, 0, 131074, 65537, 0, -131072, 1, 0, -65537, 65537, 0, -65538, 65537, 0, -65539, 65537, 0, -65540, 65537, 0, 196610, 65537, 0, 196609, 65537, 0, 196608, 1, 0, 262143, 65537, 0, 196607, 65537, 0, 65535, 1, 0, -1, 65537, 0, -65536, 1, 0, 0, 1, 0, -65534, 65537, 0, -131070, 1, 0, -131071, 1, 0, -65535, 65537, 0, -2, 65537, 0, -3, 65537, 0, -4, 65537, 0, 65532, 65537, 0, 131068, 65537, 0, 65533, 65537, 0, 65534, 65537, 0, 131070, 65537, 0, 131069, 65537, 0, 196605, 65537, 0, 196604, 65537, 0, 262140, 65537, 0, 262141, 65537, 0, 262142, 65537, 0, 196606, 65537, 0, 1, 65537, 0, 2, 65537, 0, 131071, 1, 0, 65531, 65537, 0)
+layer_1/navigation_enabled = false
+layer_1/tile_data = PackedInt32Array(-65536, 1, 0, -1, 1, 0, 1, 1, 0, 65537, 1, 0, -2, 1, 0, 131070, 65537, 0, 2, 1, 0, -65534, 1, 0, 196606, 1, 0, 196607, 1, 0, 131073, 1, 0, 131074, 1, 0, -131070, 1, 0, -131071, 65537, 0, -131072, 1, 0, -65537, 1, 0, -65538, 1, 0, -65539, 1, 0, -65540, 1, 0, -4, 1, 0, -3, 1, 0, 65532, 1, 0, 131068, 65537, 0, 196605, 1, 0, 196604, 65537, 0, 262140, 65537, 0, 262141, 1, 0, 262142, 1, 0, 262143, 1, 0, 196609, 1, 0, 196610, 1, 0, 196608, 1, 0, 131072, 1, 0, 65536, 1, 0, 131069, 65537, 0)
+layer_2/tile_data = PackedInt32Array(65533, 1, 0, 65534, 1, 0, 65535, 1, 0, 0, 1, 0, -65535, 1, 0)
+
+[node name="JumpySlime" parent="Level" instance=ExtResource("4_73f1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 3)
+inControl = true
+heightLayer = null
+tilePosition = Vector2i(-2, 3)
+
+[node name="GridMap" type="GridMap" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, -0.5)
+mesh_library = ExtResource("5_aw43i")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(-4, 3, 1, -131076, 2, 0, -131075, 2, 0, -131075, 3, 0, -131076, 4, 0, -131075, 4, 0, -131074, 4, 0, -131073, 4, 0, -196608, 4, 0, -196607, 4, 0, -196606, 4, 0, -196608, 5, 0, -196607, 5, 4, -196605, 3, 0, -131079, 2, 0, -131078, 2, 0, -131077, 3, 0, -131077, 2, 0, -131077, 1, 0, -196604, 3, 4, -196605, 2, 0, -196605, 1, 0, -196604, 1, 0, -196604, 2, 0, -196605, 0, 0, -196603, 65530, 0, -196604, 65531, 0, -196603, 65531, 0, -196603, 65532, 0, -196602, 65531, 0, -196602, 65532, 3, -196603, 65533, 0, -131082, 65533, 0, -131081, 65533, 0, -131080, 65533, 0, -131079, 65533, 0, -131079, 65534, 0, -131080, 65534, 4, -131077, 65529, 0, -131076, 65529, 0, -131076, 65530, 2, -131077, 65530, 0, -196606, 65524, 0, -196606, 65525, 0, -196606, 65526, 0, -196607, 65526, 0, -196608, 65527, 0, -196607, 65527, 0, -196606, 65527, 0, -262143, 65528, 7, -196616, 65535, 6, -262141, 4, 6, -262139, 65534, 6, -262138, 65533, 6, -196614, 65529, 6, -196614, 65530, 6, -262139, 3, 5, -262139, 2, 5, -196614, 3, 5, -196615, 3, 5, -65531, 65531, 0, -131072, 65526, 0, -5, 65528, 0, -131076, 65528, 0, -65534, 3, 0, -65535, 3, 1, -65534, 2, 1, -65535, 2, 0, -1, 2, 0, -2, 3, 0, -3, 2, 10, -1, 3, 1, -2, 2, 11, -3, 3, 1, 65533, 1, 6, 65532, 2, 6, 65532, 3, 5, 65532, 1, 10, 65534, 1, 0, -65535, 0, 0, -65534, 65535, 0, -65534, 0, 1, -65535, 65535, 1, -2, 65534, 1, -4, 65534, 1, -3, 65534, 0, -1, 65534, 0, -1, 65535, 1, -3, 65535, 6, -2, 65535, 0, -4, 65535, 5, 1, 65534, 5, -65535, 65534, 0, -196608, 3, 10, -196608, 2, 10, -196608, 1, 10, -196607, 1, 10, -196606, 1, 10, -196608, 0, 10, -196608, 65535, 10, -196608, 65534, 10, -131073, 0, 10, -131073, 1, 10, -131074, 0, 10, -131074, 1, 10, -2, 0, 1, -65538, 1, 6, -5, 0, 1)
+}
+metadata/_editor_floor_ = Vector3(0, -1, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 18, 18)
+fov = 20.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.560841, 2.17287e-07, 0.827924, -0.568961, 0.726455, 0.385418, -0.601449, -0.687214, 0.407426, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kbt1j")
+
+[node name="basket" parent="." instance=ExtResource("7_kbm8t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -2)
+
+[node name="tree" parent="." instance=ExtResource("8_f5oue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -2, -6)
+
+[node name="tree2" parent="." instance=ExtResource("8_f5oue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -2, -7)
+
+[node name="tree3" parent="." instance=ExtResource("8_f5oue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -5)
+
+[node name="tree4" parent="." instance=ExtResource("8_f5oue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -10)
+
+[node name="tree5" parent="." instance=ExtResource("8_f5oue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -2, -9)
+
+[node name="tree6" parent="." instance=ExtResource("8_f5oue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -2, 2)
+
+[node name="tree7" parent="." instance=ExtResource("8_f5oue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 5)
+
+[node name="tree8" parent="." instance=ExtResource("8_f5oue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -2, 4)
+
+[node name="tree9" parent="." instance=ExtResource("8_f5oue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -2, 2)
+
+[node name="tree10" parent="." instance=ExtResource("8_f5oue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, -2, -3)
+
+[node name="tree11" parent="." instance=ExtResource("8_f5oue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -3, 3)
+
+[node name="picnic" parent="." instance=ExtResource("7_bdy3l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -1)
+
+[node name="tree12" parent="." instance=ExtResource("8_f5oue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 3)
+
+[node name="tree13" parent="." instance=ExtResource("8_f5oue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -2)
