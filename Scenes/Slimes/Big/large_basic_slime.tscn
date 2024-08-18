@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://dw404wym7g13q"]
 
-[ext_resource type="Script" path="res://Scripts/LittleSlime.gd" id="1_21je3"]
+[ext_resource type="Script" path="res://Scripts/BigSlime.gd" id="1_xuvtn"]
 [ext_resource type="AudioStream" uid="uid://cltc76krufxiy" path="res://Sounds/Effects/Falling1.wav" id="2_jgfdi"]
 [ext_resource type="AudioStream" uid="uid://bwqggsirgyvii" path="res://Sounds/Effects/Falling2.wav" id="3_wuquj"]
 [ext_resource type="AudioStream" uid="uid://br212d5n4ley0" path="res://Sounds/Effects/Falling3.wav" id="4_v3pev"]
@@ -177,7 +177,7 @@ _data = {
 }
 
 [node name="LargeBasicSlime" type="Node3D"]
-script = ExtResource("1_21je3")
+script = ExtResource("1_xuvtn")
 fallSounds = Array[AudioStream]([ExtResource("2_jgfdi"), ExtResource("3_wuquj"), ExtResource("4_v3pev")])
 
 [node name="Visuals" type="Node3D" parent="."]
@@ -191,6 +191,7 @@ libraries = {
 }
 
 [node name="ControlRing" parent="Visuals" instance=ExtResource("8_r1f7g")]
+visible = false
 
 [node name="Behaviour" type="Node" parent="."]
 script = ExtResource("9_a7x6x")

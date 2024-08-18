@@ -47,8 +47,8 @@ func CheckFacingTiles(dir: Vector2i) -> Array[String]:
 	return [get_parent().ReadTile(tilePosition + dir, heightLayer)]
 
 func CheckForGround() -> bool:
-	for ii in range(-1, 1):
-		for jj in range(-1, 1):
+	for ii in range(-1, 2):
+		for jj in range(-1, 2):
 			if(get_parent().ReadTile(tilePosition + Vector2i(ii, jj), heightLayer - 1) != "Air"):
 				return true
 	return false
