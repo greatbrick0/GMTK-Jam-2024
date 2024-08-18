@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://vvc5yfc4g37l"]
+[gd_scene load_steps=11 format=3 uid="uid://vvc5yfc4g37l"]
 
 [ext_resource type="PackedScene" uid="uid://b5ke5fcwyf1lg" path="res://Scenes/Slimes/Small/basic_slime.tscn" id="1_iuon6"]
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_jbn6u"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dq4smmbp1k74c" path="res://Scenes/Slimes/Small/jumpy_slime.tscn" id="4_2mphd"]
 [ext_resource type="MeshLibrary" uid="uid://cx761x71sw86k" path="res://Art/SurfaceTiles.tres" id="5_5lky0"]
 [ext_resource type="PackedScene" uid="uid://dw404wym7g13q" path="res://Scenes/Slimes/Big/large_basic_slime.tscn" id="6_oxc55"]
-[ext_resource type="PackedScene" uid="uid://dj6hxxsdsus8q" path="res://Art/Models/basket.glb" id="7_2gslq"]
 [ext_resource type="PackedScene" uid="uid://bcgpsusq5pemj" path="res://Art/Models/tree.glb" id="8_g1pf0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_78i1y"]
@@ -42,7 +41,6 @@ script = ExtResource("1_jbn6u")
 [node name="BasicSlime" parent="Level" instance=ExtResource("1_iuon6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
 inControl = true
-heightLayer = null
 tilePosition = Vector2i(2, -2)
 
 [node name="TileMap" type="TileMap" parent="Level"]
@@ -56,8 +54,6 @@ layer_2/tile_data = PackedInt32Array()
 
 [node name="JumpySlime" parent="Level" instance=ExtResource("4_2mphd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 1)
-inControl = null
-heightLayer = null
 tilePosition = Vector2i(-4, 1)
 
 [node name="GridMap" type="GridMap" parent="Level"]
@@ -70,8 +66,8 @@ data = {
 metadata/_editor_floor_ = Vector3(0, -1, 0)
 
 [node name="LargeBasicSlime" parent="Level" instance=ExtResource("6_oxc55")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-heightLayer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+tilePosition = Vector2i(0, 1)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 18, 18)
@@ -84,9 +80,6 @@ directional_shadow_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_kbt1j")
-
-[node name="basket" parent="." instance=ExtResource("7_2gslq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 3)
 
 [node name="tree" parent="." instance=ExtResource("8_g1pf0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -2, -6)

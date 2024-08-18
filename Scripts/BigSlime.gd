@@ -9,7 +9,7 @@ var isDead: bool = false
 @export var fallSounds: Array[AudioStream]
 
 func _ready():
-	get_parent().tileScenes[self] = [tilePosition, heightLayer, "BigSlime"]
+	get_parent().AddTileScene("BigSlime", tilePosition, heightLayer, self)
 	SlimeController.slimeList.append(self)
 
 func _process(delta):
@@ -35,7 +35,7 @@ func _process(delta):
 
 func ChangeTiles(newPos: Vector2i):
 	tilePosition = newPos
-	get_parent().tileScenes[self][0] = tilePosition
+	get_parent().MoveTileScene(self, tilePosition, heightLayer)
 	$Visuals/SlimeBody/SlimeAnim.play("Green_Move1")
 	position.x = newPos.x
 	position.z = newPos.y
@@ -63,7 +63,7 @@ func DropHeightLayer() -> int:
 	while(!isDead && !CheckForGround()):
 		heightLayer -= 1
 		distance += 1
-		get_parent().tileScenes[self][1] = heightLayer
+		get_parent().MoveTileScene(self, tilePosition, heightLayer)
 		position.y = heightLayer - 1
 		if(heightLayer <= 0):
 			Die()

@@ -1,6 +1,16 @@
 extends Node3D
 
 var tileScenes: Dictionary
+var directionVectors: Array[Vector2i] = [
+	Vector2i.UP, 
+	Vector2i.UP + Vector2i.LEFT,
+	Vector2i.LEFT,
+	-Vector2i.UP + Vector2i.LEFT,
+	-Vector2i.UP,
+	-Vector2i.UP - Vector2i.LEFT,
+	-Vector2i.LEFT,
+	Vector2i.UP - Vector2i.LEFT
+	]
 
 func _ready():
 	$TileMap.visible = false
@@ -22,3 +32,16 @@ func FindByPosition(pos: Vector2i, height: int) -> String:
 		if(ii[0] == pos && ii[1] == height):
 			output = ii[2]
 	return output
+
+func AddTileScene(sceneType: String, pos: Vector2i, height: int, key: Node3D):
+	tileScenes[key] = [pos, height, sceneType]
+	if(sceneType == "BigSlime"):
+		for ii in range(directionVectors.size()):
+			tileScenes[[key, ii]] = [pos + directionVectors[ii], height, sceneType]
+
+func MoveTileScene(key: Node3D, pos: Vector2i, height: int):
+	var sceneType: String = tileScenes[key][2]
+	tileScenes[key] = [pos, height, sceneType]
+	if(sceneType == "BigSlime"):
+		for ii in range(directionVectors.size()):
+			tileScenes[[key, ii]] = [pos + directionVectors[ii], height, sceneType]
