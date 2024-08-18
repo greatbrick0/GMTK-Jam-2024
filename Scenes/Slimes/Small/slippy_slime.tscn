@@ -179,9 +179,6 @@ _data = {
 [node name="SlippySlime" type="Node3D"]
 script = ExtResource("1_hyhkk")
 fallSounds = Array[AudioStream]([ExtResource("2_yrlk8"), ExtResource("3_jlgyf"), ExtResource("4_hyikd")])
-heightLayer = null
-tilePosition = null
-inControl = null
 
 [node name="Visuals" type="Node3D" parent="."]
 

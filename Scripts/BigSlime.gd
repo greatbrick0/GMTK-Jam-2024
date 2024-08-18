@@ -74,7 +74,7 @@ func Die():
 	print("dead slime")
 	inControl = false
 	isDead = true
-	$Visuals.visible = false
+	#$Visuals.visible = false
 	get_parent().tileScenes.erase(self)
 	SlimeController.RemoveSlime(self)
 	$Sounds/FallSound.stream = fallSounds.pick_random()
