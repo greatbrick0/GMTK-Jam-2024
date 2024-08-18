@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dq4smmbp1k74c"]
+[gd_scene load_steps=22 format=3 uid="uid://dq4smmbp1k74c"]
 
 [ext_resource type="Script" path="res://Scripts/slime.gd" id="1_jb6l8"]
 [ext_resource type="AudioStream" uid="uid://cltc76krufxiy" path="res://Sounds/Effects/Falling1.wav" id="2_kjm1l"]
@@ -10,10 +10,14 @@
 [ext_resource type="PackedScene" uid="uid://himskgliij4c" path="res://Scenes/control_ring.tscn" id="6_tij5k"]
 [ext_resource type="Animation" uid="uid://d30rjntrrlo2h" path="res://Art/Animations/Green_Move1.res" id="7_dh4ew"]
 
+[sub_resource type="Animation" id="Animation_r0lbo"]
+resource_name = "RESET"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ans24"]
 _data = {
 "Green_Idle": ExtResource("6_dq3bn"),
-"Green_Move1": ExtResource("7_dh4ew")
+"Green_Move1": ExtResource("7_dh4ew"),
+"RESET": SubResource("Animation_r0lbo")
 }
 
 [sub_resource type="Animation" id="Animation_hdh0i"]

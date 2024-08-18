@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://rij270fd4c37"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_o0pm3"]
+inner_radius = 2.8
+outer_radius = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ypsk"]
+shading_mode = 0
+disable_receive_shadows = true
+
+[node name="ControlRing" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("TorusMesh_o0pm3")
+surface_material_override/0 = SubResource("StandardMaterial3D_0ypsk")
