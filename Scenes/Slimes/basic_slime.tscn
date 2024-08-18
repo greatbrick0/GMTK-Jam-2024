@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b5ke5fcwyf1lg"]
+[gd_scene load_steps=21 format=3 uid="uid://b5ke5fcwyf1lg"]
 
 [ext_resource type="Script" path="res://Scripts/slime.gd" id="1_rhjpw"]
 [ext_resource type="AudioStream" uid="uid://cltc76krufxiy" path="res://Sounds/Effects/Falling1.wav" id="2_eh2v7"]
@@ -95,8 +95,76 @@ tracks/0/keys = {
 "values": [Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_urw7t"]
+resource_name = "BumpUp"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(2, 0.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.3), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0j2np"]
+resource_name = "BumpDown"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(2, 0.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.3), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ocmht"]
+resource_name = "BumpLeft"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(2, 0.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.3, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_p5r66"]
+resource_name = "BumpRight"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(2, 0.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.3, 0, 0), Vector3(0, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gyjkl"]
 _data = {
+"BumpDown": SubResource("Animation_0j2np"),
+"BumpLeft": SubResource("Animation_ocmht"),
+"BumpRight": SubResource("Animation_p5r66"),
+"BumpUp": SubResource("Animation_urw7t"),
 "MoveDown": SubResource("Animation_hdh0i"),
 "MoveLeft": SubResource("Animation_xuuho"),
 "MoveRight": SubResource("Animation_kxm8c"),

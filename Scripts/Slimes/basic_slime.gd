@@ -5,6 +5,8 @@ func AttemptMove(dir: Vector2):
 		$"../MovePlayer".play("Move" + VectorTools.VectorToString(dir))
 		$"../Visuals".position = VectorTools.Vec2ToVec3(-dir)
 		get_parent().MoveTiles(dir)
+	else:
+		$"../MovePlayer".play("Bump" + VectorTools.VectorToString(dir))
 	get_parent().DropHeightLayer()
 
 func IsOnlyAir(tiles: Array[String]):
