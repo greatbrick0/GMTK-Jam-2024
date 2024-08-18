@@ -15,8 +15,8 @@ func _ready():
 func _process(delta):
 	$Visuals/ControlRing.visible = inControl
 	if(Input.is_action_just_pressed("PuzzleAction")):
-		$Visuals/SlimeBody/SlimeAnim.stop()
-		$MovePlayer.stop()
+		$Visuals/SlimeBody/SlimeAnim.play("RESET")
+		$MovePlayer.play("RESET")
 	if(inControl):
 		var moveDirection: Vector2 = Vector2.ZERO
 		if(Input.is_action_just_pressed("MoveUp")):
