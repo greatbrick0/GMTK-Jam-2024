@@ -8,6 +8,7 @@ var isDead: bool = false
 @export var fallSounds: Array[AudioStream]
 
 func _ready():
+	isBig = true
 	get_parent().AddTileScene("BigSlime", tilePosition, heightLayer, self)
 	SlimeController.slimeList.append(self)
 

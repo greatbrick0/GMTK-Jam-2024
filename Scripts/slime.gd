@@ -3,3 +3,4 @@ class_name Slime
 
 @export var inControl: bool = false
 var inGoal: bool = false
+var isBig: bool

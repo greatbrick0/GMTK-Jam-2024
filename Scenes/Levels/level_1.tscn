@@ -63,6 +63,7 @@ tilePosition = Vector2i(0, 1)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -0.5, 18, 19)
+current = true
 fov = 20.0
 far = 50.0
 
