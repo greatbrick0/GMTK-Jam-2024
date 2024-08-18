@@ -1,5 +1,16 @@
 extends Node
 
+static var directionVectors: Array[Vector2i] = [
+	Vector2i.UP, 
+	Vector2i.UP + Vector2i.LEFT,
+	Vector2i.LEFT,
+	-Vector2i.UP + Vector2i.LEFT,
+	-Vector2i.UP,
+	-Vector2i.UP - Vector2i.LEFT,
+	-Vector2i.LEFT,
+	Vector2i.UP - Vector2i.LEFT
+	]
+
 static func VectorToString(dir: Vector2i) -> String:
 	match dir:
 		Vector2i.UP:

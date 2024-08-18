@@ -1,7 +1,6 @@
 extends Slime
 class_name BigSlime
 
-@export var inControl: bool = false
 @export var heightLayer: int = 1
 @export var tilePosition: Vector2i = Vector2i.ZERO
 var isDead: bool = false
@@ -32,6 +31,8 @@ func _process(delta):
 			moveDirection = Vector2.RIGHT
 		if(moveDirection != Vector2.ZERO):
 			$Behaviour.AttemptMove(moveDirection)
+			inGoal = CheckForGoal()
+			SlimeController.CheckForVictory()
 
 func ChangeTiles(newPos: Vector2i):
 	tilePosition = newPos
@@ -51,10 +52,20 @@ func CheckFacingTiles(dir: Vector2i) -> Array[String]:
 	output.append(get_parent().ReadTile(tilePosition + dir + dir - perpDir, heightLayer))
 	return output
 
+func CheckForGoal() -> bool:
+	if(get_parent().ReadTile(tilePosition, heightLayer) == "Goal"):
+		return true
+	for ii in VectorTools.directionVectors:
+		if(get_parent().ReadTile(tilePosition + ii, heightLayer) == "Goal"):
+			return true
+	return false
+
 func CheckForGround() -> bool:
+	var below: String
 	for ii in range(-1, 2):
 		for jj in range(-1, 2):
-			if(get_parent().ReadTile(tilePosition + Vector2i(ii, jj), heightLayer - 1) != "Air"):
+			below = get_parent().ReadTile(tilePosition + Vector2i(ii, jj), heightLayer - 1)
+			if(below != "Air" and below != "Goal"):
 				return true
 	return false
 

@@ -16,6 +16,6 @@ func MoveOneTile(dir: Vector2):
 func IsOnlyAir(tiles: Array[String]):
 	var output: bool = true
 	for ii in tiles:
-		if(ii != "Air"):
+		if(ii != "Air" and ii != "Goal"):
 			output = false
 	return output

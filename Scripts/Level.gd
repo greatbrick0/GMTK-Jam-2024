@@ -1,16 +1,6 @@
 extends Node3D
 
 var tileScenes: Dictionary
-var directionVectors: Array[Vector2i] = [
-	Vector2i.UP, 
-	Vector2i.UP + Vector2i.LEFT,
-	Vector2i.LEFT,
-	-Vector2i.UP + Vector2i.LEFT,
-	-Vector2i.UP,
-	-Vector2i.UP - Vector2i.LEFT,
-	-Vector2i.LEFT,
-	Vector2i.UP - Vector2i.LEFT
-	]
 
 func _ready():
 	$TileMap.visible = false
@@ -22,7 +12,7 @@ func ReadTile(pos: Vector2i, height: int) -> String:
 	if(tileData == null): tile = "Air"
 	else: tile = tileData.get_custom_data("GroundType")
 	
-	if(tile == "Air"): tile = FindByPosition(pos, height)
+	if(tile == "Air" or tile == "Goal" or tile == "Goal"): tile = FindByPosition(pos, height)
 	
 	return tile
 
@@ -36,12 +26,12 @@ func FindByPosition(pos: Vector2i, height: int) -> String:
 func AddTileScene(sceneType: String, pos: Vector2i, height: int, key: Node3D):
 	tileScenes[key] = [pos, height, sceneType]
 	if(sceneType == "BigSlime"):
-		for ii in range(directionVectors.size()):
-			tileScenes[[key, ii]] = [pos + directionVectors[ii], height, sceneType]
+		for ii in range(VectorTools.directionVectors.size()):
+			tileScenes[[key, ii]] = [pos + VectorTools.directionVectors[ii], height, sceneType]
 
 func MoveTileScene(key: Node3D, pos: Vector2i, height: int):
 	var sceneType: String = tileScenes[key][2]
 	tileScenes[key] = [pos, height, sceneType]
 	if(sceneType == "BigSlime"):
-		for ii in range(directionVectors.size()):
-			tileScenes[[key, ii]] = [pos + directionVectors[ii], height, sceneType]
+		for ii in range(VectorTools.directionVectors.size()):
+			tileScenes[[key, ii]] = [pos + VectorTools.directionVectors[ii], height, sceneType]

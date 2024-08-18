@@ -1,7 +1,6 @@
 extends Slime
 class_name LittleSlime
 
-@export var inControl: bool = false
 @export var heightLayer: int = 1
 @export var tilePosition: Vector2i = Vector2i.ZERO
 var isDead: bool = false
@@ -32,6 +31,8 @@ func _process(delta):
 			moveDirection = Vector2.RIGHT
 		if(moveDirection != Vector2.ZERO):
 			$Behaviour.AttemptMove(moveDirection)
+			inGoal = CheckForGoal()
+			SlimeController.CheckForVictory()
 
 func ChangeTiles(newPos: Vector2i):
 	tilePosition = newPos
@@ -46,8 +47,12 @@ func MoveTiles(dir: Vector2i):
 func CheckFacingTiles(dir: Vector2i) -> Array[String]:
 	return [get_parent().ReadTile(tilePosition + dir, heightLayer)]
 
+func CheckForGoal() -> bool:
+	return get_parent().ReadTile(tilePosition, heightLayer) == "Goal"
+
 func CheckForGround() -> bool:
-	return get_parent().ReadTile(tilePosition, heightLayer - 1) != "Air"
+	var below: String = get_parent().ReadTile(tilePosition, heightLayer - 1)
+	return below != "Air" and below != "Goal"
 
 func DropHeightLayer() -> int:
 	var distance: int = 0

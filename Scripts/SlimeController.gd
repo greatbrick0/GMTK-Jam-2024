@@ -20,3 +20,9 @@ func RemoveSlime(slime: Slime):
 		print("You Lose")
 	else:
 		slimeList[0].set_deferred("inControl", true)
+
+func CheckForVictory():
+	for ii in slimeList:
+		if(!ii.inGoal):
+			return
+	print("victory")

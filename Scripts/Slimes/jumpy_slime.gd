@@ -3,6 +3,7 @@ extends Node
 func AttemptMove(dir: Vector2):
 	MoveOneTile(dir)
 	MoveOneTile(dir)
+	print(get_parent().CheckFacingTiles(dir))
 	get_parent().DropHeightLayer()
 
 func MoveOneTile(dir: Vector2):
@@ -17,6 +18,6 @@ func MoveOneTile(dir: Vector2):
 func IsOnlyAir(tiles: Array[String]):
 	var output: bool = true
 	for ii in tiles:
-		if(ii != "Air"):
+		if(ii != "Air" and ii != "Goal"):
 			output = false
 	return output
