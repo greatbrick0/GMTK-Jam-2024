@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://vvc5yfc4g37l"]
+[gd_scene load_steps=11 format=3 uid="uid://vvc5yfc4g37l"]
 
 [ext_resource type="PackedScene" uid="uid://b5ke5fcwyf1lg" path="res://Scenes/Slimes/Small/basic_slime.tscn" id="1_iuon6"]
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_jbn6u"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dq4smmbp1k74c" path="res://Scenes/Slimes/Small/jumpy_slime.tscn" id="4_2mphd"]
 [ext_resource type="MeshLibrary" uid="uid://cx761x71sw86k" path="res://Art/SurfaceTiles.tres" id="5_5lky0"]
 [ext_resource type="PackedScene" uid="uid://dw404wym7g13q" path="res://Scenes/Slimes/Big/large_basic_slime.tscn" id="6_oxc55"]
+[ext_resource type="PackedScene" uid="uid://bvik8m7x0vg5m" path="res://Art/Models/basket.glb" id="7_2gslq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_78i1y"]
 texture = ExtResource("2_f76gy")
@@ -84,3 +85,6 @@ directional_shadow_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_kbt1j")
+
+[node name="basket" parent="." instance=ExtResource("7_2gslq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 3)
