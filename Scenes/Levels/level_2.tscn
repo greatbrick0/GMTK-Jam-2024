@@ -33,7 +33,7 @@ fog_light_color = Color(0.611765, 0.796078, 0.796078, 1)
 fog_density = 0.0
 fog_height_density = 0.5
 
-[node name="Level1" type="Node3D"]
+[node name="Level2" type="Node3D"]
 
 [node name="Level" type="Node3D" parent="."]
 script = ExtResource("1_gn51c")
