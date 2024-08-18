@@ -32,6 +32,7 @@ script = ExtResource("1_jbn6u")
 
 [node name="BasicSlime" parent="Level" instance=ExtResource("1_iuon6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
+heightLayer = null
 tilePosition = Vector2i(2, -2)
 inControl = true
 
@@ -46,7 +47,9 @@ layer_2/tile_data = PackedInt32Array()
 
 [node name="JumpySlime" parent="Level" instance=ExtResource("4_2mphd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 1)
+heightLayer = null
 tilePosition = Vector2i(-4, 1)
+inControl = null
 
 [node name="GridMap" type="GridMap" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, -0.5)

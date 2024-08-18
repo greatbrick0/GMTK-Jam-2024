@@ -1,10 +1,6 @@
 extends Slime
 class_name BigSlime
 
-@export var heightLayer: int = 1
-@export var tilePosition: Vector2i = Vector2i.ZERO
-var isDead: bool = false
-
 @export var fallSounds: Array[AudioStream]
 
 func _ready():
@@ -32,13 +28,6 @@ func _process(delta):
 			moveDirection = Vector2.RIGHT
 		if(moveDirection != Vector2.ZERO):
 			$Behaviour.AttemptMove(moveDirection)
-
-func ChangeTiles(newPos: Vector2i):
-	tilePosition = newPos
-	get_parent().MoveTileScene(self, tilePosition, heightLayer)
-	$Visuals/SlimeBody/SlimeAnim.play("Green_Move1")
-	position.x = newPos.x
-	position.z = newPos.y
 
 func MoveTiles(dir: Vector2i):
 	inGoal = CheckForGoal(tilePosition + dir, heightLayer)
