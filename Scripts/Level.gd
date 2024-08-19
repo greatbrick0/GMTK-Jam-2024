@@ -37,6 +37,14 @@ func AddTileScene(sceneType: String, pos: Vector2i, height: int, key: Node3D):
 		for ii in range(VectorTools.directionVectors.size()):
 			tileScenes[[key, ii]] = [pos + VectorTools.directionVectors[ii], height, sceneType]
 
+func RemoveTileScene(key: Node3D):
+	if(tileScenes[key][2] == "BigSlime"):
+		tileScenes.erase(key)
+		for ii in range(VectorTools.directionVectors.size()):
+			tileScenes.erase([key, ii])
+	else:
+		tileScenes.erase(key)
+
 func MoveTileScene(key: Node3D, pos: Vector2i, height: int):
 	var sceneType: String = tileScenes[key][2]
 	tileScenes[key] = [pos, height, sceneType]

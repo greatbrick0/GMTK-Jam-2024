@@ -5,9 +5,13 @@ class_name BigSlime
 @export var fallSounds: Array[AudioStream]
 
 func _ready():
+	if(init): SlimeInit()
+
+func SlimeInit():
 	isBig = true
 	get_parent().AddTileScene("BigSlime", tilePosition, heightLayer, self)
 	SlimeController.slimeList.append(self)
+	visible = true
 
 func _process(delta):
 	$Visuals/ControlRing.visible = inControl
@@ -27,6 +31,8 @@ func _process(delta):
 			moveDirection = Vector2.LEFT
 		if(Input.is_action_just_pressed("MoveRight")):
 			moveDirection = Vector2.RIGHT
+		if(Input.is_action_just_pressed("Split")):
+			Split()
 		if(moveDirection != Vector2.ZERO):
 			$Behaviour.AttemptMove(moveDirection)
 
@@ -75,21 +81,26 @@ func Die():
 	print("dead slime")
 	inControl = false
 	isDead = true
-	get_parent().tileScenes.erase(self)
+	get_parent().RemoveTileScene(self)
 	SlimeController.RemoveSlime(self)
 	$Sounds/FallSound.stream = fallSounds.pick_random()
 	$Sounds/FallSound.play()
 
 func Split():
 	inControl = false
-	get_parent().tileScenes.erase(self)
-	SlimeController.RemoveSlime(self)
+	get_parent().RemoveTileScene(self)
+	SlimeController.RemoveSlime(self, true)
+	SlimeController.UnselectAll()
 	
 	get_parent().AddTileScene("LittleSlime", tilePosition, heightLayer, composeSlimes[0])
 	SlimeController.slimeList.append(composeSlimes[0])
-	composeSlimes[0].tilePosition = tilePosition + Vector2i.LEFT
+	composeSlimes[0].ChangeTiles(tilePosition + Vector2i.LEFT)
+	composeSlimes[0].visible = true
 	composeSlimes[0].inControl = true
 	
 	get_parent().AddTileScene("LittleSlime", tilePosition, heightLayer, composeSlimes[1])
 	SlimeController.slimeList.append(composeSlimes[1])
-	composeSlimes[0].tilePosition = tilePosition + Vector2i.RIGHT
+	composeSlimes[1].ChangeTiles(tilePosition + Vector2i.RIGHT)
+	composeSlimes[1].visible = true
+	
+	visible = false

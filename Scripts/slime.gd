@@ -1,6 +1,7 @@
 extends Node3D
 class_name Slime
 
+@export var init: bool = false
 @export var heightLayer: int = 1
 @export var tilePosition: Vector2i = Vector2i.ZERO
 var isDead: bool = false

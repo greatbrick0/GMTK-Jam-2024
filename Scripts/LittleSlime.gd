@@ -4,9 +4,13 @@ class_name LittleSlime
 @export var fallSounds: Array[AudioStream]
 
 func _ready():
+	if(init): SlimeInit()
+
+func SlimeInit():
 	isBig = false
 	get_parent().AddTileScene("LittleSlime", tilePosition, heightLayer, self)
 	SlimeController.slimeList.append(self)
+	visible = true
 
 func _process(delta):
 	$Visuals/ControlRing.visible = inControl
@@ -72,7 +76,7 @@ func Die():
 	print("dead slime")
 	inControl = false
 	isDead = true
-	get_parent().tileScenes.erase(self)
+	get_parent().RemoveTileScene(self)
 	SlimeController.RemoveSlime(self)
 	$Sounds/FallSound.stream = fallSounds.pick_random()
 	$Sounds/FallSound.play()
@@ -81,6 +85,6 @@ func MergeWith(otherSlime: LittleSlime):
 	inControl = false
 	SlimeController.RemoveSlime(self)
 	SlimeController.RemoveSlime(otherSlime)
-	get_parent().tileScenes.erase(self)
-	get_parent().tileScenes.erase(otherSlime)
+	get_parent().RemoveTileScene(self)
+	get_parent().RemoveTileScene(otherSlime)
 	

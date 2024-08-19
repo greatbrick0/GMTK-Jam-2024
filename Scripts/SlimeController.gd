@@ -21,12 +21,13 @@ func UnselectAll():
 	for ii in slimeList:
 		ii.inControl = false
 
-func RemoveSlime(slime: Slime):
+func RemoveSlime(slime: Slime, newSlime: bool = false):
 	slimeList.erase(slime)
-	if(slimeList.size() <= 0):
-		print("You Lose")
-	else:
-		slimeList[0].set_deferred("inControl", true)
+	if(!newSlime):
+		if(slimeList.size() <= 0):
+			print("You Lose")
+		else:
+			slimeList[0].set_deferred("inControl", true)
 
 func CheckForVictory():
 	if(slimeList.size() <= 0):
