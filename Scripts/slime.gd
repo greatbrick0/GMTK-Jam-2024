@@ -35,8 +35,15 @@ const slimeComboMap: Dictionary = {
 	[3, 5]: "res://Scenes/Slimes/Big/large_basic_slime.tscn",
 	[4, 4]: "res://Scenes/Slimes/Big/large_basic_slime.tscn",
 	[4, 5]: "res://Scenes/Slimes/Big/large_basic_slime.tscn",
-	[5, 5]: "res://Scenes/Slimes/Big/large_basic_slime.tscn",
+	[5, 5]: "res://Scenes/Slimes/Big/large_basic_slime.tscn", 
 	}
+const puzzleActionList: Array[String] = [
+	"MoveUp",
+	"MoveDown",
+	"MoveLeft",
+	"MoveRight",
+	"Split"
+	]
 
 func ChangeTiles(newPos: Vector2i):
 	tilePosition = newPos

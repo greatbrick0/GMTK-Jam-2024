@@ -12,16 +12,18 @@ func ExecuteQueue(queue: Array, displacement: Vector3):
 		timePassed = ii[0]
 		
 		if(execActive):
+			get_parent().animPlayers[ii[1]].play(ii[2])
 			if(ii.size() >= 4): 
 				$"../../VisualsOffset".position += ii[3]
-			get_parent().animPlayers[ii[1]].play(ii[2])
 		else:
 			print("cancelled "+name)
 			
 	if(execActive):
 		$"../../VisualsOffset".position = Vector3.ZERO
 		print("finished "+name)
-		End()
+		
+	await get_tree().create_timer(1.0).timeout
+	End()
 
 func Skip():
 	execActive = false

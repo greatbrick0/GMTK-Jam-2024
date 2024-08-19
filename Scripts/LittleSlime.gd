@@ -15,20 +15,21 @@ func SlimeInit():
 func _process(delta):
 	$VisualsOffset/Visuals/ControlRing.visible = inControl
 	
-	if(Input.is_action_just_pressed("PuzzleAction")):
-		$AnimQueue.SkipQueue()
+	for ii in puzzleActionList:
+		if(Input.is_action_just_pressed(ii)):
+			$AnimQueue.SkipQueue()
 	
 	if(inControl):
 		var moveDirection: Vector2 = Vector2.ZERO
 		if(Input.is_action_just_pressed("MoveUp")):
-			moveDirection = Vector2.UP
+			moveDirection += Vector2.UP
 		if(Input.is_action_just_pressed("MoveDown")):
-			moveDirection = Vector2.DOWN
+			moveDirection += Vector2.DOWN
 		if(Input.is_action_just_pressed("MoveLeft")):
-			moveDirection = Vector2.LEFT
+			moveDirection += Vector2.LEFT
 		if(Input.is_action_just_pressed("MoveRight")):
-			moveDirection = Vector2.RIGHT
-		if(moveDirection != Vector2.ZERO):
+			moveDirection += Vector2.RIGHT
+		if(moveDirection != Vector2.ZERO and moveDirection.length() == 1):
 			$Behaviour.AttemptMove(moveDirection)
 
 func MoveTiles(dir: Vector2i):
