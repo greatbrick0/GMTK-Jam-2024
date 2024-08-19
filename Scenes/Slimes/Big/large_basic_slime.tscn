@@ -27,7 +27,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals:position")
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -43,7 +43,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals:position")
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -59,7 +59,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals:position")
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -75,7 +75,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals:position")
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -91,7 +91,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals:position")
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -107,7 +107,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals:position")
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -123,7 +123,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals:position")
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -139,7 +139,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals:position")
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -154,7 +154,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals:position")
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -182,17 +182,19 @@ script = ExtResource("1_xuvtn")
 fallSounds = Array[AudioStream]([ExtResource("2_jgfdi"), ExtResource("3_wuquj"), ExtResource("4_v3pev")])
 slimeName = 0
 
-[node name="Visuals" type="Node3D" parent="."]
+[node name="VisualsOffset" type="Node3D" parent="."]
 
-[node name="SlimeBody" parent="Visuals" instance=ExtResource("5_vxs60")]
+[node name="Visuals" type="Node3D" parent="VisualsOffset"]
+
+[node name="SlimeBody" parent="VisualsOffset/Visuals" instance=ExtResource("5_vxs60")]
 transform = Transform3D(2.5, 0, 0, 0, 2, 0, 0, 0, 2.5, 0, 0, 0)
 
-[node name="SlimeAnim" type="AnimationPlayer" parent="Visuals/SlimeBody"]
+[node name="SlimeAnim" type="AnimationPlayer" parent="VisualsOffset/Visuals/SlimeBody"]
 libraries = {
 "": SubResource("AnimationLibrary_pick6")
 }
 
-[node name="ControlRing" parent="Visuals" instance=ExtResource("8_r1f7g")]
+[node name="ControlRing" parent="VisualsOffset/Visuals" instance=ExtResource("8_r1f7g")]
 visible = false
 
 [node name="Behaviour" type="Node" parent="."]
@@ -210,4 +212,4 @@ libraries = {
 
 [node name="AnimQueue" type="Node" parent="." node_paths=PackedStringArray("animPlayers")]
 script = ExtResource("10_5xo4b")
-animPlayers = [NodePath("../MovePlayer"), NodePath("../Visuals/SlimeBody/SlimeAnim")]
+animPlayers = [NodePath("../MovePlayer"), NodePath("../VisualsOffset/Visuals/SlimeBody/SlimeAnim")]

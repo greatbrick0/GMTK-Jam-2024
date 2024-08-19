@@ -14,12 +14,10 @@ func SlimeInit():
 	visible = true
 
 func _process(delta):
-	$Visuals/ControlRing.visible = inControl
+	$VisualsOffset/Visuals/ControlRing.visible = inControl
 	
 	if(Input.is_action_just_pressed("PuzzleAction")):
-		$Visuals/SlimeBody/SlimeAnim.play("RESET")
-		$MovePlayer.play("RESET")
-		$Visuals.position = Vector3.ZERO
+		$AnimQueue.SkipQueue()
 	
 	if(inControl):
 		var moveDirection: Vector2 = Vector2.ZERO

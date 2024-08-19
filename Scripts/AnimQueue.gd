@@ -15,14 +15,20 @@ func AddMoveToQueue(dir: Vector2i, moveType: String, time: float):
 
 func ExecuteQueue():
 	var timePassed: float = 0.0
-	$"../Visuals".position = -totalDisplacement
+	$"../VisualsOffset".position = -totalDisplacement
 	for ii in queue:
 		await get_tree().create_timer(ii[0] - timePassed).timeout
 		timePassed = ii[0]
 		if(ii.size() >= 4): 
-			#$"../Visuals".position += ii[3]
-			pass
+			$"../VisualsOffset".position += ii[3]
 		animPlayers[ii[1]].play(ii[2])
 	queue.clear()
-	$"../Visuals".position
+	$"../VisualsOffset".position = Vector3.ZERO
 	totalDisplacement = Vector3.ZERO
+
+func SkipQueue():
+	queue.clear()
+	$"../VisualsOffset".position = Vector3.ZERO
+	totalDisplacement = Vector3.ZERO
+	for ii in animPlayers:
+		ii.play("RESET")
