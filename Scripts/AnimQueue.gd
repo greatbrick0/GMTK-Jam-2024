@@ -21,6 +21,8 @@ func ExecuteQueue():
 	totalDisplacement = Vector3.ZERO
 
 func SkipQueue():
+	for ii in animPlayers:
+		ii.play("RESET")
 	for ii in get_children():
 		if(ii.execActive):
 			ii.Skip()
