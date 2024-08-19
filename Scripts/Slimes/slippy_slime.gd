@@ -1,4 +1,4 @@
-extends Node
+extends SlimeBehaviour
 
 func AttemptMove(dir: Vector2):
 	var didMove: bool = MoveOneTile(dir)
@@ -19,17 +19,3 @@ func AttemptMove(dir: Vector2):
 		ii += 1
 	SlimeController.CheckForVictory()
 	$"../AnimQueue".ExecuteQueue()
-
-func MoveOneTile(dir: Vector2) -> bool:
-	if(IsOnlyAir(get_parent().CheckFacingTiles(dir))):
-		get_parent().MoveTiles(dir)
-		return true
-	else:
-		return false
-
-func IsOnlyAir(tiles: Array[String]):
-	var output: bool = true
-	for ii in tiles:
-		if(ii != "Air" and ii != "Goal"):
-			output = false
-	return output
