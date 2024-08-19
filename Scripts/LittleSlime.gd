@@ -98,7 +98,7 @@ func MergeWith(otherSlime: LittleSlime):
 	get_parent().add_child(newSlime)
 	get_parent().AddTileScene("BigSlime", otherSlime.tilePosition, otherSlime.heightLayer, newSlime)
 	SlimeController.slimeList.append(newSlime)
-	newSlime.ChangeTiles(tilePosition)
+	newSlime.ChangeTiles(otherSlime.tilePosition)
 	newSlime.visible = true
 	newSlime.inControl = true
 	
