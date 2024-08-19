@@ -65,6 +65,7 @@ func CheckForGround() -> bool:
 
 func DropHeightLayer() -> int:
 	var distance: int = 0
+	position.y = heightLayer - 1
 	while(!isDead && !CheckForGround()):
 		inGoal = CheckForGoal(tilePosition, heightLayer - 1)
 		heightLayer -= 1
@@ -95,12 +96,14 @@ func Split():
 	composeSlimes[0].ChangeTiles(tilePosition + Vector2i.LEFT)
 	composeSlimes[0].visible = true
 	composeSlimes[0].inControl = true
+	composeSlimes[0].heightLayer = heightLayer
 	composeSlimes[0].DropHeightLayer()
 	
 	get_parent().AddTileScene("LittleSlime", tilePosition, heightLayer, composeSlimes[1])
 	SlimeController.slimeList.append(composeSlimes[1])
 	composeSlimes[1].ChangeTiles(tilePosition + Vector2i.RIGHT)
 	composeSlimes[1].visible = true
+	composeSlimes[1].heightLayer = heightLayer
 	composeSlimes[1].DropHeightLayer()
 	
 	visible = false

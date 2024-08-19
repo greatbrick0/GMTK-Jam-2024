@@ -60,6 +60,7 @@ func CheckForGround() -> bool:
 
 func DropHeightLayer() -> int:
 	var distance: int = 0
+	position.y = heightLayer - 1
 	while(!isDead && !CheckForGround()):
 		inGoal = CheckForGoal(tilePosition, heightLayer - 1)
 		heightLayer -= 1
@@ -95,6 +96,9 @@ func MergeWith(otherSlime: LittleSlime):
 	newSlime.composeSlimes = [self, otherSlime]
 	get_parent().add_child(newSlime)
 	get_parent().AddTileScene("BigSlime", otherSlime.tilePosition, otherSlime.heightLayer, newSlime)
+	newSlime.heightLayer = otherSlime.heightLayer
+	newSlime.DropHeightLayer()
+	print(newSlime.heightLayer)
 	SlimeController.slimeList.append(newSlime)
 	newSlime.ChangeTiles(otherSlime.tilePosition)
 	newSlime.visible = true
