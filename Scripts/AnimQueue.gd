@@ -14,21 +14,13 @@ func AddMoveToQueue(dir: Vector2i, moveType: String, time: float):
 	queue.append(appendItem)
 
 func ExecuteQueue():
-	var timePassed: float = 0.0
-	$"../VisualsOffset".position = -totalDisplacement
-	for ii in queue:
-		await get_tree().create_timer(ii[0] - timePassed).timeout
-		timePassed = ii[0]
-		if(ii.size() >= 4): 
-			$"../VisualsOffset".position += ii[3]
-		animPlayers[ii[1]].play(ii[2])
+	var newExec: AnimExec = AnimExec.new()
+	add_child(newExec)
+	newExec.ExecuteQueue(queue.duplicate(), totalDisplacement)
 	queue.clear()
-	$"../VisualsOffset".position = Vector3.ZERO
 	totalDisplacement = Vector3.ZERO
 
 func SkipQueue():
-	queue.clear()
-	$"../VisualsOffset".position = Vector3.ZERO
-	totalDisplacement = Vector3.ZERO
-	for ii in animPlayers:
-		ii.play("RESET")
+	for ii in get_children():
+		if(ii.execActive):
+			ii.Skip()

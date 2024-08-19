@@ -5,6 +5,7 @@ const keyOrder: Array[String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0
 
 func _process(delta):
 	if(Input.is_action_just_pressed("Retry")):
+		
 		slimeList.clear()
 		get_tree().reload_current_scene()
 	if(Input.is_action_just_pressed("BackToMenu")):

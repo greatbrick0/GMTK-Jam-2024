@@ -94,16 +94,16 @@ func Split():
 	get_parent().AddTileScene("LittleSlime", tilePosition, heightLayer, composeSlimes[0])
 	SlimeController.slimeList.append(composeSlimes[0])
 	composeSlimes[0].ChangeTiles(tilePosition + Vector2i.LEFT)
-	composeSlimes[0].visible = true
-	composeSlimes[0].inControl = true
 	composeSlimes[0].heightLayer = heightLayer
 	composeSlimes[0].DropHeightLayer()
+	composeSlimes[0].visible = true
+	composeSlimes[0].inControl = true
 	
 	get_parent().AddTileScene("LittleSlime", tilePosition, heightLayer, composeSlimes[1])
 	SlimeController.slimeList.append(composeSlimes[1])
 	composeSlimes[1].ChangeTiles(tilePosition + Vector2i.RIGHT)
-	composeSlimes[1].visible = true
 	composeSlimes[1].heightLayer = heightLayer
 	composeSlimes[1].DropHeightLayer()
+	composeSlimes[1].visible = true
 	
 	visible = false
