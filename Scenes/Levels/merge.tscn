@@ -53,6 +53,10 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, -3, 0)
 
+[node name="BasicSlime2" parent="Level" instance=ExtResource("2_uiaou")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 2)
+tilePosition = Vector2i(-4, 2)
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -1.5, 18, 19)
 fov = 20.0
@@ -107,7 +111,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 
 [node name="tree12" parent="." instance=ExtResource("8_13nlo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -2)
-
-[node name="BasicSlime" parent="." instance=ExtResource("2_uiaou")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 2)
-tilePosition = Vector2i(-4, 2)

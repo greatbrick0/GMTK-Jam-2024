@@ -15,3 +15,6 @@ func ChangeTiles(newPos: Vector2i):
 	$Visuals/SlimeBody/SlimeAnim.play("Green_Move1")
 	position.x = newPos.x
 	position.z = newPos.y
+
+func GetTileScene(pos: Vector2i, y: int) -> Node3D:
+	return get_parent().ReferenceByPosition(tilePosition + pos, heightLayer + y)

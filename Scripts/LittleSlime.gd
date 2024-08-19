@@ -39,11 +39,11 @@ func CheckFacingTiles(dir: Vector2i) -> Array[String]:
 func CheckForGoal(pos: Vector2i, y: int) -> bool:
 	return get_parent().ReadTile(pos, y) == "Goal"
 
-func CheckForExpand(pos: Vector2i, y: int) -> bool:
+func CheckForExpand() -> bool:
 	var checkTile: String
 	var slimesInTheWay: int = 0
 	for ii in VectorTools.directionVectors:
-		checkTile = get_parent().ReadTile(pos + ii, y)
+		checkTile = get_parent().ReadTile(tilePosition + ii, heightLayer)
 		if(checkTile == "LittleSlime"):
 			slimesInTheWay += 1
 		elif(checkTile == "Air" or checkTile == "Goal"):
