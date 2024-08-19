@@ -12,7 +12,6 @@ var isBig: bool
 func ChangeTiles(newPos: Vector2i):
 	tilePosition = newPos
 	get_parent().MoveTileScene(self, tilePosition, heightLayer)
-	$Visuals/SlimeBody/SlimeAnim.play("Green_Move1")
 	position.x = newPos.x
 	position.z = newPos.y
 

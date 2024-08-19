@@ -1,6 +1,7 @@
 extends Slime
 class_name BigSlime
 
+@export var composeSlimes: Array[LittleSlime] = []
 @export var fallSounds: Array[AudioStream]
 
 func _ready():
@@ -74,8 +75,21 @@ func Die():
 	print("dead slime")
 	inControl = false
 	isDead = true
-	#$Visuals.visible = false
 	get_parent().tileScenes.erase(self)
 	SlimeController.RemoveSlime(self)
 	$Sounds/FallSound.stream = fallSounds.pick_random()
 	$Sounds/FallSound.play()
+
+func Split():
+	inControl = false
+	get_parent().tileScenes.erase(self)
+	SlimeController.RemoveSlime(self)
+	
+	get_parent().AddTileScene("LittleSlime", tilePosition, heightLayer, composeSlimes[0])
+	SlimeController.slimeList.append(composeSlimes[0])
+	composeSlimes[0].tilePosition = tilePosition + Vector2i.LEFT
+	composeSlimes[0].inControl = true
+	
+	get_parent().AddTileScene("LittleSlime", tilePosition, heightLayer, composeSlimes[1])
+	SlimeController.slimeList.append(composeSlimes[1])
+	composeSlimes[0].tilePosition = tilePosition + Vector2i.RIGHT

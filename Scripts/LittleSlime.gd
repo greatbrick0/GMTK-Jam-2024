@@ -72,8 +72,15 @@ func Die():
 	print("dead slime")
 	inControl = false
 	isDead = true
-	#$Visuals.visible = false
 	get_parent().tileScenes.erase(self)
 	SlimeController.RemoveSlime(self)
 	$Sounds/FallSound.stream = fallSounds.pick_random()
 	$Sounds/FallSound.play()
+
+func MergeWith(otherSlime: LittleSlime):
+	inControl = false
+	SlimeController.RemoveSlime(self)
+	SlimeController.RemoveSlime(otherSlime)
+	get_parent().tileScenes.erase(self)
+	get_parent().tileScenes.erase(otherSlime)
+	

@@ -29,5 +29,4 @@ func AttemptMerge(dir: Vector2i) -> bool:
 	if(get_parent().CheckFacingTiles(dir)[0] != "LittleSlime"): return false
 	
 	var slimeRef: LittleSlime = get_parent().GetTileScene(dir, 0)
-	print(slimeRef.CheckForExpand())
 	return slimeRef.CheckForExpand()
