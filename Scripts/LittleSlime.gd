@@ -83,8 +83,24 @@ func Die():
 
 func MergeWith(otherSlime: LittleSlime):
 	inControl = false
-	SlimeController.RemoveSlime(self)
-	SlimeController.RemoveSlime(otherSlime)
+	SlimeController.RemoveSlime(self, true)
+	SlimeController.RemoveSlime(otherSlime, true)
 	get_parent().RemoveTileScene(self)
 	get_parent().RemoveTileScene(otherSlime)
+	SlimeController.UnselectAll()
 	
+	var combo = [slimeName, otherSlime.slimeName]
+	combo.sort()
+	var newSlimeScene: PackedScene = load(Slime.slimeComboMap[combo])
+	var newSlime: BigSlime = newSlimeScene.instantiate()
+	newSlime.isBig = true
+	newSlime.composeSlimes = [self, otherSlime]
+	get_parent().add_child(newSlime)
+	get_parent().AddTileScene("BigSlime", otherSlime.tilePosition, otherSlime.heightLayer, newSlime)
+	SlimeController.slimeList.append(newSlime)
+	newSlime.ChangeTiles(tilePosition)
+	newSlime.visible = true
+	newSlime.inControl = true
+	
+	visible = false
+	otherSlime.visible = false

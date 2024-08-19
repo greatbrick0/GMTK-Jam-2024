@@ -1,11 +1,15 @@
 extends Node
 
+var otherSlimeRef: LittleSlime
+
 func AttemptMove(dir: Vector2):
 	if(MoveOneTile(dir)):
 		$"../AnimQueue".AddMoveToQueue(dir, "Move", 0.0)
 	else:
-		AttemptMerge(dir)
-		$"../AnimQueue".AddMoveToQueue(dir, "Bump", 0.0)
+		if(AttemptMerge(dir)):
+			get_parent().MergeWith(otherSlimeRef)
+		else:
+			$"../AnimQueue".AddMoveToQueue(dir, "Bump", 0.0)
 	get_parent().DropHeightLayer()
 	SlimeController.CheckForVictory()
 	$"../AnimQueue".ExecuteQueue()
@@ -28,5 +32,5 @@ func AttemptMerge(dir: Vector2i) -> bool:
 	if(get_parent().isBig): return false
 	if(get_parent().CheckFacingTiles(dir)[0] != "LittleSlime"): return false
 	
-	var slimeRef: LittleSlime = get_parent().GetTileScene(dir, 0)
-	return slimeRef.CheckForExpand()
+	otherSlimeRef = get_parent().GetTileScene(dir, 0)
+	return otherSlimeRef.CheckForExpand()
