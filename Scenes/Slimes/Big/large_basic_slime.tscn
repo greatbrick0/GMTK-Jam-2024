@@ -180,6 +180,7 @@ _data = {
 [node name="LargeBasicSlime" type="Node3D"]
 script = ExtResource("1_xuvtn")
 fallSounds = Array[AudioStream]([ExtResource("2_jgfdi"), ExtResource("3_wuquj"), ExtResource("4_v3pev")])
+slimeName = 0
 
 [node name="Visuals" type="Node3D" parent="."]
 
