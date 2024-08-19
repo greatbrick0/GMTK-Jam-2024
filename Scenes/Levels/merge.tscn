@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4jjphwq3xb8g"]
+[gd_scene load_steps=11 format=3 uid="uid://ctruwfmj6um4r"]
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_llpbc"]
 [ext_resource type="PackedScene" uid="uid://b5ke5fcwyf1lg" path="res://Scenes/Slimes/Small/basic_slime.tscn" id="2_uiaou"]
@@ -32,7 +32,6 @@ script = ExtResource("1_llpbc")
 
 [node name="BasicSlime" parent="Level" instance=ExtResource("2_uiaou")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -1)
-tilePosition = Vector2i(-4, -1)
 tilePosition = Vector2i(-4, -1)
 inControl = true
 
@@ -111,5 +110,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -2)
 
 [node name="BasicSlime" parent="." instance=ExtResource("2_uiaou")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 2)
-tilePosition = Vector2i(-4, 2)
 tilePosition = Vector2i(-4, 2)
