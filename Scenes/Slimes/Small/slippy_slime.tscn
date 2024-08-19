@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://qshry7pjxhix"]
+[gd_scene load_steps=23 format=3 uid="uid://qshry7pjxhix"]
 
 [ext_resource type="Script" path="res://Scripts/LittleSlime.gd" id="1_hyhkk"]
 [ext_resource type="AudioStream" uid="uid://cltc76krufxiy" path="res://Sounds/Effects/Falling1.wav" id="2_yrlk8"]
@@ -9,6 +9,7 @@
 [ext_resource type="Animation" uid="uid://d30rjntrrlo2h" path="res://Art/Animations/Green_Move1.res" id="7_upaxh"]
 [ext_resource type="PackedScene" uid="uid://himskgliij4c" path="res://Scenes/control_ring.tscn" id="8_qi1ia"]
 [ext_resource type="Script" path="res://Scripts/Slimes/slippy_slime.gd" id="9_16m5y"]
+[ext_resource type="Script" path="res://Scripts/AnimQueue.gd" id="10_cr32f"]
 
 [sub_resource type="Animation" id="Animation_mrq02"]
 resource_name = "RESET"
@@ -205,3 +206,7 @@ stream = ExtResource("2_yrlk8")
 libraries = {
 "": SubResource("AnimationLibrary_gyjkl")
 }
+
+[node name="AnimQueue" type="Node" parent="." node_paths=PackedStringArray("animPlayers")]
+script = ExtResource("10_cr32f")
+animPlayers = [NodePath(""), NodePath("")]

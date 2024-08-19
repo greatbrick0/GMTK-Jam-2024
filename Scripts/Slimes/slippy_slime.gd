@@ -3,15 +3,21 @@ extends Node
 func AttemptMove(dir: Vector2):
 	var didMove: bool = MoveOneTile(dir)
 	if(didMove):
-		$"../MovePlayer".play("Move" + VectorTools.VectorToString(dir))
-		$"../Visuals".position = VectorTools.Vec2ToVec3(-dir)
+		$"../AnimQueue".AddMoveToQueue(dir, "Move", 0.0)
 	else:
-		$"../Visuals".position = Vector3.ZERO
-		$"../MovePlayer".play("Bump" + VectorTools.VectorToString(dir))
+		$"../AnimQueue".AddMoveToQueue(dir, "Bump", 0.0)
 	
-	while(IsOnlyAir(get_parent().CheckFacingTiles(dir)) and get_parent().DropHeightLayer() == 0):
-		get_parent().MoveTiles(dir)
+	var ii: int = 1
+	while(didMove and get_parent().DropHeightLayer() == 0):
+		didMove = MoveOneTile(dir)
+		if(didMove):
+			$"../AnimQueue".AddMoveToQueue(dir, "Move", ii * 0.5)
+		else:
+			$"../AnimQueue".AddMoveToQueue(dir, "Bump", ii * 0.5)
+		if(get_parent().DropHeightLayer() > 0):
+			didMove = false
 	SlimeController.CheckForVictory()
+	$"../AnimQueue".ExecuteQueue()
 
 func MoveOneTile(dir: Vector2) -> bool:
 	if(IsOnlyAir(get_parent().CheckFacingTiles(dir))):

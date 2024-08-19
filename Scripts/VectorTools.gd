@@ -1,4 +1,5 @@
 extends Node
+class_name  VectorTools
 
 const directionVectors: Array[Vector2i] = [
 	Vector2i.UP, 

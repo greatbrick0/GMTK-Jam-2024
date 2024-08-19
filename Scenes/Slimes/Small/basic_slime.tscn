@@ -206,5 +206,6 @@ libraries = {
 "": SubResource("AnimationLibrary_gyjkl")
 }
 
-[node name="AnimQueue" type="Node" parent="."]
+[node name="AnimQueue" type="Node" parent="." node_paths=PackedStringArray("animPlayers")]
 script = ExtResource("10_c08ja")
+animPlayers = [NodePath("../MovePlayer"), NodePath("../Visuals/SlimeBody/SlimeAnim")]

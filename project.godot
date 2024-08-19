@@ -18,7 +18,6 @@ config/icon="res://Art/Images/GameIcon.png"
 [autoload]
 
 SlimeController="*res://Scripts/SlimeController.gd"
-VectorTools="*res://Scripts/VectorTools.gd"
 
 [display]
 

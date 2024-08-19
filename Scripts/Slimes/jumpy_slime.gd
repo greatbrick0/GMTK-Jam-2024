@@ -2,19 +2,16 @@ extends Node
 
 func AttemptMove(dir: Vector2):
 	if(MoveOneTile(dir)):
-		$"../MovePlayer".play("Move" + VectorTools.VectorToString(dir))
-		$"../Visuals".position = VectorTools.Vec2ToVec3(-dir)
+		$"../AnimQueue".AddMoveToQueue(dir, "Move", 0.0)
 	else:
-		$"../Visuals".position = Vector3.ZERO
-		$"../MovePlayer".play("Bump" + VectorTools.VectorToString(dir))
+		$"../AnimQueue".AddMoveToQueue(dir, "Bump", 0.0)
 	if(MoveOneTile(dir)):
-		$"../MovePlayer".play("Move" + VectorTools.VectorToString(dir))
-		$"../Visuals".position = VectorTools.Vec2ToVec3(-dir)
+		$"../AnimQueue".AddMoveToQueue(dir, "Move", 0.5)
 	else:
-		$"../Visuals".position = Vector3.ZERO
-		$"../MovePlayer".play("Bump" + VectorTools.VectorToString(dir))
+		$"../AnimQueue".AddMoveToQueue(dir, "Bump", 0.5)
 	get_parent().DropHeightLayer()
 	SlimeController.CheckForVictory()
+	$"../AnimQueue".ExecuteQueue()
 
 func MoveOneTile(dir: Vector2) -> bool:
 	if(IsOnlyAir(get_parent().CheckFacingTiles(dir))):
