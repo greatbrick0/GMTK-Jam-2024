@@ -37,6 +37,12 @@ init = true
 heightLayer = 2
 tilePosition = Vector2i(-4, 2)
 
+[node name="BasicSlime2" parent="Level" instance=ExtResource("2_w7qgb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 2)
+init = true
+heightLayer = 2
+tilePosition = Vector2i(-3, 2)
+
 [node name="JumpySlime" parent="Level" instance=ExtResource("3_1b4ha")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -2)
 init = true
