@@ -16,6 +16,7 @@ func AttemptMove(dir: Vector2):
 			$"../AnimQueue".AddMoveToQueue(dir, "Bump", ii * 0.5)
 		if(get_parent().DropHeightLayer() > 0):
 			didMove = false
+		ii += 1
 	SlimeController.CheckForVictory()
 	$"../AnimQueue".ExecuteQueue()
 
