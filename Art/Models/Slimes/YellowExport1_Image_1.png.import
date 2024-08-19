@@ -2,19 +2,19 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpy0r7qxrwx6t"
-path="res://.godot/imported/YellowSlime_Image_0.png-d9498d0fc57cd7292efae4758ad02419.ctex"
+uid="uid://c8pefe126jm8c"
+path="res://.godot/imported/YellowExport1_Image_1.png-fa955b924872ca10243f223040d80f4f.ctex"
 metadata={
 "vram_texture": false
 }
 generator_parameters={
-"md5": "6c0f75dbf0fb3a8346611ac765a22ba9"
+"md5": "525683149f3fee288b436b9f57282f24"
 }
 
 [deps]
 
-source_file="res://Art/Models/Slimes/YellowSlime_Image_0.png"
-dest_files=["res://.godot/imported/YellowSlime_Image_0.png-d9498d0fc57cd7292efae4758ad02419.ctex"]
+source_file="res://Art/Models/Slimes/YellowExport1_Image_1.png"
+dest_files=["res://.godot/imported/YellowExport1_Image_1.png-fa955b924872ca10243f223040d80f4f.ctex"]
 
 [params]
 
