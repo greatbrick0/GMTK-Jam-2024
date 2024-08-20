@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bkoobhbhdbbt5"]
+[gd_scene load_steps=16 format=3 uid="uid://bkoobhbhdbbt5"]
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_h3d6e"]
 [ext_resource type="PackedScene" uid="uid://d3o0cu7jma2tj" path="res://Scenes/Slimes/Small/jumpy_slime.tscn" id="2_13f4n"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://db77qdr606amx" path="res://Art/Models/widePicnic.glb" id="9_wx5hg"]
 [ext_resource type="PackedScene" uid="uid://b4c8pk3nsx0rj" path="res://Art/Models/Barrel.glb" id="10_djdov"]
 [ext_resource type="PackedScene" uid="uid://dasqal1exv1gy" path="res://Art/Models/Box (2).glb" id="11_ca31d"]
+[ext_resource type="Script" path="res://Scripts/WinSceneHolder.gd" id="12_r8ruc"]
+[ext_resource type="PackedScene" uid="uid://cm38ngtiq6fb1" path="res://Scenes/Levels/expansionLimitation.tscn" id="13_dgbc3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_78i1y"]
 texture = ExtResource("4_ubbji")
@@ -134,3 +136,7 @@ transform = Transform3D(0.528275, 0, 0.305, 0, 0.61, 0, -0.305, 0, 0.528275, -2,
 
 [node name="Box (2)2" parent="." instance=ExtResource("11_ca31d")]
 transform = Transform3D(0.758252, 0, -0.203173, 0, 0.785, 0, 0.203173, 0, 0.758252, -2, 0, -4)
+
+[node name="WinSceneHolder" type="Node" parent="."]
+script = ExtResource("12_r8ruc")
+winScene = ExtResource("13_dgbc3")

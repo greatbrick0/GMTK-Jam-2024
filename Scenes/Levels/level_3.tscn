@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://citleqf55w342"]
+[gd_scene load_steps=13 format=3 uid="uid://citleqf55w342"]
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_k53uw"]
 [ext_resource type="Texture2D" uid="uid://dhhnp6x275thb" path="res://Art/Images/TileMapData.png" id="2_q1gc7"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dj6hxxsdsus8q" path="res://Art/Models/basket.glb" id="5_q3jrq"]
 [ext_resource type="PackedScene" uid="uid://bcgpsusq5pemj" path="res://Art/Models/tree.glb" id="6_7ppiy"]
 [ext_resource type="PackedScene" uid="uid://db77qdr606amx" path="res://Art/Models/widePicnic.glb" id="7_4g1h4"]
+[ext_resource type="Script" path="res://Scripts/WinSceneHolder.gd" id="9_ltpfn"]
+[ext_resource type="PackedScene" uid="uid://ctruwfmj6um4r" path="res://Scenes/Levels/merge.tscn" id="10_0u1f6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_78i1y"]
 texture = ExtResource("2_q1gc7")
@@ -112,3 +114,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 2)
 
 [node name="tree13" parent="." instance=ExtResource("6_7ppiy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="WinSceneHolder" type="Node" parent="."]
+script = ExtResource("9_ltpfn")
+winScene = ExtResource("10_0u1f6")
