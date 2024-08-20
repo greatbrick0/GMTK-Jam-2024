@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://8k34jwmdrtkl"]
+[gd_scene load_steps=8 format=3 uid="uid://44doioiakbmn"]
 
-[ext_resource type="PackedScene" uid="uid://ud251q7yst0o" path="res://Scenes/Slimes/Small/small_slime_template.tscn" id="1_8q51h"]
-[ext_resource type="PackedScene" uid="uid://cqaxagyjfmdd0" path="res://Art/Models/Slimes/RedSlimeNoAnim1.glb" id="2_v22nw"]
-[ext_resource type="Animation" uid="uid://nidgk46gx767" path="res://Art/Animations/Green_Idle.res" id="3_qm01m"]
-[ext_resource type="Animation" uid="uid://d30rjntrrlo2h" path="res://Art/Animations/Green_Move1.res" id="4_dj0fp"]
-[ext_resource type="Script" path="res://Scripts/Slimes/angry_slime.gd" id="5_8peuu"]
+[ext_resource type="PackedScene" uid="uid://wyd1dfc6vwf5" path="res://Scenes/Slimes/Big/big_slime_template.tscn" id="1_m6ebd"]
+[ext_resource type="PackedScene" uid="uid://cqaxagyjfmdd0" path="res://Art/Models/Slimes/RedSlimeNoAnim1.glb" id="2_y1cqr"]
+[ext_resource type="Animation" uid="uid://nidgk46gx767" path="res://Art/Animations/Green_Idle.res" id="3_6puq3"]
+[ext_resource type="Animation" uid="uid://d30rjntrrlo2h" path="res://Art/Animations/Green_Move1.res" id="4_eltwt"]
+[ext_resource type="Script" path="res://Scripts/Slimes/angry_slime.gd" id="5_of1nu"]
 
 [sub_resource type="Animation" id="Animation_08f65"]
 resource_name = "RESET"
@@ -40,15 +40,16 @@ tracks/3/keys = PackedFloat32Array(0, 1, -0.000541125, 0.312286, 0.3753)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pick6"]
 _data = {
-"Green_Idle": ExtResource("3_qm01m"),
-"Green_Move1": ExtResource("4_dj0fp"),
+"Green_Idle": ExtResource("3_6puq3"),
+"Green_Move1": ExtResource("4_eltwt"),
 "RESET": SubResource("Animation_08f65")
 }
 
-[node name="AngrySlime" instance=ExtResource("1_8q51h")]
-slimeName = 3
+[node name="LargeAngrySlime" instance=ExtResource("1_m6ebd")]
+slimeName = 0
 
-[node name="SlimeBody" parent="VisualsOffset/Visuals" index="0" instance=ExtResource("2_v22nw")]
+[node name="SlimeBody" parent="VisualsOffset/Visuals" index="0" instance=ExtResource("2_y1cqr")]
+transform = Transform3D(2.5, 0, 0, 0, 2, 0, 0, 0, 2.5, 0, 0, 0)
 
 [node name="SlimeAnim" type="AnimationPlayer" parent="VisualsOffset/Visuals/SlimeBody" index="1"]
 libraries = {
@@ -56,7 +57,7 @@ libraries = {
 }
 
 [node name="Behaviour" parent="." index="1"]
-script = ExtResource("5_8peuu")
+script = ExtResource("5_of1nu")
 
 [node name="AnimQueue" parent="." index="5" node_paths=PackedStringArray("animPlayers")]
 animPlayers = [NodePath("../MovePlayer"), NodePath("../VisualsOffset/Visuals/SlimeBody/SlimeAnim"), NodePath("../FallPlayer")]
