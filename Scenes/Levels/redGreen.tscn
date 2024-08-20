@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://cgby12gddc17g"]
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_a7c1f"]
-[ext_resource type="PackedScene" uid="uid://b5ke5fcwyf1lg" path="res://Scenes/Slimes/Small/basic_slime.tscn" id="2_w7qgb"]
-[ext_resource type="PackedScene" uid="uid://dq4smmbp1k74c" path="res://Scenes/Slimes/Small/jumpy_slime.tscn" id="3_1b4ha"]
+[ext_resource type="PackedScene" uid="uid://b5ke5fcwyf1lg" path="res://Scenes/Slimes/Small/basic_slime2.tscn" id="2_w7qgb"]
+[ext_resource type="PackedScene" uid="uid://dq4smmbp1k74c" path="res://Scenes/Slimes/Small/jumpy_slime2.tscn" id="3_1b4ha"]
 [ext_resource type="Texture2D" uid="uid://dhhnp6x275thb" path="res://Art/Images/TileMapData.png" id="5_f7ehc"]
 [ext_resource type="MeshLibrary" uid="uid://cx761x71sw86k" path="res://Art/SurfaceTiles.tres" id="6_g6q8o"]
 [ext_resource type="Environment" uid="uid://cs8septr0lst1" path="res://Environment1.tres" id="7_jqewa"]

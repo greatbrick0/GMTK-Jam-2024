@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_rtrev"]
 [ext_resource type="Texture2D" uid="uid://dhhnp6x275thb" path="res://Art/Images/TileMapData.png" id="3_u1plq"]
-[ext_resource type="PackedScene" uid="uid://dq4smmbp1k74c" path="res://Scenes/Slimes/Small/jumpy_slime.tscn" id="4_dn7am"]
+[ext_resource type="PackedScene" uid="uid://dq4smmbp1k74c" path="res://Scenes/Slimes/Small/jumpy_slime2.tscn" id="4_dn7am"]
 [ext_resource type="MeshLibrary" uid="uid://cx761x71sw86k" path="res://Art/SurfaceTiles.tres" id="5_pl11s"]
-[ext_resource type="PackedScene" uid="uid://dw404wym7g13q" path="res://Scenes/Slimes/Big/large_basic_slime.tscn" id="6_aheaw"]
+[ext_resource type="PackedScene" path="res://Scenes/Slimes/Big/large_basic_slime2.tscn" id="6_aheaw"]
 [ext_resource type="PackedScene" uid="uid://db77qdr606amx" path="res://Art/Models/widePicnic.glb" id="7_issmv"]
 [ext_resource type="PackedScene" uid="uid://dj6hxxsdsus8q" path="res://Art/Models/basket.glb" id="8_f7uau"]
 [ext_resource type="PackedScene" uid="uid://bcgpsusq5pemj" path="res://Art/Models/tree.glb" id="8_yuarv"]
 [ext_resource type="PackedScene" uid="uid://4iotg8x4dqrc" path="res://Art/Models/Slimes/BlueSlime1.glb" id="9_6eay2"]
-[ext_resource type="PackedScene" uid="uid://b5ke5fcwyf1lg" path="res://Scenes/Slimes/Small/basic_slime.tscn" id="10_e23qb"]
+[ext_resource type="PackedScene" uid="uid://b5ke5fcwyf1lg" path="res://Scenes/Slimes/Small/basic_slime2.tscn" id="10_e23qb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_78i1y"]
 texture = ExtResource("3_u1plq")
