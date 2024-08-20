@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://c2wvfnebvavj"]
+
+[ext_resource type="PackedScene" uid="uid://wyd1dfc6vwf5" path="res://Scenes/Slimes/Big/big_slime_template.tscn" id="1_wgvkk"]
+[ext_resource type="PackedScene" uid="uid://d0wg557iut5c2" path="res://Art/Models/Slimes/Big/RBBigSlime.glb" id="2_c62tk"]
+[ext_resource type="Animation" uid="uid://nidgk46gx767" path="res://Art/Animations/Green_Idle.res" id="3_jb5oh"]
+[ext_resource type="Animation" uid="uid://d30rjntrrlo2h" path="res://Art/Animations/Green_Move1.res" id="4_3e2w6"]
+[ext_resource type="Script" path="res://Scripts/Slimes/crashy_slime.gd" id="5_70kxq"]
+
+[sub_resource type="Animation" id="Animation_08f65"]
+resource_name = "RESET"
+length = 0.833333
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Root")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Root")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/2/type = "scale_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("Root")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 1, 1, 1)
+tracks/3/type = "position_3d"
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/path = NodePath("Root/Skeleton3D:Eyes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -0.000541125, 0.312286, 0.3753)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pick6"]
+_data = {
+"Green_Idle": ExtResource("3_jb5oh"),
+"Green_Move1": ExtResource("4_3e2w6"),
+"RESET": SubResource("Animation_08f65")
+}
+
+[node name="AngrySlippySlime" instance=ExtResource("1_wgvkk")]
+slimeName = 0
+
+[node name="SlimeBody" parent="VisualsOffset/Visuals" index="0" instance=ExtResource("2_c62tk")]
+transform = Transform3D(2.5, 0, 0, 0, 2, 0, 0, 0, 2.5, 0, 0, 0)
+
+[node name="SlimeAnim" type="AnimationPlayer" parent="VisualsOffset/Visuals/SlimeBody" index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_pick6")
+}
+
+[node name="Behaviour" parent="." index="1"]
+script = ExtResource("5_70kxq")
+
+[node name="AnimQueue" parent="." index="5" node_paths=PackedStringArray("animPlayers")]
+animPlayers = [NodePath("../MovePlayer"), NodePath("../VisualsOffset/Visuals/SlimeBody/SlimeAnim"), NodePath("../FallPlayer")]

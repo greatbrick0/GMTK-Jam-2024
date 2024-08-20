@@ -9,10 +9,7 @@ func AttemptMove(dir: Vector2):
 		if(AttemptMerge(dir)):
 			get_parent().MergeWith(otherSlimeRef)
 		else:
-			if(AttemptMerge(dir)):
-				get_parent().MergeWith(otherSlimeRef)
-			else:
-				AttemptBreak(dir)
+			AttemptBreak(dir)
 			$"../AnimQueue".AddMoveToQueue(dir, "Bump", 0.0)
 	
 	var fallDist: int = get_parent().DropHeightLayer()
