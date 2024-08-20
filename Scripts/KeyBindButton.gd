@@ -6,4 +6,5 @@ func _ready():
 	self.pressed.connect(ActivateBind)
 
 func ActivateBind():
+	print(bind)
 	Input.action_press(bind)

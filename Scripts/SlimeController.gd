@@ -8,10 +8,14 @@ var playerLost: bool = false
 
 func _process(delta):
 	if(Input.is_action_just_pressed("Retry")):
+		for ii in get_children():
+			ii.queue_free()
 		slimeList.clear()
 		playerLost = false
 		get_tree().reload_current_scene()
 	if(Input.is_action_just_pressed("BackToMenu")):
+		for ii in get_children():
+			ii.queue_free()
 		slimeList.clear()
 		playerLost = false
 		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
@@ -30,10 +34,7 @@ func UnselectAll():
 func RemoveSlime(slime: Slime, newSlime: bool = false):
 	slimeList.erase(slime)
 	if(!newSlime):
-		playerLost = true
-		var popUp = restartPopUp.instantiate()
-		add_child(popUp)
-		popUp.get_node("AnimationPlayer").play("SlideUp")
+		Lose()
 
 func CheckForVictory():
 	if(slimeList.size() <= 0):
@@ -42,3 +43,9 @@ func CheckForVictory():
 		if(!ii.inGoal):
 			return
 	print("victory")
+
+func Lose():
+	playerLost = true
+	var popUp = restartPopUp.instantiate()
+	add_child(popUp)
+	popUp.get_node("AnimationPlayer").play("SlideUp")
