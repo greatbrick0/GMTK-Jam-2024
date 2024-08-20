@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://dedfpfcoujkyu"]
 
 [ext_resource type="Theme" uid="uid://c0yn4it21qjdo" path="res://BaseSlimeTheme.tres" id="1_188e2"]
-[ext_resource type="Texture2D" uid="uid://cv3sebomebjs2" path="res://Art/attempt1BG.png" id="1_b1wyf"]
 [ext_resource type="Script" path="res://Scripts/PlayTestButton.gd" id="1_qjvn6"]
+[ext_resource type="Texture2D" uid="uid://cxpanx6yvhr8u" path="res://Art/attempt2BG.png" id="1_vxx8y"]
 [ext_resource type="PackedScene" uid="uid://vvc5yfc4g37l" path="res://Scenes/Levels/level_1.tscn" id="2_486bp"]
 [ext_resource type="PackedScene" uid="uid://5tndv6eqpk0v" path="res://Scenes/Levels/level_2.tscn" id="3_8ge8w"]
 [ext_resource type="PackedScene" uid="uid://cav2x3v1hf7eb" path="res://Scenes/Levels/verticality.tscn" id="3_8xp6y"]
@@ -23,9 +23,9 @@ grow_vertical = 2
 color = Color(0.518558, 0.824219, 0.508698, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(641.5, 360)
-scale = Vector2(10.0234, 11.25)
-texture = ExtResource("1_b1wyf")
+position = Vector2(640.5, 361.5)
+scale = Vector2(3.33594, 3.75521)
+texture = ExtResource("1_vxx8y")
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
