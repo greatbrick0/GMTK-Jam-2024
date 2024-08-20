@@ -1,6 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqj8j2c77h0ab"]
+[gd_scene load_steps=9 format=3 uid="uid://dqj8j2c77h0ab"]
 
 [ext_resource type="Script" path="res://Scripts/HudManager.gd" id="1_3gddb"]
+[ext_resource type="AudioStream" uid="uid://ydo2ue56obva" path="res://Sounds/Effects/Win1.wav" id="2_aw2gc"]
+[ext_resource type="Theme" uid="uid://c0yn4it21qjdo" path="res://BaseSlimeTheme.tres" id="2_ek233"]
+[ext_resource type="Script" path="res://Scripts/KeyBindButton.gd" id="3_oa2ye"]
 
 [sub_resource type="Animation" id="Animation_w2smm"]
 resource_name = "FadeIn"
@@ -68,6 +71,115 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="ControlButtons" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_top = 40.0
+offset_right = -40.0
+offset_bottom = 640.0
+grow_horizontal = 0
+theme_override_constants/separation = 30
+
+[node name="Button1" type="Button" parent="Control/ControlButtons"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("2_ek233")
+text = "1"
+script = ExtResource("3_oa2ye")
+bind = "ControlSlime1"
+
+[node name="Button2" type="Button" parent="Control/ControlButtons"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("2_ek233")
+text = "2"
+script = ExtResource("3_oa2ye")
+bind = "ControlSlime2"
+
+[node name="Button3" type="Button" parent="Control/ControlButtons"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("2_ek233")
+text = "3
+"
+script = ExtResource("3_oa2ye")
+bind = "ControlSlime3"
+
+[node name="Button4" type="Button" parent="Control/ControlButtons"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("2_ek233")
+text = "4
+"
+script = ExtResource("3_oa2ye")
+bind = "ControlSlime4"
+
+[node name="Button5" type="Button" parent="Control/ControlButtons"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("2_ek233")
+text = "5
+"
+script = ExtResource("3_oa2ye")
+bind = "ControlSlime5"
+
+[node name="Button6" type="Button" parent="Control/ControlButtons"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("2_ek233")
+text = "6
+"
+script = ExtResource("3_oa2ye")
+bind = "ControlSlime6"
+
+[node name="Button7" type="Button" parent="Control/ControlButtons"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("2_ek233")
+text = "7"
+script = ExtResource("3_oa2ye")
+bind = "ControlSlime7"
+
+[node name="Button8" type="Button" parent="Control/ControlButtons"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("2_ek233")
+text = "8
+"
+script = ExtResource("3_oa2ye")
+bind = "ControlSlime8"
+
+[node name="Button9" type="Button" parent="Control/ControlButtons"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("2_ek233")
+text = "9
+"
+script = ExtResource("3_oa2ye")
+bind = "ControlSlime9"
+
+[node name="Button10" type="Button" parent="Control/ControlButtons"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("2_ek233")
+text = "0
+"
+script = ExtResource("3_oa2ye")
+bind = "ControlSlime0"
+
 [node name="FadeRect" type="ColorRect" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
@@ -82,3 +194,6 @@ color = Color(0, 0, 0, 0)
 libraries = {
 "": SubResource("AnimationLibrary_tx7lr")
 }
+
+[node name="WinSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_aw2gc")
