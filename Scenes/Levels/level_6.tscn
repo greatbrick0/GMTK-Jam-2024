@@ -90,9 +90,9 @@ tilePosition = Vector2i(-2, -5)
 visualsType = 1
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -0.5, 18, 19)
-current = true
-fov = 20.0
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -0.5, 13, 13)
+fov = 25.0
+near = 10.0
 far = 50.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
