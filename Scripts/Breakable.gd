@@ -36,10 +36,10 @@ func DropHeightLayer() -> int:
 	return distance
 
 func Break():
+	get_parent().RemoveTileScene(self)
 	await get_tree().create_timer(0.2).timeout
 	$Visuals.visible = false
 	PlayBreakSound()
-	get_parent().RemoveTileScene(self)
 
 func PlayBreakSound():
 	$BreakSound.stream = breakSounds.pick_random()

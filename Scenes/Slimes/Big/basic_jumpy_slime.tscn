@@ -20,6 +20,7 @@ _data = {
 slimeName = 0
 
 [node name="SlimeBody" parent="VisualsOffset/Visuals" index="0" instance=ExtResource("2_hju81")]
+transform = Transform3D(2.5, 0, 0, 0, 2, 0, 0, 0, 2.5, 0, 0, 0)
 
 [node name="SlimeAnim" type="AnimationPlayer" parent="VisualsOffset/Visuals/SlimeBody" index="1"]
 libraries = {
