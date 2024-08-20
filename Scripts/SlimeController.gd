@@ -44,11 +44,11 @@ func CheckForVictory() -> bool:
 	Win()
 	return true
 
-func ExitScene():
+func ExitScene(clearWinScene: bool = true):
 	slimeList.clear()
 	playerLost = false
 	playerWon = false
-	winScene = null
+	if(clearWinScene): winScene = null
 	await HudManager.FadeOut()
 	for ii in get_children():
 		ii.queue_free()
@@ -67,7 +67,7 @@ func Win():
 	popUp.get_node("AnimationPlayer").play(["Win1", "Win2", "Win3"].pick_random())
 	HudManager.PlayWinSound()
 	await get_tree().create_timer(2.0).timeout
-	await ExitScene()
+	await ExitScene(false)
 	if(winScene != null):
 		get_tree().change_scene_to_packed(winScene)
 	else:
