@@ -44,7 +44,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 4)
 init = true
 heightLayer = 2
 tilePosition = Vector2i(2, 4)
-inControl = true
 
 [node name="TileMap" type="TileMap" parent="Level"]
 tile_set = SubResource("TileSet_p0oox")
