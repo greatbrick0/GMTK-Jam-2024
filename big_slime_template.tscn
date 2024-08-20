@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://wyd1dfc6vwf5" path="res://Scenes/Slimes/Big/big_slime_template.tscn" id="1_nenyl"]
 
 [node name="BigSlimeTemplate" instance=ExtResource("1_nenyl")]
+slimeName = 0
 
 [node name="AnimQueue" parent="." index="5" node_paths=PackedStringArray("animPlayers")]
 animPlayers = [NodePath("../MovePlayer"), NodePath(""), NodePath("../FallPlayer")]

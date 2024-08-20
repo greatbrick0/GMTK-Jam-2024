@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://d21gh5rk5vidc"]
+[gd_scene load_steps=7 format=3 uid="uid://d0pveqs7jutte"]
 
-[ext_resource type="PackedScene" uid="uid://wyd1dfc6vwf5" path="res://Scenes/Slimes/Big/big_slime_template.tscn" id="1_boi18"]
-[ext_resource type="PackedScene" uid="uid://qgeo7nhbj6xx" path="res://Art/Models/Slimes/GreenSlimeNoAnim1.glb" id="5_vxs60"]
-[ext_resource type="Animation" uid="uid://nidgk46gx767" path="res://Art/Animations/Green_Idle.res" id="6_s4mur"]
-[ext_resource type="Animation" uid="uid://d30rjntrrlo2h" path="res://Art/Animations/Green_Move1.res" id="7_d2uid"]
+[ext_resource type="PackedScene" uid="uid://ud251q7yst0o" path="res://Scenes/Slimes/Small/small_slime_template.tscn" id="1_2y27f"]
+[ext_resource type="PackedScene" uid="uid://qgeo7nhbj6xx" path="res://Art/Models/Slimes/GreenSlimeNoAnim1.glb" id="5_4er81"]
+[ext_resource type="Animation" uid="uid://nidgk46gx767" path="res://Art/Animations/Green_Idle.res" id="6_v0207"]
+[ext_resource type="Animation" uid="uid://d30rjntrrlo2h" path="res://Art/Animations/Green_Move1.res" id="7_c6rar"]
 
-[sub_resource type="Animation" id="Animation_ke83s"]
+[sub_resource type="Animation" id="Animation_08f65"]
 resource_name = "RESET"
 length = 0.833333
 tracks/0/type = "position_3d"
@@ -39,16 +39,14 @@ tracks/3/keys = PackedFloat32Array(0, 1, -0.000541125, 0.312286, 0.3753)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pick6"]
 _data = {
-"Green_Idle": ExtResource("6_s4mur"),
-"Green_Move1": ExtResource("7_d2uid"),
-"RESET": SubResource("Animation_ke83s")
+"Green_Idle": ExtResource("6_v0207"),
+"Green_Move1": ExtResource("7_c6rar"),
+"RESET": SubResource("Animation_08f65")
 }
 
-[node name="LargeBasicSlime" instance=ExtResource("1_boi18")]
-slimeName = 0
+[node name="BasicSlime" instance=ExtResource("1_2y27f")]
 
-[node name="SlimeBody" parent="VisualsOffset/Visuals" index="0" instance=ExtResource("5_vxs60")]
-transform = Transform3D(2.5, 0, 0, 0, 2, 0, 0, 0, 2.5, 0, 0, 0)
+[node name="SlimeBody" parent="VisualsOffset/Visuals" index="0" instance=ExtResource("5_4er81")]
 
 [node name="SlimeAnim" type="AnimationPlayer" parent="VisualsOffset/Visuals/SlimeBody" index="1"]
 libraries = {
