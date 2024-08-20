@@ -16,7 +16,7 @@ _data = {
 "RESET": SubResource("Animation_4hkjc")
 }
 
-[node name="BigSlimeTemplate" instance=ExtResource("1_mqn68")]
+[node name="LargeSlippySlime" instance=ExtResource("1_mqn68")]
 slimeName = 0
 
 [node name="SlimeBody" parent="VisualsOffset/Visuals" index="0" instance=ExtResource("2_xv4gp")]

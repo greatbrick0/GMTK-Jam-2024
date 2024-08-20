@@ -22,9 +22,9 @@ var isBig: bool
 
 const slimeComboMap: Dictionary = {
 	[1, 1]: "res://Scenes/Slimes/Big/large_basic_slime.tscn",
-	[1, 2]: "res://Scenes/Slimes/Big/large_slippy_slime.tscn",
+	[1, 2]: "res://Scenes/Slimes/Big/basic_slippy_slime.tscn",
 	[1, 3]: "res://Scenes/Slimes/Big/large_basic_slime.tscn",
-	[1, 4]: "res://Scenes/Slimes/Big/large_jumpy_slime.tscn",
+	[1, 4]: "res://Scenes/Slimes/Big/basic_jumpy_slime.tscn",
 	[1, 5]: "res://Scenes/Slimes/Big/large_basic_slime.tscn",
 	[2, 2]: "res://Scenes/Slimes/Big/large_slippy_slime.tscn",
 	[2, 3]: "res://Scenes/Slimes/Big/large_basic_slime.tscn",

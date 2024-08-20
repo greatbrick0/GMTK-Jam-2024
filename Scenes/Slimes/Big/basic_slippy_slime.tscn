@@ -1,0 +1,34 @@
+[gd_scene load_steps=8 format=3 uid="uid://b445rtpijb7ri"]
+
+[ext_resource type="PackedScene" uid="uid://wyd1dfc6vwf5" path="res://Scenes/Slimes/Big/big_slime_template.tscn" id="1_8hg1o"]
+[ext_resource type="PackedScene" uid="uid://cstj4jiwovpch" path="res://Art/Models/Slimes/Big/BigGBSlime.glb" id="2_o8hu1"]
+[ext_resource type="Animation" uid="uid://nidgk46gx767" path="res://Art/Animations/Green_Idle.res" id="3_jov26"]
+[ext_resource type="Animation" uid="uid://d30rjntrrlo2h" path="res://Art/Animations/Green_Move1.res" id="4_vutaj"]
+[ext_resource type="Script" path="res://Scripts/Slimes/slippy_slime.gd" id="5_0fn2q"]
+
+[sub_resource type="Animation" id="Animation_4hkjc"]
+resource_name = "RESET"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i7qwd"]
+_data = {
+"Green_Idle": ExtResource("3_jov26"),
+"Green_Move1": ExtResource("4_vutaj"),
+"RESET": SubResource("Animation_4hkjc")
+}
+
+[node name="BasicSlippySlime" instance=ExtResource("1_8hg1o")]
+slimeName = 0
+
+[node name="BigGBSlime" parent="VisualsOffset/Visuals" index="0" instance=ExtResource("2_o8hu1")]
+transform = Transform3D(2.5, 0, 0, 0, 2, 0, 0, 0, 2.5, 0, 0, 0)
+
+[node name="SlimeAnim" type="AnimationPlayer" parent="VisualsOffset/Visuals/BigGBSlime" index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_i7qwd")
+}
+
+[node name="Behaviour" parent="." index="1"]
+script = ExtResource("5_0fn2q")
+
+[node name="AnimQueue" parent="." index="5" node_paths=PackedStringArray("animPlayers")]
+animPlayers = [NodePath("../MovePlayer"), NodePath("../VisualsOffset/Visuals/BigGBSlime/SlimeAnim"), NodePath("../FallPlayer")]
