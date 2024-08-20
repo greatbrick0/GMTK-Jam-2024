@@ -25,7 +25,7 @@ custom_data_layer_0/name = "GroundType"
 custom_data_layer_0/type = 4
 sources/1 = SubResource("TileSetAtlasSource_78i1y")
 
-[node name="Level1" type="Node3D"]
+[node name="Level2" type="Node3D"]
 
 [node name="Level" type="Node3D" parent="."]
 script = ExtResource("1_jbn6u")

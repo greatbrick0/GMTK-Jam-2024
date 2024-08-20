@@ -1,6 +1,7 @@
 extends Node
 
 const restartPopUp: PackedScene = preload("res://Scenes/restart_pop.tscn")
+const victoryPopUp: PackedScene = preload("res://Scenes/victory_pop.tscn")
 const keyOrder: Array[String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
 var slimeList: Array[Slime]
@@ -44,13 +45,13 @@ func CheckForVictory() -> bool:
 	return true
 
 func ExitScene():
-	for ii in get_children():
-		ii.queue_free()
 	slimeList.clear()
 	playerLost = false
 	playerWon = false
 	winScene = null
 	await HudManager.FadeOut()
+	for ii in get_children():
+		ii.queue_free()
 
 func Lose():
 	playerLost = true
@@ -61,8 +62,11 @@ func Lose():
 func Win():
 	playerWon = true
 	UnselectAll()
+	var popUp = victoryPopUp.instantiate()
+	add_child(popUp)
+	popUp.get_node("AnimationPlayer").play(["Win1", "Win2", "Win3"].pick_random())
 	HudManager.PlayWinSound()
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(2.0).timeout
 	await ExitScene()
 	if(winScene != null):
 		get_tree().change_scene_to_packed(winScene)

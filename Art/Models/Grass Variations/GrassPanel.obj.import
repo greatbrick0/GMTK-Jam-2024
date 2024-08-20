@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://dkjpxv3l7hrr0"
-path="res://.godot/imported/grassPanel.obj-16f370fed6a05797bd02e3eee6fc7443.mesh"
+path="res://.godot/imported/GrassPanel.obj-e2400fc442d8f7697b19c5f9f67b7bcf.mesh"
 
 [deps]
 
-files=["res://.godot/imported/grassPanel.obj-16f370fed6a05797bd02e3eee6fc7443.mesh"]
+files=["res://.godot/imported/GrassPanel.obj-e2400fc442d8f7697b19c5f9f67b7bcf.mesh"]
 
-source_file="res://Art/Models/Grass Variations/grassPanel.obj"
-dest_files=["res://.godot/imported/grassPanel.obj-16f370fed6a05797bd02e3eee6fc7443.mesh", "res://.godot/imported/grassPanel.obj-16f370fed6a05797bd02e3eee6fc7443.mesh"]
+source_file="res://Art/Models/Grass Variations/GrassPanel.obj"
+dest_files=["res://.godot/imported/GrassPanel.obj-e2400fc442d8f7697b19c5f9f67b7bcf.mesh", "res://.godot/imported/GrassPanel.obj-e2400fc442d8f7697b19c5f9f67b7bcf.mesh"]
 
 [params]
 
