@@ -45,13 +45,13 @@ func CheckForVictory() -> bool:
 	return true
 
 func ExitScene():
-	for ii in get_children():
-		ii.queue_free()
 	slimeList.clear()
 	playerLost = false
 	playerWon = false
 	winScene = null
 	await HudManager.FadeOut()
+	for ii in get_children():
+		ii.queue_free()
 
 func Lose():
 	playerLost = true
