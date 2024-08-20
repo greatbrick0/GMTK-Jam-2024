@@ -9,7 +9,10 @@ func AttemptMove(dir: Vector2):
 		if(AttemptMerge(dir)):
 			get_parent().MergeWith(otherSlimeRef)
 		else:
-			AttemptBreak(dir)
+			if(AttemptMerge(dir)):
+				get_parent().MergeWith(otherSlimeRef)
+			else:
+				AttemptBreak(dir)
 			$"../AnimQueue".AddMoveToQueue(dir, "Bump", 0.0)
 	
 	var fallDist: int = get_parent().DropHeightLayer()
@@ -28,6 +31,5 @@ func AttemptBreak(dir: Vector2i):
 		breakTiles = [dir]
 		
 	for ii in breakTiles:
-		print(get_parent().CheckTile(ii))
 		if(get_parent().CheckTile(ii) == "Box"):
 			get_parent().GetTileScene(ii, 0).Break()
