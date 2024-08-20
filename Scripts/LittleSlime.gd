@@ -1,8 +1,6 @@
 extends Slime
 class_name LittleSlime
 
-@export var fallSounds: Array[AudioStream]
-
 func _ready():
 	if(init): SlimeInit()
 
@@ -78,8 +76,6 @@ func Die():
 	isDead = true
 	get_parent().RemoveTileScene(self)
 	SlimeController.RemoveSlime(self)
-	$Sounds/FallSound.stream = fallSounds.pick_random()
-	$Sounds/FallSound.play()
 
 func MergeWith(otherSlime: LittleSlime):
 	inControl = false

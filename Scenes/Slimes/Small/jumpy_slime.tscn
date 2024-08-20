@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dq4smmbp1k74c"]
+[gd_scene load_steps=39 format=3 uid="uid://dq4smmbp1k74c"]
 
 [ext_resource type="Script" path="res://Scripts/LittleSlime.gd" id="1_jb6l8"]
 [ext_resource type="AudioStream" uid="uid://cltc76krufxiy" path="res://Sounds/Effects/Falling1.wav" id="2_kjm1l"]
@@ -8,8 +8,15 @@
 [ext_resource type="PackedScene" uid="uid://c5p3mw3jfwlhr" path="res://Art/Models/Slimes/YellowExport1.glb" id="5_f3n5m"]
 [ext_resource type="Animation" uid="uid://nidgk46gx767" path="res://Art/Animations/Green_Idle.res" id="6_dq3bn"]
 [ext_resource type="PackedScene" uid="uid://himskgliij4c" path="res://Scenes/control_ring.tscn" id="6_tij5k"]
+[ext_resource type="Script" path="res://Scripts/SlimeVoice.gd" id="7_8cu01"]
 [ext_resource type="Animation" uid="uid://d30rjntrrlo2h" path="res://Art/Animations/Green_Move1.res" id="7_dh4ew"]
 [ext_resource type="Script" path="res://Scripts/AnimQueue.gd" id="10_1f7jd"]
+[ext_resource type="AudioStream" uid="uid://caaaeriw1k1km" path="res://Sounds/Effects/Slime1.wav" id="11_kkijp"]
+[ext_resource type="AudioStream" uid="uid://d1plngytpehg0" path="res://Sounds/Effects/Slime2.wav" id="12_xcgli"]
+[ext_resource type="AudioStream" uid="uid://dgis66rfn0ht0" path="res://Sounds/Effects/Slime3.wav" id="13_t2378"]
+[ext_resource type="AudioStream" uid="uid://b1yjekkosklik" path="res://Sounds/Effects/Slime4.wav" id="14_c1qsv"]
+[ext_resource type="AudioStream" uid="uid://bhyl7xrauw2uy" path="res://Sounds/Effects/Slime5.wav" id="15_jkj7r"]
+[ext_resource type="AudioStream" uid="uid://dvqi0t1mqo70u" path="res://Sounds/Effects/Slime6.wav" id="16_xa1jn"]
 
 [sub_resource type="Animation" id="Animation_ho4g2"]
 resource_name = "RESET"
@@ -129,6 +136,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, -1), Vector3(0, 0, 0)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sounds")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayMoveSound"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_xuuho"]
 resource_name = "MoveLeft"
@@ -144,6 +165,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(-2, 1),
 "update": 0,
 "values": [Vector3(1, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sounds")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayMoveSound"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_kxm8c"]
@@ -161,6 +196,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(-1, 0, 0), Vector3(0, 0, 0)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sounds")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayMoveSound"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_ec0ti"]
 resource_name = "MoveUp"
@@ -177,8 +226,23 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 1), Vector3(0, 0, 0)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sounds")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayMoveSound"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_cdhy4"]
+resource_name = "RESET"
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -221,6 +285,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 1, 0), Vector3(0, 0, 0)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sounds")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayFallSound"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_2kdcl"]
 resource_name = "Fall2"
@@ -236,6 +314,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(4, 1),
 "update": 0,
 "values": [Vector3(0, 2, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sounds")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayFallSound"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_nnrax"]
@@ -253,6 +345,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 3, 0), Vector3(0, 0, 0)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sounds")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayFallSound"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_3kjub"]
 resource_name = "Fall4"
@@ -269,6 +375,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 4, 0), Vector3(0, 0, 0)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sounds")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayFallSound"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_03txh"]
 resource_name = "Fall5"
@@ -284,6 +404,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(4, 1),
 "update": 0,
 "values": [Vector3(0, 5, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sounds")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayFallSound"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_hvl1y"]
@@ -348,7 +482,6 @@ _data = {
 
 [node name="JumpySlime" type="Node3D"]
 script = ExtResource("1_jb6l8")
-fallSounds = Array[AudioStream]([ExtResource("2_kjm1l"), ExtResource("3_c2eq3"), ExtResource("4_klvsa")])
 slimeName = 4
 
 [node name="VisualsOffset" type="Node3D" parent="."]
@@ -369,9 +502,16 @@ visible = false
 script = ExtResource("3_w1k37")
 
 [node name="Sounds" type="Node" parent="."]
+script = ExtResource("7_8cu01")
+fallSounds = Array[AudioStream]([ExtResource("2_kjm1l"), ExtResource("3_c2eq3"), ExtResource("4_klvsa")])
+moveSounds = Array[AudioStream]([ExtResource("11_kkijp"), ExtResource("12_xcgli"), ExtResource("13_t2378"), ExtResource("14_c1qsv"), ExtResource("15_jkj7r"), ExtResource("16_xa1jn")])
 
 [node name="FallSound" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("2_kjm1l")
+
+[node name="MoveSound" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("2_kjm1l")
+volume_db = -6.0
 
 [node name="MovePlayer" type="AnimationPlayer" parent="."]
 libraries = {
