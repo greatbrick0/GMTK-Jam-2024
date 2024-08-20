@@ -1,34 +1,33 @@
-[gd_scene load_steps=8 format=3 uid="uid://vhhjfp1lutym"]
+[gd_scene load_steps=8 format=3 uid="uid://5f7ru11cynm4"]
 
 [ext_resource type="PackedScene" uid="uid://wyd1dfc6vwf5" path="res://Scenes/Slimes/Big/big_slime_template.tscn" id="1_0y6f7"]
-[ext_resource type="PackedScene" uid="uid://yg008ytoyc35" path="res://Art/Models/Slimes/Big/YGBigSlime.glb" id="2_4eg06"]
+[ext_resource type="PackedScene" uid="uid://k4wyenvtw4cb" path="res://Art/Models/BigYG.glb" id="2_hju81"]
 [ext_resource type="Animation" uid="uid://nidgk46gx767" path="res://Art/Animations/Green_Idle.res" id="3_lytdl"]
 [ext_resource type="Animation" uid="uid://d30rjntrrlo2h" path="res://Art/Animations/Green_Move1.res" id="4_o2hnq"]
 [ext_resource type="Script" path="res://Scripts/Slimes/jumpy_slime.gd" id="5_1ljkf"]
 
-[sub_resource type="Animation" id="Animation_mrwhn"]
+[sub_resource type="Animation" id="Animation_pqgnu"]
 resource_name = "RESET"
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_1pq5s"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j0trn"]
 _data = {
 "Green_Idle": ExtResource("3_lytdl"),
 "Green_Move1": ExtResource("4_o2hnq"),
-"RESET": SubResource("Animation_mrwhn")
+"RESET": SubResource("Animation_pqgnu")
 }
 
 [node name="BasicJumpySlime" instance=ExtResource("1_0y6f7")]
 slimeName = 0
 
-[node name="YGBigSlime" parent="VisualsOffset/Visuals" index="0" instance=ExtResource("2_4eg06")]
-transform = Transform3D(2.5, 0, 0, 0, 2, 0, 0, 0, 2.5, 0, 0, 0)
+[node name="SlimeBody" parent="VisualsOffset/Visuals" index="0" instance=ExtResource("2_hju81")]
 
-[node name="SlimeAnim" type="AnimationPlayer" parent="VisualsOffset/Visuals/YGBigSlime" index="2"]
+[node name="SlimeAnim" type="AnimationPlayer" parent="VisualsOffset/Visuals/SlimeBody" index="1"]
 libraries = {
-"": SubResource("AnimationLibrary_1pq5s")
+"": SubResource("AnimationLibrary_j0trn")
 }
 
 [node name="Behaviour" parent="." index="1"]
 script = ExtResource("5_1ljkf")
 
 [node name="AnimQueue" parent="." index="5" node_paths=PackedStringArray("animPlayers")]
-animPlayers = [NodePath("../MovePlayer"), NodePath("../VisualsOffset/Visuals/YGBigSlime/SlimeAnim"), NodePath("../FallPlayer")]
+animPlayers = [NodePath("../MovePlayer"), NodePath("../VisualsOffset/Visuals/SlimeBody/SlimeAnim"), NodePath("../FallPlayer")]

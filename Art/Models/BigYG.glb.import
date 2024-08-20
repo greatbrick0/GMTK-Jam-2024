@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://yg008ytoyc35"
-path="res://.godot/imported/YGBigSlime.glb-34df7ff6fe040faa5db63cee9ae33361.scn"
+uid="uid://k4wyenvtw4cb"
+path="res://.godot/imported/BigYG.glb-70c2185dd5fab4b623642ddc9f181ae8.scn"
 
 [deps]
 
-source_file="res://Art/Models/Slimes/Big/YGBigSlime.glb"
-dest_files=["res://.godot/imported/YGBigSlime.glb-34df7ff6fe040faa5db63cee9ae33361.scn"]
+source_file="res://Art/Models/BigYG.glb"
+dest_files=["res://.godot/imported/BigYG.glb-70c2185dd5fab4b623642ddc9f181ae8.scn"]
 
 [params]
 

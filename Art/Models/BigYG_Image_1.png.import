@@ -2,23 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://usubnyskk0te"
-path="res://.godot/imported/YGBigSlime_Image_0.png-30e2b937619b43a169ebf40774f86747.ctex"
+uid="uid://cbjwbry6ngdg6"
+path.s3tc="res://.godot/imported/BigYG_Image_1.png-b534463f6058301bb79ffd3fa7326216.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
-"md5": "5807a014341260bd100277394a2374d0"
+"md5": "875cc9cd72913f1e4e551f240569aa20"
 }
 
 [deps]
 
-source_file="res://Art/Models/Slimes/Big/YGBigSlime_Image_0.png"
-dest_files=["res://.godot/imported/YGBigSlime_Image_0.png-30e2b937619b43a169ebf40774f86747.ctex"]
+source_file="res://Art/Models/BigYG_Image_1.png"
+dest_files=["res://.godot/imported/BigYG_Image_1.png-b534463f6058301bb79ffd3fa7326216.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
