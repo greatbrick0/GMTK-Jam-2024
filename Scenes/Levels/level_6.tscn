@@ -37,7 +37,6 @@ script = ExtResource("1_ec62a")
 [node name="JumpySlime" parent="Level" instance=ExtResource("2_vf2fk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -4)
 init = true
-slimeName = 3
 tilePosition = Vector2i(-5, -4)
 inControl = true
 

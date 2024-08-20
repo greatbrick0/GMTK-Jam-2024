@@ -59,15 +59,10 @@ inControl = true
 [node name="JumpySlime" parent="Level" instance=ExtResource("5_ijlca")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 3)
 init = true
-heightLayer = null
 tilePosition = Vector2i(-4, 3)
-inControl = null
 
 [node name="SlippySlime" parent="Level" instance=ExtResource("6_a1jx6")]
 init = true
-heightLayer = null
-tilePosition = null
-inControl = null
 
 [node name="AngrySlime" parent="Level" instance=ExtResource("7_jmcou")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)

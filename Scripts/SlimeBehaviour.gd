@@ -23,3 +23,17 @@ func AttemptMerge(dir: Vector2i) -> bool:
 	
 	otherSlimeRef = get_parent().GetTileScene(dir, 0)
 	return otherSlimeRef.CheckForExpand()
+
+func AttemptBreak(dir: Vector2i):
+	var perpDir: Vector2i = VectorTools.Perpendicular(dir)
+	perpDir = perpDir / perpDir.length()
+	
+	var breakTiles: Array[Vector2i]
+	if(get_parent().isBig):
+		breakTiles = [dir + dir + perpDir, dir + dir, dir + dir - perpDir]
+	else:
+		breakTiles = [dir]
+		
+	for ii in breakTiles:
+		if(get_parent().CheckTile(ii) == "Box"):
+			get_parent().GetTileScene(ii, 0).Break()
