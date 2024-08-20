@@ -54,6 +54,9 @@ func ChangeTiles(newPos: Vector2i):
 func GetTileScene(pos: Vector2i, y: int) -> Node3D:
 	return get_parent().ReferenceByPosition(tilePosition + pos, heightLayer + y)
 
+func CheckTile(dir: Vector2i) -> String:
+	return get_parent().ReadTile(tilePosition + dir, heightLayer)
+
 func ManageControl():
 	$VisualsOffset/Visuals/ControlRing.visible = inControl
 	

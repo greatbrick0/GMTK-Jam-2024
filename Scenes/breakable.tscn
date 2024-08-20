@@ -1,0 +1,22 @@
+[gd_scene load_steps=7 format=3 uid="uid://fkmv4k6e00me"]
+
+[ext_resource type="Script" path="res://Scripts/Breakable.gd" id="1_3kb4c"]
+[ext_resource type="AudioStream" uid="uid://b687nm43sqe73" path="res://Sounds/Effects/break1.wav" id="2_3thc3"]
+[ext_resource type="PackedScene" uid="uid://b4c8pk3nsx0rj" path="res://Art/Models/Barrel.glb" id="2_5xwsm"]
+[ext_resource type="PackedScene" uid="uid://dasqal1exv1gy" path="res://Art/Models/Box (2).glb" id="3_j0gj3"]
+[ext_resource type="AudioStream" uid="uid://chljy0pm2f32v" path="res://Sounds/Effects/break2.wav" id="3_tp004"]
+[ext_resource type="AudioStream" uid="uid://b6gtqjxxe3svv" path="res://Sounds/Effects/break3.wav" id="4_ye1by"]
+
+[node name="Breakable" type="Node3D"]
+script = ExtResource("1_3kb4c")
+breakSounds = Array[AudioStream]([ExtResource("2_3thc3"), ExtResource("3_tp004"), ExtResource("4_ye1by")])
+
+[node name="Visuals" type="Node3D" parent="."]
+
+[node name="Barrel" parent="Visuals" instance=ExtResource("2_5xwsm")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+
+[node name="Box (2)" parent="Visuals" instance=ExtResource("3_j0gj3")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+
+[node name="BreakSound" type="AudioStreamPlayer" parent="."]
