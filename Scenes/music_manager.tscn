@@ -25,6 +25,8 @@ autostart = true
 [node name="EnvSounds" type="AudioStreamPlayer" parent="."]
 
 [node name="EnvTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
 
 [connection signal="timeout" from="TrackTimer" to="." method="_on_track_timer_timeout"]
 [connection signal="timeout" from="EnvTimer" to="." method="_on_env_timer_timeout"]

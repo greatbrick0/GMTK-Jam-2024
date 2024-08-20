@@ -55,6 +55,7 @@ func ExitScene(clearWinScene: bool = true):
 
 func Lose():
 	playerLost = true
+	UnselectAll()
 	var popUp = restartPopUp.instantiate()
 	add_child(popUp)
 	popUp.get_node("AnimationPlayer").play("SlideUp")

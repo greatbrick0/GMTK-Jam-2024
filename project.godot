@@ -19,6 +19,7 @@ config/icon="res://Art/Images/GameIcon.png"
 
 SlimeController="*res://Scripts/SlimeController.gd"
 HudManager="*res://Scenes/HudManager.tscn"
+MusicManager="*res://Scenes/music_manager.tscn"
 
 [display]
 

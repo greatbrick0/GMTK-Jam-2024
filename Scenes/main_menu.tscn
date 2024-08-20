@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://dedfpfcoujkyu"]
+[gd_scene load_steps=16 format=3 uid="uid://dedfpfcoujkyu"]
 
 [ext_resource type="Theme" uid="uid://c0yn4it21qjdo" path="res://BaseSlimeTheme.tres" id="1_188e2"]
 [ext_resource type="Script" path="res://Scripts/PlayTestButton.gd" id="1_qjvn6"]
 [ext_resource type="Texture2D" uid="uid://cxpanx6yvhr8u" path="res://Art/attempt2BG.png" id="1_vxx8y"]
+[ext_resource type="PackedScene" uid="uid://vvc5yfc4g37l" path="res://Scenes/Levels/level_1.tscn" id="2_486bp"]
 [ext_resource type="PackedScene" uid="uid://5tndv6eqpk0v" path="res://Scenes/Levels/level_2.tscn" id="3_8ge8w"]
 [ext_resource type="PackedScene" uid="uid://citleqf55w342" path="res://Scenes/Levels/level_3.tscn" id="4_b3yp7"]
 [ext_resource type="PackedScene" uid="uid://ctruwfmj6um4r" path="res://Scenes/Levels/level_4.tscn" id="6_bcmdi"]
@@ -13,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bq6eidsbwuav3" path="res://Scenes/Levels/level_9.tscn" id="12_scslv"]
 [ext_resource type="PackedScene" uid="uid://cm38ngtiq6fb1" path="res://Scenes/Levels/level_10.tscn" id="13_j0k2l"]
 [ext_resource type="PackedScene" uid="uid://daw3w7hbbwocm" path="res://Scenes/Levels/level_11.tscn" id="14_qg1fy"]
-[ext_resource type="PackedScene" uid="uid://7o5mis1yai0y" path="res://Scenes/Levels/Sandbox level.tscn" id="14_yjcf5"]
+[ext_resource type="PackedScene" path="res://Scenes/Levels/Sandbox level.tscn" id="14_yjcf5"]
 
 [node name="MainMenu" type="Node2D"]
 
@@ -83,6 +84,7 @@ theme = ExtResource("1_188e2")
 theme_override_font_sizes/font_size = 23
 text = "level 1"
 script = ExtResource("1_qjvn6")
+newScene = ExtResource("2_486bp")
 
 [node name="Level2" type="Button" parent="CanvasLayer/Control/Panel/HBoxContainer"]
 custom_minimum_size = Vector2(150, 80)
