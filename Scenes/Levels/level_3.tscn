@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_k53uw"]
 [ext_resource type="Texture2D" uid="uid://dhhnp6x275thb" path="res://Art/Images/TileMapData.png" id="2_q1gc7"]
 [ext_resource type="MeshLibrary" uid="uid://cx761x71sw86k" path="res://Art/SurfaceTiles.tres" id="4_b10fi"]
-[ext_resource type="PackedScene" uid="uid://qshry7pjxhix" path="res://Scenes/Slimes/Small/slippy_slime2.tscn" id="4_rl77i"]
+[ext_resource type="PackedScene" uid="uid://3qvt8tbdyf4c" path="res://Scenes/Slimes/Small/slippy_slime.tscn" id="4_rl77i"]
 [ext_resource type="Environment" uid="uid://cs8septr0lst1" path="res://Environment1.tres" id="5_khb5r"]
 [ext_resource type="PackedScene" uid="uid://dj6hxxsdsus8q" path="res://Art/Models/basket.glb" id="5_q3jrq"]
 [ext_resource type="PackedScene" uid="uid://bcgpsusq5pemj" path="res://Art/Models/tree.glb" id="6_7ppiy"]

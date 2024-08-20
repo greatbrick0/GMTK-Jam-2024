@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://ccat3xqebdpbu"]
+[gd_scene load_steps=11 format=3 uid="uid://cm38ngtiq6fb1"]
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_kg6tn"]
-[ext_resource type="PackedScene" uid="uid://dq4smmbp1k74c" path="res://Scenes/Slimes/Small/jumpy_slime.tscn" id="2_g8x07"]
+[ext_resource type="PackedScene" uid="uid://d3o0cu7jma2tj" path="res://Scenes/Slimes/Small/jumpy_slime.tscn" id="2_g8x07"]
 [ext_resource type="Texture2D" uid="uid://dhhnp6x275thb" path="res://Art/Images/TileMapData.png" id="3_25n2j"]
 [ext_resource type="MeshLibrary" uid="uid://cx761x71sw86k" path="res://Art/SurfaceTiles.tres" id="4_rwda6"]
 [ext_resource type="Environment" uid="uid://cs8septr0lst1" path="res://Environment1.tres" id="5_mlerh"]
@@ -30,18 +30,19 @@ sources/1 = SubResource("TileSetAtlasSource_78i1y")
 [node name="Level" type="Node3D" parent="."]
 script = ExtResource("1_kg6tn")
 
-[node name="JumpySlime2" parent="Level" instance=ExtResource("2_g8x07")]
+[node name="JumpySlime3" parent="Level" instance=ExtResource("2_g8x07")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 1)
 init = true
 heightLayer = 2
 tilePosition = Vector2i(-1, 1)
 inControl = true
 
-[node name="JumpySlime" parent="Level" instance=ExtResource("2_g8x07")]
+[node name="JumpySlime4" parent="Level" instance=ExtResource("2_g8x07")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 4)
 init = true
 heightLayer = 2
 tilePosition = Vector2i(2, 4)
+inControl = true
 
 [node name="TileMap" type="TileMap" parent="Level"]
 tile_set = SubResource("TileSet_p0oox")

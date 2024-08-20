@@ -46,6 +46,7 @@ _data = {
 }
 
 [node name="JumpySlime" instance=ExtResource("1_nnyys")]
+slimeName = 4
 
 [node name="SlimeBody" parent="VisualsOffset/Visuals" index="0" instance=ExtResource("2_cerg4")]
 

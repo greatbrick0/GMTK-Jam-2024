@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_gn51c"]
 [ext_resource type="Texture2D" uid="uid://dhhnp6x275thb" path="res://Art/Images/TileMapData.png" id="3_s55c5"]
-[ext_resource type="PackedScene" uid="uid://dq4smmbp1k74c" path="res://Scenes/Slimes/Small/jumpy_slime2.tscn" id="4_73f1g"]
+[ext_resource type="PackedScene" uid="uid://d3o0cu7jma2tj" path="res://Scenes/Slimes/Small/jumpy_slime.tscn" id="4_73f1g"]
 [ext_resource type="Environment" uid="uid://cs8septr0lst1" path="res://Environment1.tres" id="5_3v0nl"]
 [ext_resource type="MeshLibrary" uid="uid://cx761x71sw86k" path="res://Art/SurfaceTiles.tres" id="5_aw43i"]
 [ext_resource type="PackedScene" uid="uid://cgh2tq17b0mg5" path="res://Art/Models/picnic.glb" id="7_bdy3l"]
