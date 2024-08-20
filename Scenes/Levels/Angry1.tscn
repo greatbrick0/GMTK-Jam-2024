@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_h3d6e"]
 [ext_resource type="PackedScene" uid="uid://dq4smmbp1k74c" path="res://Scenes/Slimes/Small/jumpy_slime.tscn" id="2_13f4n"]
-[ext_resource type="PackedScene" uid="uid://b5ke5fcwyf1lg" path="res://Scenes/Slimes/Small/basic_slime.tscn" id="3_q8vu8"]
+[ext_resource type="PackedScene" path="res://Scenes/Slimes/Small/angry_slime.tscn" id="2_jtbu6"]
 [ext_resource type="Texture2D" uid="uid://dhhnp6x275thb" path="res://Art/Images/TileMapData.png" id="4_ubbji"]
 [ext_resource type="MeshLibrary" uid="uid://cx761x71sw86k" path="res://Art/SurfaceTiles.tres" id="5_uvd5r"]
 [ext_resource type="Environment" uid="uid://cs8septr0lst1" path="res://Environment1.tres" id="6_4nr2v"]
@@ -40,7 +40,7 @@ slimeName = 3
 tilePosition = Vector2i(-5, -4)
 inControl = true
 
-[node name="BasicSlime" parent="Level" instance=ExtResource("3_q8vu8")]
+[node name="AngrySlime" parent="Level" instance=ExtResource("2_jtbu6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 1)
 init = true
 heightLayer = 2
