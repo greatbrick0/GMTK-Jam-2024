@@ -5,7 +5,10 @@ func AttemptMove(dir: Vector2):
 	if(didMove):
 		$"../AnimQueue".AddMoveToQueue(dir, "Move", 0.0)
 	else:
-		$"../AnimQueue".AddMoveToQueue(dir, "Bump", 0.0)
+		if(AttemptMerge(dir)):
+			get_parent().MergeWith(otherSlimeRef)
+		else:
+			$"../AnimQueue".AddMoveToQueue(dir, "Bump", 0.0)
 	
 	var ii: int = 1
 	while(didMove and get_parent().DropHeightLayer() == 0):
