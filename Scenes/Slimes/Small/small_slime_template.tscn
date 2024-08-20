@@ -1,0 +1,478 @@
+[gd_scene load_steps=34 format=3 uid="uid://ud251q7yst0o"]
+
+[ext_resource type="Script" path="res://Scripts/LittleSlime.gd" id="1_qgy5c"]
+[ext_resource type="PackedScene" uid="uid://himskgliij4c" path="res://Scenes/control_ring.tscn" id="5_gqp83"]
+[ext_resource type="Script" path="res://Scripts/Slimes/basic_slime.gd" id="6_8ef54"]
+[ext_resource type="Script" path="res://Scripts/SlimeVoice.gd" id="7_k3wii"]
+[ext_resource type="AudioStream" uid="uid://cltc76krufxiy" path="res://Sounds/Effects/Falling1.wav" id="8_udi5j"]
+[ext_resource type="AudioStream" uid="uid://bwqggsirgyvii" path="res://Sounds/Effects/Falling2.wav" id="9_vojju"]
+[ext_resource type="AudioStream" uid="uid://br212d5n4ley0" path="res://Sounds/Effects/Falling3.wav" id="10_wbtj1"]
+[ext_resource type="AudioStream" uid="uid://caaaeriw1k1km" path="res://Sounds/Effects/Slime1.wav" id="11_ijjn4"]
+[ext_resource type="AudioStream" uid="uid://d1plngytpehg0" path="res://Sounds/Effects/Slime2.wav" id="12_5k72f"]
+[ext_resource type="AudioStream" uid="uid://dgis66rfn0ht0" path="res://Sounds/Effects/Slime3.wav" id="13_gjs4f"]
+[ext_resource type="AudioStream" uid="uid://b1yjekkosklik" path="res://Sounds/Effects/Slime4.wav" id="14_08he3"]
+[ext_resource type="AudioStream" uid="uid://bhyl7xrauw2uy" path="res://Sounds/Effects/Slime5.wav" id="15_xdtai"]
+[ext_resource type="AudioStream" uid="uid://dvqi0t1mqo70u" path="res://Sounds/Effects/Slime6.wav" id="16_uw2m6"]
+[ext_resource type="Script" path="res://Scripts/AnimQueue.gd" id="17_lvkuu"]
+
+[sub_resource type="Animation" id="Animation_0j2np"]
+resource_name = "BumpDown"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(2, 0.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.3), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ocmht"]
+resource_name = "BumpLeft"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(2, 0.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.3, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_p5r66"]
+resource_name = "BumpRight"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(2, 0.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.3, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_urw7t"]
+resource_name = "BumpUp"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(2, 0.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.3), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hdh0i"]
+resource_name = "MoveDown"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector3(0, 0, -1), Vector3(0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sounds")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayMoveSound"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_xuuho"]
+resource_name = "MoveLeft"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector3(1, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sounds")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayMoveSound"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_kxm8c"]
+resource_name = "MoveRight"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector3(-1, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sounds")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayMoveSound"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ec0ti"]
+resource_name = "MoveUp"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector3(0, 0, 1), Vector3(0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sounds")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayMoveSound"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_cdhy4"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gyjkl"]
+_data = {
+"BumpDown": SubResource("Animation_0j2np"),
+"BumpLeft": SubResource("Animation_ocmht"),
+"BumpRight": SubResource("Animation_p5r66"),
+"BumpUp": SubResource("Animation_urw7t"),
+"MoveDown": SubResource("Animation_hdh0i"),
+"MoveLeft": SubResource("Animation_xuuho"),
+"MoveRight": SubResource("Animation_kxm8c"),
+"MoveUp": SubResource("Animation_ec0ti"),
+"RESET": SubResource("Animation_cdhy4")
+}
+
+[sub_resource type="Animation" id="Animation_bf0bn"]
+resource_name = "Fall1"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(4, 1),
+"update": 0,
+"values": [Vector3(0, 1, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sounds")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayFallSound"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_2kdcl"]
+resource_name = "Fall2"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(4, 1),
+"update": 0,
+"values": [Vector3(0, 2, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sounds")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayFallSound"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_nnrax"]
+resource_name = "Fall3"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(4, 1),
+"update": 0,
+"values": [Vector3(0, 3, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sounds")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayFallSound"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_3kjub"]
+resource_name = "Fall4"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(4, 1),
+"update": 0,
+"values": [Vector3(0, 4, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sounds")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayFallSound"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_03txh"]
+resource_name = "Fall5"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(4, 1),
+"update": 0,
+"values": [Vector3(0, 5, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sounds")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayFallSound"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_hvl1y"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qfomm"]
+resource_name = "Up1"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_72iyt"]
+resource_name = "Up2"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -2, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uccku"]
+_data = {
+"Fall1": SubResource("Animation_bf0bn"),
+"Fall2": SubResource("Animation_2kdcl"),
+"Fall3": SubResource("Animation_nnrax"),
+"Fall4": SubResource("Animation_3kjub"),
+"Fall5": SubResource("Animation_03txh"),
+"RESET": SubResource("Animation_hvl1y"),
+"Up1": SubResource("Animation_qfomm"),
+"Up2": SubResource("Animation_72iyt")
+}
+
+[node name="SmallSlimeTemplate" type="Node3D"]
+script = ExtResource("1_qgy5c")
+
+[node name="VisualsOffset" type="Node3D" parent="."]
+
+[node name="Visuals" type="Node3D" parent="VisualsOffset"]
+
+[node name="ControlRing" parent="VisualsOffset/Visuals" instance=ExtResource("5_gqp83")]
+visible = false
+
+[node name="Behaviour" type="Node" parent="."]
+script = ExtResource("6_8ef54")
+
+[node name="Sounds" type="Node" parent="."]
+script = ExtResource("7_k3wii")
+fallSounds = Array[AudioStream]([ExtResource("8_udi5j"), ExtResource("9_vojju"), ExtResource("10_wbtj1")])
+moveSounds = Array[AudioStream]([ExtResource("11_ijjn4"), ExtResource("12_5k72f"), ExtResource("13_gjs4f"), ExtResource("14_08he3"), ExtResource("15_xdtai"), ExtResource("16_uw2m6")])
+
+[node name="FallSound" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("8_udi5j")
+
+[node name="MoveSound" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("8_udi5j")
+volume_db = -6.0
+
+[node name="MovePlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gyjkl")
+}
+
+[node name="FallPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_uccku")
+}
+
+[node name="AnimQueue" type="Node" parent="." node_paths=PackedStringArray("animPlayers")]
+script = ExtResource("17_lvkuu")
+animPlayers = [NodePath("../MovePlayer"), NodePath(""), NodePath("../FallPlayer")]
