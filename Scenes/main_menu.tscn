@@ -1,11 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://dedfpfcoujkyu"]
+[gd_scene load_steps=15 format=3 uid="uid://dedfpfcoujkyu"]
 
 [ext_resource type="Theme" uid="uid://c0yn4it21qjdo" path="res://BaseSlimeTheme.tres" id="1_188e2"]
 [ext_resource type="Script" path="res://Scripts/PlayTestButton.gd" id="1_qjvn6"]
 [ext_resource type="Texture2D" uid="uid://cxpanx6yvhr8u" path="res://Art/attempt2BG.png" id="1_vxx8y"]
-[ext_resource type="PackedScene" uid="uid://vvc5yfc4g37l" path="res://Scenes/Levels/Sandbox.tscn" id="2_486bp"]
+[ext_resource type="PackedScene" uid="uid://vvc5yfc4g37l" path="res://Scenes/Levels/level_1.tscn" id="2_486bp"]
 [ext_resource type="PackedScene" uid="uid://5tndv6eqpk0v" path="res://Scenes/Levels/level_2.tscn" id="3_8ge8w"]
-[ext_resource type="PackedScene" uid="uid://cav2x3v1hf7eb" path="res://Scenes/Levels/level_1.tscn" id="3_8xp6y"]
 [ext_resource type="PackedScene" uid="uid://citleqf55w342" path="res://Scenes/Levels/level_3.tscn" id="4_b3yp7"]
 [ext_resource type="PackedScene" uid="uid://ctruwfmj6um4r" path="res://Scenes/Levels/level_4.tscn" id="6_bcmdi"]
 [ext_resource type="PackedScene" uid="uid://cgby12gddc17g" path="res://Scenes/Levels/level_5.tscn" id="8_au8aa"]
@@ -84,7 +83,7 @@ theme = ExtResource("1_188e2")
 theme_override_font_sizes/font_size = 23
 text = "level 1"
 script = ExtResource("1_qjvn6")
-newScene = ExtResource("3_8xp6y")
+newScene = ExtResource("2_486bp")
 
 [node name="Level2" type="Button" parent="CanvasLayer/Control/Panel/HBoxContainer"]
 custom_minimum_size = Vector2(150, 80)
@@ -261,14 +260,3 @@ theme_override_font_sizes/font_size = 23
 text = "level 11"
 script = ExtResource("1_qjvn6")
 newScene = ExtResource("14_qg1fy")
-
-[node name="Sandbox" type="Button" parent="CanvasLayer/Control/Panel3/HBoxContainer"]
-custom_minimum_size = Vector2(150, 80)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource("1_188e2")
-theme_override_font_sizes/font_size = 23
-text = "Sandbox"
-script = ExtResource("1_qjvn6")
-newScene = ExtResource("2_486bp")
