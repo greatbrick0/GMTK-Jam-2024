@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://vvc5yfc4g37l"]
+[gd_scene load_steps=13 format=3 uid="uid://vvc5yfc4g37l"]
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_jbn6u"]
 [ext_resource type="Texture2D" uid="uid://dhhnp6x275thb" path="res://Art/Images/TileMapData.png" id="2_f76gy"]
@@ -6,8 +6,10 @@
 [ext_resource type="MeshLibrary" uid="uid://cx761x71sw86k" path="res://Art/SurfaceTiles.tres" id="5_5lky0"]
 [ext_resource type="PackedScene" uid="uid://d3o0cu7jma2tj" path="res://Scenes/Slimes/Small/jumpy_slime.tscn" id="5_ijlca"]
 [ext_resource type="PackedScene" uid="uid://3qvt8tbdyf4c" path="res://Scenes/Slimes/Small/slippy_slime.tscn" id="6_a1jx6"]
+[ext_resource type="PackedScene" uid="uid://8k34jwmdrtkl" path="res://Scenes/Slimes/Small/angry_slime.tscn" id="7_jmcou"]
 [ext_resource type="Environment" uid="uid://cs8septr0lst1" path="res://Environment1.tres" id="7_lcrp3"]
 [ext_resource type="PackedScene" uid="uid://bcgpsusq5pemj" path="res://Art/Models/tree.glb" id="8_g1pf0"]
+[ext_resource type="PackedScene" uid="uid://fkmv4k6e00me" path="res://Scenes/breakable.tscn" id="10_lfs4k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_78i1y"]
 texture = ExtResource("2_f76gy")
@@ -66,6 +68,15 @@ init = true
 heightLayer = null
 tilePosition = null
 inControl = null
+
+[node name="AngrySlime" parent="Level" instance=ExtResource("7_jmcou")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+init = true
+tilePosition = Vector2i(1, 3)
+
+[node name="Breakable" parent="Level" instance=ExtResource("10_lfs4k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3)
+tilePosition = Vector2i(2, 3)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -0.5, 18, 19)

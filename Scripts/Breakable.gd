@@ -36,6 +36,7 @@ func DropHeightLayer() -> int:
 	return distance
 
 func Break():
+	await get_tree().create_timer(0.2).timeout
 	$Visuals.visible = false
 	PlayBreakSound()
 	get_parent().RemoveTileScene(self)
