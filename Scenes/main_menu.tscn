@@ -1,14 +1,20 @@
-[gd_scene load_steps=10 format=3 uid="uid://dedfpfcoujkyu"]
+[gd_scene load_steps=16 format=3 uid="uid://dedfpfcoujkyu"]
 
 [ext_resource type="Theme" uid="uid://c0yn4it21qjdo" path="res://BaseSlimeTheme.tres" id="1_188e2"]
 [ext_resource type="Script" path="res://Scripts/PlayTestButton.gd" id="1_qjvn6"]
 [ext_resource type="Texture2D" uid="uid://cxpanx6yvhr8u" path="res://Art/attempt2BG.png" id="1_vxx8y"]
-[ext_resource type="PackedScene" uid="uid://vvc5yfc4g37l" path="res://Scenes/Levels/level_1.tscn" id="2_486bp"]
+[ext_resource type="PackedScene" uid="uid://vvc5yfc4g37l" path="res://Scenes/Levels/Sandbox.tscn" id="2_486bp"]
 [ext_resource type="PackedScene" uid="uid://5tndv6eqpk0v" path="res://Scenes/Levels/level_2.tscn" id="3_8ge8w"]
-[ext_resource type="PackedScene" uid="uid://cav2x3v1hf7eb" path="res://Scenes/Levels/verticality.tscn" id="3_8xp6y"]
+[ext_resource type="PackedScene" uid="uid://cav2x3v1hf7eb" path="res://Scenes/Levels/level_1.tscn" id="3_8xp6y"]
 [ext_resource type="PackedScene" uid="uid://citleqf55w342" path="res://Scenes/Levels/level_3.tscn" id="4_b3yp7"]
-[ext_resource type="PackedScene" uid="uid://ctruwfmj6um4r" path="res://Scenes/Levels/merge.tscn" id="6_bcmdi"]
-[ext_resource type="PackedScene" uid="uid://cgby12gddc17g" path="res://Scenes/Levels/yellowGreen.tscn" id="8_au8aa"]
+[ext_resource type="PackedScene" uid="uid://ctruwfmj6um4r" path="res://Scenes/Levels/level_4.tscn" id="6_bcmdi"]
+[ext_resource type="PackedScene" uid="uid://cgby12gddc17g" path="res://Scenes/Levels/level_5.tscn" id="8_au8aa"]
+[ext_resource type="PackedScene" uid="uid://bkoobhbhdbbt5" path="res://Scenes/Levels/level_6.tscn" id="9_wihew"]
+[ext_resource type="PackedScene" uid="uid://bqvyx2wet2yu5" path="res://Scenes/Levels/level_7.tscn" id="10_h10rn"]
+[ext_resource type="PackedScene" uid="uid://di744jf0p7f10" path="res://Scenes/Levels/level_8.tscn" id="11_d3v75"]
+[ext_resource type="PackedScene" uid="uid://bq6eidsbwuav3" path="res://Scenes/Levels/level_9.tscn" id="12_scslv"]
+[ext_resource type="PackedScene" uid="uid://cm38ngtiq6fb1" path="res://Scenes/Levels/level_10.tscn" id="13_j0k2l"]
+[ext_resource type="PackedScene" uid="uid://daw3w7hbbwocm" path="res://Scenes/Levels/level_11.tscn" id="14_qg1fy"]
 
 [node name="MainMenu" type="Node2D"]
 
@@ -43,12 +49,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -480.0
-offset_top = -296.0
-offset_right = 480.0
-offset_bottom = -166.0
+offset_left = -353.0
+offset_top = -327.0
+offset_right = 407.0
+offset_bottom = -197.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.8, 0.8)
 theme = ExtResource("1_188e2")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/Panel"]
@@ -74,6 +81,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("1_188e2")
+theme_override_font_sizes/font_size = 23
 text = "level 1"
 script = ExtResource("1_qjvn6")
 newScene = ExtResource("3_8xp6y")
@@ -84,6 +92,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("1_188e2")
+theme_override_font_sizes/font_size = 23
 text = "level 2"
 script = ExtResource("1_qjvn6")
 newScene = ExtResource("3_8ge8w")
@@ -94,6 +103,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("1_188e2")
+theme_override_font_sizes/font_size = 23
 text = "level 3"
 script = ExtResource("1_qjvn6")
 newScene = ExtResource("4_b3yp7")
@@ -104,37 +114,161 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("1_188e2")
+theme_override_font_sizes/font_size = 23
 text = "level 4"
 script = ExtResource("1_qjvn6")
 newScene = ExtResource("6_bcmdi")
 
-[node name="Level5" type="Button" parent="CanvasLayer/Control/Panel/HBoxContainer"]
-custom_minimum_size = Vector2(150, 80)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource("1_188e2")
-text = "level 5"
-script = ExtResource("1_qjvn6")
-newScene = ExtResource("8_au8aa")
-
-[node name="TestLevel" type="Button" parent="CanvasLayer/Control"]
-custom_minimum_size = Vector2(150, 80)
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 313.0
-offset_top = -119.0
-offset_right = 463.0
-offset_bottom = -39.0
+offset_left = -353.0
+offset_top = -195.0
+offset_right = 407.0
+offset_bottom = -65.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+theme = ExtResource("1_188e2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -455.0
+offset_top = -40.0
+offset_right = 455.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(205, -10)
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Level5" type="Button" parent="CanvasLayer/Control/Panel2/HBoxContainer"]
+custom_minimum_size = Vector2(150, 80)
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("1_188e2")
-text = "Test Level"
+theme_override_font_sizes/font_size = 23
+text = "level 5"
+script = ExtResource("1_qjvn6")
+newScene = ExtResource("8_au8aa")
+
+[node name="Level6" type="Button" parent="CanvasLayer/Control/Panel2/HBoxContainer"]
+custom_minimum_size = Vector2(150, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_188e2")
+theme_override_font_sizes/font_size = 23
+text = "level 6"
+script = ExtResource("1_qjvn6")
+newScene = ExtResource("9_wihew")
+
+[node name="Level7" type="Button" parent="CanvasLayer/Control/Panel2/HBoxContainer"]
+custom_minimum_size = Vector2(150, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_188e2")
+theme_override_font_sizes/font_size = 23
+text = "level 7"
+script = ExtResource("1_qjvn6")
+newScene = ExtResource("10_h10rn")
+
+[node name="Level8" type="Button" parent="CanvasLayer/Control/Panel2/HBoxContainer"]
+custom_minimum_size = Vector2(150, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_188e2")
+theme_override_font_sizes/font_size = 23
+text = "level 8"
+script = ExtResource("1_qjvn6")
+newScene = ExtResource("11_d3v75")
+
+[node name="Panel3" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -353.0
+offset_top = -65.0
+offset_right = 407.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+theme = ExtResource("1_188e2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/Panel3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -455.0
+offset_top = -40.0
+offset_right = 455.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(205, -10)
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Level9" type="Button" parent="CanvasLayer/Control/Panel3/HBoxContainer"]
+custom_minimum_size = Vector2(150, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_188e2")
+theme_override_font_sizes/font_size = 23
+text = "level 9"
+script = ExtResource("1_qjvn6")
+newScene = ExtResource("12_scslv")
+
+[node name="Level10" type="Button" parent="CanvasLayer/Control/Panel3/HBoxContainer"]
+custom_minimum_size = Vector2(150, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_188e2")
+theme_override_font_sizes/font_size = 23
+text = "level 10"
+script = ExtResource("1_qjvn6")
+newScene = ExtResource("13_j0k2l")
+
+[node name="Level11" type="Button" parent="CanvasLayer/Control/Panel3/HBoxContainer"]
+custom_minimum_size = Vector2(150, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_188e2")
+theme_override_font_sizes/font_size = 23
+text = "level 11"
+script = ExtResource("1_qjvn6")
+newScene = ExtResource("14_qg1fy")
+
+[node name="Sandbox" type="Button" parent="CanvasLayer/Control/Panel3/HBoxContainer"]
+custom_minimum_size = Vector2(150, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_188e2")
+theme_override_font_sizes/font_size = 23
+text = "Sandbox"
 script = ExtResource("1_qjvn6")
 newScene = ExtResource("2_486bp")
