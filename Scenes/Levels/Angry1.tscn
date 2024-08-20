@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cylvky0xp0ubq"]
+[gd_scene load_steps=14 format=3 uid="uid://bn3gjpxiemqkt"]
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_h3d6e"]
 [ext_resource type="PackedScene" uid="uid://d3o0cu7jma2tj" path="res://Scenes/Slimes/Small/jumpy_slime.tscn" id="2_13f4n"]

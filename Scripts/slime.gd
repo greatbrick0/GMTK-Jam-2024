@@ -28,7 +28,7 @@ const slimeComboMap: Dictionary = {
 	[1, 5]: "res://Scenes/Slimes/Big/large_basic_slime.tscn",
 	[2, 2]: "res://Scenes/Slimes/Big/large_slippy_slime.tscn",
 	[2, 3]: "res://Scenes/Slimes/Big/large_basic_slime.tscn",
-	[2, 4]: "res://Scenes/Slimes/Big/large_basic_slime.tscn",
+	[2, 4]: "res://Scenes/Slimes/Big/jumpy_slippy_slime.tscn",
 	[2, 5]: "res://Scenes/Slimes/Big/large_basic_slime.tscn",
 	[3, 3]: "res://Scenes/Slimes/Big/large_basic_slime.tscn",
 	[3, 4]: "res://Scenes/Slimes/Big/large_basic_slime.tscn",

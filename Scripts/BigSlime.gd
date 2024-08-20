@@ -40,6 +40,7 @@ func MoveTiles(dir: Vector2i):
 
 func CheckFacingTiles(dir: Vector2i) -> Array[String]:
 	var perpDir: Vector2i = VectorTools.Perpendicular(dir)
+	perpDir = perpDir / perpDir.length()
 	var output: Array[String] = []
 	output.append(get_parent().ReadTile(tilePosition + dir + dir, heightLayer))
 	output.append(get_parent().ReadTile(tilePosition + dir + dir + perpDir, heightLayer))
