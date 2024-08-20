@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=14 format=3 uid="uid://bkoobhbhdbbt5"]
+=======
+[gd_scene load_steps=14 format=3 uid="uid://bn3gjpxiemqkt"]
+>>>>>>> 094331196082d9f67fae74f0013ad0e5e82bcd11
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_h3d6e"]
 [ext_resource type="PackedScene" uid="uid://dq4smmbp1k74c" path="res://Scenes/Slimes/Small/jumpy_slime.tscn" id="2_13f4n"]

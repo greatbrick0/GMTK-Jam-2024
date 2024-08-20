@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://bto05s3pjme52"]
+
+[ext_resource type="PackedScene" uid="uid://wyd1dfc6vwf5" path="res://Scenes/Slimes/Big/big_slime_template.tscn" id="1_duwha"]
+[ext_resource type="PackedScene" uid="uid://dpdouv3wblxgy" path="res://Art/Models/Slimes/Big/YBBigSlime.glb" id="2_x223a"]
+[ext_resource type="Animation" uid="uid://nidgk46gx767" path="res://Art/Animations/Green_Idle.res" id="3_y8xbv"]
+[ext_resource type="Animation" uid="uid://d30rjntrrlo2h" path="res://Art/Animations/Green_Move1.res" id="4_8r8mb"]
+[ext_resource type="Script" path="res://Scripts/Slimes/skippy_slime.gd" id="5_ujd2g"]
+
+[sub_resource type="Animation" id="Animation_ke83s"]
+resource_name = "RESET"
+length = 0.833333
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Root")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Root")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/2/type = "scale_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("Root")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 1, 1, 1)
+tracks/3/type = "position_3d"
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/path = NodePath("Root/Skeleton3D:Eyes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -0.000541125, 0.312286, 0.3753)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pick6"]
+_data = {
+"Green_Idle": ExtResource("3_y8xbv"),
+"Green_Move1": ExtResource("4_8r8mb"),
+"RESET": SubResource("Animation_ke83s")
+}
+
+[node name="JumpySlippySlime" instance=ExtResource("1_duwha")]
+
+[node name="YBBigSlime" parent="VisualsOffset/Visuals" index="0" instance=ExtResource("2_x223a")]
+transform = Transform3D(2.5, 0, 0, 0, 2, 0, 0, 0, 2.5, 0, 0, 0)
+
+[node name="SlimeAnim" type="AnimationPlayer" parent="VisualsOffset/Visuals/YBBigSlime" index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_pick6")
+}
+
+[node name="Behaviour" parent="." index="1"]
+script = ExtResource("5_ujd2g")
+
+[node name="AnimQueue" parent="." index="5" node_paths=PackedStringArray("animPlayers")]
+animPlayers = [NodePath("../MovePlayer"), NodePath("../VisualsOffset/Visuals/YBBigSlime/SlimeAnim"), NodePath("../FallPlayer")]
