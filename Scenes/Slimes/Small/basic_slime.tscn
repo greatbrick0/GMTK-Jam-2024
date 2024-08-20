@@ -45,6 +45,11 @@ _data = {
 }
 
 [node name="BasicSlime" instance=ExtResource("1_2y27f")]
+init = null
+slimeName = null
+heightLayer = null
+tilePosition = null
+inControl = null
 
 [node name="SlimeBody" parent="VisualsOffset/Visuals" index="0" instance=ExtResource("5_4er81")]
 

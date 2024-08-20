@@ -51,16 +51,23 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 [node name="BasicSlime" parent="Level" instance=ExtResource("4_dlley")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
 init = true
+slimeName = null
+heightLayer = null
 tilePosition = Vector2i(2, -2)
 inControl = true
 
 [node name="JumpySlime" parent="Level" instance=ExtResource("5_ijlca")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 3)
 init = true
+heightLayer = null
 tilePosition = Vector2i(-4, 3)
+inControl = null
 
 [node name="SlippySlime" parent="Level" instance=ExtResource("6_a1jx6")]
 init = true
+heightLayer = null
+tilePosition = null
+inControl = null
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -0.5, 18, 19)

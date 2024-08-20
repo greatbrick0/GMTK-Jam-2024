@@ -1,8 +1,9 @@
 extends Node
 
-var slimeList: Array[Slime]
+const restartPopUp: PackedScene = preload("res://Scenes/restart_pop.tscn")
 const keyOrder: Array[String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
+var slimeList: Array[Slime]
 var playerLost: bool = false
 
 func _process(delta):
@@ -30,6 +31,9 @@ func RemoveSlime(slime: Slime, newSlime: bool = false):
 	slimeList.erase(slime)
 	if(!newSlime):
 		playerLost = true
+		var popUp = restartPopUp.instantiate()
+		add_child(popUp)
+		popUp.get_node("AnimationPlayer").play("SlideUp")
 
 func CheckForVictory():
 	if(slimeList.size() <= 0):
