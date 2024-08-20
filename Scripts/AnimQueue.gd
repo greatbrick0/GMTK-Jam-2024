@@ -15,7 +15,7 @@ func AddMoveToQueue(dir: Vector2i, moveType: String, time: float):
 
 func AddFallToQueue(dist: int, time: float):
 	var appendItem: Array
-	appendItem = [time, 2, ("Fall" if (dist >= 0) else "Up") + str(dist), Vector3(0, -dist, 0)]
+	appendItem = [time, 2, ("Fall" if (dist >= 0) else "Up") + str(abs(dist)), Vector3(0, -dist, 0)]
 	totalDisplacement += appendItem[3]
 	queue.append(appendItem)
 
