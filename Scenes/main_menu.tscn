@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cav2x3v1hf7eb" path="res://Scenes/Levels/verticality.tscn" id="3_8xp6y"]
 [ext_resource type="PackedScene" uid="uid://citleqf55w342" path="res://Scenes/Levels/level_3.tscn" id="4_b3yp7"]
 [ext_resource type="PackedScene" uid="uid://ctruwfmj6um4r" path="res://Scenes/Levels/merge.tscn" id="6_bcmdi"]
-[ext_resource type="PackedScene" uid="uid://cgby12gddc17g" path="res://Scenes/Levels/redGreen.tscn" id="7_fisl7"]
+[ext_resource type="PackedScene" uid="uid://dbnxe1l43v10w" path="res://Scenes/Levels/yellowGreen.tscn" id="8_au8aa"]
 
 [node name="MainMenu" type="Node2D"]
 
@@ -116,7 +116,7 @@ size_flags_vertical = 4
 theme = ExtResource("1_188e2")
 text = "level 5"
 script = ExtResource("1_qjvn6")
-newScene = ExtResource("7_fisl7")
+newScene = ExtResource("8_au8aa")
 
 [node name="TestLevel" type="Button" parent="CanvasLayer/Control"]
 custom_minimum_size = Vector2(150, 80)

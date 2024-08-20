@@ -57,7 +57,7 @@ func GetTileScene(pos: Vector2i, y: int) -> Node3D:
 func ManageControl():
 	$VisualsOffset/Visuals/ControlRing.visible = inControl
 	
-	if(!SlimeController.playerLost):
+	if(!SlimeController.playerLost and !SlimeController.playerWon):
 		for ii in puzzleActionList:
 			if(Input.is_action_just_pressed(ii)):
 				$AnimQueue.SkipQueue()

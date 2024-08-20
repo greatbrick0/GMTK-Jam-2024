@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://x554e2lqrj1b"]
+
+[ext_resource type="Script" path="res://Scripts/WinSceneHolder.gd" id="1_hfj8d"]
+
+[node name="WinSceneHolder" type="Node"]
+script = ExtResource("1_hfj8d")

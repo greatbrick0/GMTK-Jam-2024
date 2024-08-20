@@ -19,5 +19,6 @@ func FadeIn():
 	await $FadePlayer.animation_finished
 
 func PlayWinSound():
+	print("win")
 	$WinSound.stream = winSounds.pick_random()
 	$WinSound.play()

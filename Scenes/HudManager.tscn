@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqj8j2c77h0ab"]
+[gd_scene load_steps=11 format=3 uid="uid://dqj8j2c77h0ab"]
 
 [ext_resource type="Script" path="res://Scripts/HudManager.gd" id="1_3gddb"]
 [ext_resource type="AudioStream" uid="uid://ydo2ue56obva" path="res://Sounds/Effects/Win1.wav" id="2_aw2gc"]
 [ext_resource type="Theme" uid="uid://c0yn4it21qjdo" path="res://BaseSlimeTheme.tres" id="2_ek233"]
+[ext_resource type="AudioStream" uid="uid://ydrgr6ksttmv" path="res://Sounds/Effects/Win2.wav" id="3_f5a3p"]
 [ext_resource type="Script" path="res://Scripts/KeyBindButton.gd" id="3_oa2ye"]
+[ext_resource type="AudioStream" uid="uid://kia1esgbsgyd" path="res://Sounds/Effects/Win3.wav" id="4_0qulw"]
 
 [sub_resource type="Animation" id="Animation_w2smm"]
 resource_name = "FadeIn"
@@ -19,21 +21,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_ob50f"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control/FadeRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_y6wb3"]
@@ -52,6 +39,21 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_ob50f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/FadeRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tx7lr"]
 _data = {
 "FadeIn": SubResource("Animation_w2smm"),
@@ -61,6 +63,7 @@ _data = {
 
 [node name="HudManager" type="CanvasLayer"]
 script = ExtResource("1_3gddb")
+winSounds = Array[AudioStream]([ExtResource("2_aw2gc"), ExtResource("3_f5a3p"), ExtResource("4_0qulw")])
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
