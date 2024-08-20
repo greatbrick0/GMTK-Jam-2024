@@ -1,0 +1,390 @@
+[gd_scene load_steps=32 format=3 uid="uid://2ffxth240ons"]
+
+[ext_resource type="Script" path="res://Scripts/BigSlime.gd" id="1_4s6fg"]
+[ext_resource type="AudioStream" uid="uid://cltc76krufxiy" path="res://Sounds/Effects/Falling1.wav" id="2_lrp3d"]
+[ext_resource type="AudioStream" uid="uid://bwqggsirgyvii" path="res://Sounds/Effects/Falling2.wav" id="3_4rjuw"]
+[ext_resource type="AudioStream" uid="uid://br212d5n4ley0" path="res://Sounds/Effects/Falling3.wav" id="4_c48eh"]
+[ext_resource type="PackedScene" uid="uid://c5p3mw3jfwlhr" path="res://Art/Models/Slimes/YellowExport1.glb" id="5_ybltl"]
+[ext_resource type="Animation" uid="uid://nidgk46gx767" path="res://Art/Animations/Green_Idle.res" id="6_1x1hp"]
+[ext_resource type="Animation" uid="uid://d30rjntrrlo2h" path="res://Art/Animations/Green_Move1.res" id="7_gc08h"]
+[ext_resource type="PackedScene" uid="uid://rij270fd4c37" path="res://Scenes/large_control_ring.tscn" id="8_8nhcd"]
+[ext_resource type="Script" path="res://Scripts/Slimes/jumpy_slime.gd" id="9_ic8do"]
+[ext_resource type="Script" path="res://Scripts/AnimQueue.gd" id="10_g7s06"]
+
+[sub_resource type="Animation" id="Animation_ke83s"]
+resource_name = "RESET"
+length = 0.833333
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Root")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Root")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/2/type = "scale_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("Root")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 1, 1, 1)
+tracks/3/type = "position_3d"
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/path = NodePath("Root/Skeleton3D:Eyes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -0.000541125, 0.312286, 0.3753)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pick6"]
+_data = {
+"Green_Idle": ExtResource("6_1x1hp"),
+"Green_Move1": ExtResource("7_gc08h"),
+"RESET": SubResource("Animation_ke83s")
+}
+
+[sub_resource type="Animation" id="Animation_0j2np"]
+resource_name = "BumpDown"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(2, 0.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.3), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ocmht"]
+resource_name = "BumpLeft"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(2, 0.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.3, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_p5r66"]
+resource_name = "BumpRight"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(2, 0.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.3, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_urw7t"]
+resource_name = "BumpUp"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(2, 0.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.3), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hdh0i"]
+resource_name = "MoveDown"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector3(0, 0, -1), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xuuho"]
+resource_name = "MoveLeft"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector3(1, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kxm8c"]
+resource_name = "MoveRight"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector3(-1, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ec0ti"]
+resource_name = "MoveUp"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector3(0, 0, 1), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cdhy4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gyjkl"]
+_data = {
+"BumpDown": SubResource("Animation_0j2np"),
+"BumpLeft": SubResource("Animation_ocmht"),
+"BumpRight": SubResource("Animation_p5r66"),
+"BumpUp": SubResource("Animation_urw7t"),
+"MoveDown": SubResource("Animation_hdh0i"),
+"MoveLeft": SubResource("Animation_xuuho"),
+"MoveRight": SubResource("Animation_kxm8c"),
+"MoveUp": SubResource("Animation_ec0ti"),
+"RESET": SubResource("Animation_cdhy4")
+}
+
+[sub_resource type="Animation" id="Animation_bf0bn"]
+resource_name = "Fall1"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(4, 1),
+"update": 0,
+"values": [Vector3(0, 1, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2kdcl"]
+resource_name = "Fall2"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(4, 1),
+"update": 0,
+"values": [Vector3(0, 2, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nnrax"]
+resource_name = "Fall3"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(4, 1),
+"update": 0,
+"values": [Vector3(0, 3, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3kjub"]
+resource_name = "Fall4"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(4, 1),
+"update": 0,
+"values": [Vector3(0, 4, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_03txh"]
+resource_name = "Fall5"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(4, 1),
+"update": 0,
+"values": [Vector3(0, 5, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hvl1y"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qfomm"]
+resource_name = "Up1"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_72iyt"]
+resource_name = "Up2"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -2, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uccku"]
+_data = {
+"Fall1": SubResource("Animation_bf0bn"),
+"Fall2": SubResource("Animation_2kdcl"),
+"Fall3": SubResource("Animation_nnrax"),
+"Fall4": SubResource("Animation_3kjub"),
+"Fall5": SubResource("Animation_03txh"),
+"RESET": SubResource("Animation_hvl1y"),
+"Up1": SubResource("Animation_qfomm"),
+"Up2": SubResource("Animation_72iyt")
+}
+
+[node name="LargeJumpySlime" type="Node3D"]
+script = ExtResource("1_4s6fg")
+fallSounds = Array[AudioStream]([ExtResource("2_lrp3d"), ExtResource("3_4rjuw"), ExtResource("4_c48eh")])
+slimeName = 0
+
+[node name="VisualsOffset" type="Node3D" parent="."]
+
+[node name="Visuals" type="Node3D" parent="VisualsOffset"]
+
+[node name="SlimeBody" parent="VisualsOffset/Visuals" instance=ExtResource("5_ybltl")]
+transform = Transform3D(2.5, 0, 0, 0, 2, 0, 0, 0, 2.5, 0, 0, 0)
+
+[node name="SlimeAnim" type="AnimationPlayer" parent="VisualsOffset/Visuals/SlimeBody"]
+root_node = NodePath("")
+libraries = {
+"": SubResource("AnimationLibrary_pick6")
+}
+
+[node name="ControlRing" parent="VisualsOffset/Visuals" instance=ExtResource("8_8nhcd")]
+visible = false
+
+[node name="Behaviour" type="Node" parent="."]
+script = ExtResource("9_ic8do")
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="FallSound" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("2_lrp3d")
+
+[node name="MovePlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gyjkl")
+}
+
+[node name="FallPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_uccku")
+}
+
+[node name="AnimQueue" type="Node" parent="." node_paths=PackedStringArray("animPlayers")]
+script = ExtResource("10_g7s06")
+animPlayers = [NodePath("../MovePlayer"), NodePath("../VisualsOffset/Visuals/SlimeBody/SlimeAnim"), NodePath("../FallPlayer")]
