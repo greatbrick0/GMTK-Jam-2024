@@ -8,17 +8,13 @@ var playerLost: bool = false
 
 func _process(delta):
 	if(Input.is_action_just_pressed("Retry")):
-		for ii in get_children():
-			ii.queue_free()
-		slimeList.clear()
-		playerLost = false
+		await ExitScene()
 		get_tree().reload_current_scene()
+		HudManager.FadeIn()
 	if(Input.is_action_just_pressed("BackToMenu")):
-		for ii in get_children():
-			ii.queue_free()
-		slimeList.clear()
-		playerLost = false
+		await ExitScene()
 		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+		HudManager.FadeIn()
 	
 	if(playerLost): return
 	for ii in range(keyOrder.size()):
@@ -36,13 +32,21 @@ func RemoveSlime(slime: Slime, newSlime: bool = false):
 	if(!newSlime):
 		Lose()
 
-func CheckForVictory():
+func CheckForVictory() -> bool:
 	if(slimeList.size() <= 0):
-		return
+		return false
 	for ii in slimeList:
 		if(!ii.inGoal):
-			return
+			return false
 	print("victory")
+	return true
+
+func ExitScene():
+	for ii in get_children():
+		ii.queue_free()
+	slimeList.clear()
+	playerLost = false
+	await HudManager.FadeOut()
 
 func Lose():
 	playerLost = true

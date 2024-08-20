@@ -18,6 +18,7 @@ config/icon="res://Art/Images/GameIcon.png"
 [autoload]
 
 SlimeController="*res://Scripts/SlimeController.gd"
+HudManager="*res://Scenes/HudManager.tscn"
 
 [display]
 
