@@ -19,9 +19,11 @@ func IsOnlyAir(tiles: Array[String]):
 
 func AttemptMerge(dir: Vector2i) -> bool:
 	if(get_parent().isBig): return false
+	if(get_parent().isDead): return false
 	if(get_parent().CheckFacingTiles(dir)[0] != "LittleSlime"): return false
 	
 	otherSlimeRef = get_parent().GetTileScene(dir, 0)
+	if(otherSlimeRef.isDead): return false
 	return otherSlimeRef.CheckForExpand()
 
 func AttemptBreak(dir: Vector2i):

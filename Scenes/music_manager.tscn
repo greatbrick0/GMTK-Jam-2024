@@ -1,0 +1,30 @@
+[gd_scene load_steps=10 format=3 uid="uid://6jsba2x5h2cr"]
+
+[ext_resource type="Script" path="res://Scripts/music_manager.gd" id="1_i8xux"]
+[ext_resource type="AudioStream" uid="uid://c04vybj0wefp8" path="res://Sounds/StayWiggly1.wav" id="2_0yphg"]
+[ext_resource type="AudioStream" uid="uid://cmbv0hvejq57o" path="res://Sounds/Effects/Bird1.wav" id="2_kevbj"]
+[ext_resource type="AudioStream" uid="uid://da7nddxf0n1lk" path="res://Sounds/Effects/Bird2.wav" id="3_pfnyv"]
+[ext_resource type="AudioStream" uid="uid://y6ayoxhwgu78" path="res://Sounds/Effects/Bird3.wav" id="4_gr7va"]
+[ext_resource type="AudioStream" uid="uid://c4pfhtntfvnxi" path="res://Sounds/Effects/wind1.wav" id="5_t04ji"]
+[ext_resource type="AudioStream" uid="uid://d4nop7o1nduop" path="res://Sounds/Effects/wind2.wav" id="6_a55xj"]
+[ext_resource type="AudioStream" uid="uid://w184rcsxeax3" path="res://Sounds/Effects/wind3.wav" id="7_xn0ns"]
+[ext_resource type="AudioStream" uid="uid://3nokaqsoqxt4" path="res://Sounds/Effects/wind4.wav" id="8_i40nc"]
+
+[node name="MusicManager" type="Node"]
+script = ExtResource("1_i8xux")
+envStreams = Array[AudioStream]([ExtResource("2_kevbj"), ExtResource("3_pfnyv"), ExtResource("4_gr7va"), ExtResource("5_t04ji"), ExtResource("6_a55xj"), ExtResource("7_xn0ns"), ExtResource("8_i40nc")])
+
+[node name="Track1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_0yphg")
+volume_db = -14.0
+
+[node name="TrackTimer" type="Timer" parent="."]
+wait_time = 90.0
+autostart = true
+
+[node name="EnvSounds" type="AudioStreamPlayer" parent="."]
+
+[node name="EnvTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="TrackTimer" to="." method="_on_track_timer_timeout"]
+[connection signal="timeout" from="EnvTimer" to="." method="_on_env_timer_timeout"]
