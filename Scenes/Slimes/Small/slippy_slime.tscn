@@ -5,10 +5,10 @@
 [ext_resource type="AudioStream" uid="uid://bwqggsirgyvii" path="res://Sounds/Effects/Falling2.wav" id="3_jlgyf"]
 [ext_resource type="AudioStream" uid="uid://br212d5n4ley0" path="res://Sounds/Effects/Falling3.wav" id="4_hyikd"]
 [ext_resource type="PackedScene" uid="uid://4iotg8x4dqrc" path="res://Art/Models/Slimes/BlueSlime1.glb" id="5_rpau1"]
-[ext_resource type="Animation" uid="uid://nidgk46gx767" path="res://Art/Animations/Green_Idle.res" id="6_amn6d"]
+[ext_resource type="Animation" uid="uid://cnv8xs0f5fwg1" path="res://Art/Animations/Green_Idle.res" id="6_amn6d"]
 [ext_resource type="Script" path="res://Scripts/SlimeVoice.gd" id="7_rbemf"]
 [ext_resource type="Animation" uid="uid://d30rjntrrlo2h" path="res://Art/Animations/Green_Move1.res" id="7_upaxh"]
-[ext_resource type="PackedScene" uid="uid://himskgliij4c" path="res://Scenes/control_ring.tscn" id="8_qi1ia"]
+[ext_resource type="PackedScene" path="res://Scenes/control_ring.tscn" id="8_qi1ia"]
 [ext_resource type="Script" path="res://Scripts/Slimes/slippy_slime.gd" id="9_16m5y"]
 [ext_resource type="Script" path="res://Scripts/AnimQueue.gd" id="10_cr32f"]
 [ext_resource type="AudioStream" uid="uid://caaaeriw1k1km" path="res://Sounds/Effects/Slime1.wav" id="11_p8dk5"]
@@ -18,43 +18,14 @@
 [ext_resource type="AudioStream" uid="uid://bhyl7xrauw2uy" path="res://Sounds/Effects/Slime5.wav" id="15_ocmsd"]
 [ext_resource type="AudioStream" uid="uid://dvqi0t1mqo70u" path="res://Sounds/Effects/Slime6.wav" id="16_67gp8"]
 
-[sub_resource type="Animation" id="Animation_pclca"]
+[sub_resource type="Animation" id="Animation_pncbv"]
 resource_name = "RESET"
-length = 0.833333
-tracks/0/type = "position_3d"
-tracks/0/imported = true
-tracks/0/enabled = true
-tracks/0/path = NodePath("Root")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
-tracks/1/type = "rotation_3d"
-tracks/1/imported = true
-tracks/1/enabled = true
-tracks/1/path = NodePath("Root")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
-tracks/2/type = "scale_3d"
-tracks/2/imported = true
-tracks/2/enabled = true
-tracks/2/path = NodePath("Root")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, 1, 1, 1)
-tracks/3/type = "position_3d"
-tracks/3/imported = true
-tracks/3/enabled = true
-tracks/3/path = NodePath("Root/Skeleton3D:Eyes")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, -0.000541125, 0.312286, 0.3753)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_pick6"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yo77a"]
 _data = {
 "Green_Idle": ExtResource("6_amn6d"),
 "Green_Move1": ExtResource("7_upaxh"),
-"RESET": SubResource("Animation_pclca")
+"RESET": SubResource("Animation_pncbv")
 }
 
 [sub_resource type="Animation" id="Animation_0j2np"]
@@ -491,9 +462,8 @@ slimeName = 2
 [node name="SlimeBody" parent="VisualsOffset/Visuals" instance=ExtResource("5_rpau1")]
 
 [node name="SlimeAnim" type="AnimationPlayer" parent="VisualsOffset/Visuals/SlimeBody"]
-root_node = NodePath("")
 libraries = {
-"": SubResource("AnimationLibrary_pick6")
+"": SubResource("AnimationLibrary_yo77a")
 }
 
 [node name="ControlRing" parent="VisualsOffset/Visuals" instance=ExtResource("8_qi1ia")]

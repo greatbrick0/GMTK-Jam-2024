@@ -18,43 +18,14 @@
 [ext_resource type="AudioStream" uid="uid://dvqi0t1mqo70u" path="res://Sounds/Effects/Slime6.wav" id="16_j0374"]
 [ext_resource type="Script" path="res://Scripts/AnimQueue.gd" id="17_q1jj6"]
 
-[sub_resource type="Animation" id="Animation_ke83s"]
+[sub_resource type="Animation" id="Animation_4hkjc"]
 resource_name = "RESET"
-length = 0.833333
-tracks/0/type = "position_3d"
-tracks/0/imported = true
-tracks/0/enabled = true
-tracks/0/path = NodePath("Root")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
-tracks/1/type = "rotation_3d"
-tracks/1/imported = true
-tracks/1/enabled = true
-tracks/1/path = NodePath("Root")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
-tracks/2/type = "scale_3d"
-tracks/2/imported = true
-tracks/2/enabled = true
-tracks/2/path = NodePath("Root")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, 1, 1, 1)
-tracks/3/type = "position_3d"
-tracks/3/imported = true
-tracks/3/enabled = true
-tracks/3/path = NodePath("Root/Skeleton3D:Eyes")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, -0.000541125, 0.312286, 0.3753)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_pick6"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i7qwd"]
 _data = {
 "Green_Idle": ExtResource("3_pt0mg"),
 "Green_Move1": ExtResource("4_emhpv"),
-"RESET": SubResource("Animation_ke83s")
+"RESET": SubResource("Animation_4hkjc")
 }
 
 [sub_resource type="Animation" id="Animation_0j2np"]
@@ -492,9 +463,8 @@ slimeName = 0
 transform = Transform3D(2.5, 0, 0, 0, 2, 0, 0, 0, 2.5, 0, 0, 0)
 
 [node name="SlimeAnim" type="AnimationPlayer" parent="VisualsOffset/Visuals/SlimeBody"]
-root_node = NodePath("")
 libraries = {
-"": SubResource("AnimationLibrary_pick6")
+"": SubResource("AnimationLibrary_i7qwd")
 }
 
 [node name="ControlRing" parent="VisualsOffset/Visuals" instance=ExtResource("5_x58mb")]
