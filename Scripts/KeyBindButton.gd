@@ -7,4 +7,5 @@ func _ready():
 
 func ActivateBind():
 	print(bind)
-	Input.action_press(bind)
+	Input.action_press(bind, 1.0)
+	Input.call_deferred("action_release", bind)
