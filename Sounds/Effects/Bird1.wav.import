@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://3nokaqsoqxt4"
-path="res://.godot/imported/wind4.wav-b92e398ec58349aa28e0363f9a49268e.sample"
+uid="uid://cmbv0hvejq57o"
+path="res://.godot/imported/Bird1.wav-ce72acee3de7763809391836d483af55.sample"
 
 [deps]
 
-source_file="res://Sounds/wind4.wav"
-dest_files=["res://.godot/imported/wind4.wav-b92e398ec58349aa28e0363f9a49268e.sample"]
+source_file="res://Sounds/Effects/Bird1.wav"
+dest_files=["res://.godot/imported/Bird1.wav-ce72acee3de7763809391836d483af55.sample"]
 
 [params]
 
