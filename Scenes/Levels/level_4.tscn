@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cgh2tq17b0mg5" path="res://Art/Models/picnic.glb" id="9_8m287"]
 [ext_resource type="Script" path="res://Scripts/WinSceneHolder.gd" id="9_qhjqy"]
 [ext_resource type="PackedScene" uid="uid://dj6hxxsdsus8q" path="res://Art/Models/basket.glb" id="10_5lqbi"]
-[ext_resource type="PackedScene" uid="uid://cgby12gddc17g" path="res://Scenes/Levels/yellowGreen.tscn" id="10_elty4"]
+[ext_resource type="PackedScene" uid="uid://cgby12gddc17g" path="res://Scenes/Levels/level_5.tscn" id="10_elty4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_78i1y"]
 texture = ExtResource("3_xu73i")

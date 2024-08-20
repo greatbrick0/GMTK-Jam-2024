@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dj6hxxsdsus8q" path="res://Art/Models/basket.glb" id="7_r85hq"]
 [ext_resource type="PackedScene" uid="uid://db77qdr606amx" path="res://Art/Models/widePicnic.glb" id="8_gs7hc"]
 [ext_resource type="Script" path="res://Scripts/WinSceneHolder.gd" id="9_jihs5"]
-[ext_resource type="PackedScene" uid="uid://bq6eidsbwuav3" path="res://Scenes/Levels/Angry2.tscn" id="10_ptc7r"]
+[ext_resource type="PackedScene" uid="uid://daw3w7hbbwocm" path="res://Scenes/Levels/level_11.tscn" id="10_rjnm2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_78i1y"]
 texture = ExtResource("3_25n2j")
@@ -118,4 +118,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 6)
 
 [node name="WinSceneHolder" type="Node" parent="."]
 script = ExtResource("9_jihs5")
-winScene = ExtResource("10_ptc7r")
+winScene = ExtResource("10_rjnm2")
