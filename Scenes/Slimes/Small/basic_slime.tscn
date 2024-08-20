@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b5ke5fcwyf1lg"]
+[gd_scene load_steps=30 format=3 uid="uid://b5ke5fcwyf1lg"]
 
 [ext_resource type="Script" path="res://Scripts/LittleSlime.gd" id="1_rhjpw"]
 [ext_resource type="AudioStream" uid="uid://cltc76krufxiy" path="res://Sounds/Effects/Falling1.wav" id="2_eh2v7"]
@@ -177,6 +177,111 @@ _data = {
 "RESET": SubResource("Animation_cdhy4")
 }
 
+[sub_resource type="Animation" id="Animation_bf0bn"]
+resource_name = "Fall1"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(4, 1),
+"update": 0,
+"values": [Vector3(0, 1, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_atchy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2kdcl"]
+resource_name = "Fall2"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(4, 1),
+"update": 0,
+"values": [Vector3(0, 2, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nnrax"]
+resource_name = "Fall3"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(4, 1),
+"update": 0,
+"values": [Vector3(0, 3, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3kjub"]
+resource_name = "Fall4"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(4, 1),
+"update": 0,
+"values": [Vector3(0, 4, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_03txh"]
+resource_name = "Fall5"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsOffset/Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(4, 1),
+"update": 0,
+"values": [Vector3(0, 5, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uccku"]
+_data = {
+"Fall1": SubResource("Animation_bf0bn"),
+"Fall2": SubResource("Animation_2kdcl"),
+"Fall3": SubResource("Animation_nnrax"),
+"Fall4": SubResource("Animation_3kjub"),
+"Fall5": SubResource("Animation_03txh"),
+"RESET": SubResource("Animation_atchy")
+}
+
 [node name="BasicSlime" type="Node3D"]
 script = ExtResource("1_rhjpw")
 fallSounds = Array[AudioStream]([ExtResource("2_eh2v7"), ExtResource("3_n4om8"), ExtResource("4_6mtcv")])
@@ -208,6 +313,11 @@ libraries = {
 "": SubResource("AnimationLibrary_gyjkl")
 }
 
+[node name="FallPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_uccku")
+}
+
 [node name="AnimQueue" type="Node" parent="." node_paths=PackedStringArray("animPlayers")]
 script = ExtResource("10_c08ja")
-animPlayers = [NodePath("../MovePlayer"), NodePath("../VisualsOffset/Visuals/SlimeBody/SlimeAnim")]
+animPlayers = [NodePath("../MovePlayer"), NodePath("../VisualsOffset/Visuals/SlimeBody/SlimeAnim"), NodePath("../FallPlayer")]

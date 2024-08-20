@@ -8,6 +8,7 @@ func AttemptMove(dir: Vector2):
 			get_parent().MergeWith(otherSlimeRef)
 		else:
 			$"../AnimQueue".AddMoveToQueue(dir, "Bump", 0.0)
-	get_parent().DropHeightLayer()
+	var fallDist: int = get_parent().DropHeightLayer()
+	if(fallDist != 0): $"../AnimQueue".AddFallToQueue(fallDist, 0.5)
 	SlimeController.CheckForVictory()
 	$"../AnimQueue".ExecuteQueue()

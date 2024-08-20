@@ -13,6 +13,12 @@ func AddMoveToQueue(dir: Vector2i, moveType: String, time: float):
 		queue.append([time, 1, "Green_Move1"])
 	queue.append(appendItem)
 
+func AddFallToQueue(dist: int, time: float):
+	var appendItem: Array
+	appendItem = [time, 2, ("Fall" if (dist >= 0) else "Up") + str(dist), Vector3(0, -dist, 0)]
+	totalDisplacement += appendItem[3]
+	queue.append(appendItem)
+
 func ExecuteQueue():
 	var newExec: AnimExec = AnimExec.new()
 	add_child(newExec)
