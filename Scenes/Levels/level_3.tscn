@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_k53uw"]
 [ext_resource type="Texture2D" uid="uid://dhhnp6x275thb" path="res://Art/Images/TileMapData.png" id="2_q1gc7"]
 [ext_resource type="MeshLibrary" uid="uid://cx761x71sw86k" path="res://Art/SurfaceTiles.tres" id="4_b10fi"]
-[ext_resource type="PackedScene" uid="uid://qshry7pjxhix" path="res://Scenes/Slimes/Small/slippy_slime.tscn" id="4_rl77i"]
+[ext_resource type="PackedScene" uid="uid://3qvt8tbdyf4c" path="res://Scenes/Slimes/Small/slippy_slime.tscn" id="4_rl77i"]
 [ext_resource type="Environment" uid="uid://cs8septr0lst1" path="res://Environment1.tres" id="5_khb5r"]
 [ext_resource type="PackedScene" uid="uid://dj6hxxsdsus8q" path="res://Art/Models/basket.glb" id="5_q3jrq"]
 [ext_resource type="PackedScene" uid="uid://bcgpsusq5pemj" path="res://Art/Models/tree.glb" id="6_7ppiy"]
@@ -60,6 +60,7 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 transform = Transform3D(0.997564, -0.0534366, 0.0448386, 0, 0.642788, 0.766044, -0.0697565, -0.764178, 0.641222, 1, 16, 15)
 current = true
 fov = 20.0
+near = 10.0
 far = 50.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
