@@ -11,11 +11,7 @@ func SlimeInit():
 	visible = true
 
 func _process(delta):
-	$VisualsOffset/Visuals/ControlRing.visible = inControl
-	
-	for ii in puzzleActionList:
-		if(Input.is_action_just_pressed(ii)):
-			$AnimQueue.SkipQueue()
+	ManageControl()
 	
 	if(inControl):
 		var moveDirection: Vector2 = Vector2.ZERO

@@ -53,3 +53,11 @@ func ChangeTiles(newPos: Vector2i):
 
 func GetTileScene(pos: Vector2i, y: int) -> Node3D:
 	return get_parent().ReferenceByPosition(tilePosition + pos, heightLayer + y)
+
+func ManageControl():
+	$VisualsOffset/Visuals/ControlRing.visible = inControl
+	
+	if(!SlimeController.playerLost):
+		for ii in puzzleActionList:
+			if(Input.is_action_just_pressed(ii)):
+				$AnimQueue.SkipQueue()
